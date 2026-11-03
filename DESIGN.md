@@ -18,7 +18,7 @@ colors:
 typography:
   display:
     fontFamily: "Chakra Petch, Bai Jamjuree, system-ui, sans-serif"
-    fontSize: "clamp(3rem, 4.6vw, 5rem)"
+    fontSize: "clamp(2.3rem, 13cqi, 5rem)"
     fontWeight: 700
     lineHeight: 0.92
     letterSpacing: "-0.015em"
@@ -181,7 +181,7 @@ Silkscreen hairlines are the silk colour at low alpha, not separate tokens: rgba
 **Character:** Both faces are Cadson Demak (Bangkok) designs. Chakra Petch's squared, chamfered letterforms read like silkscreen legends and component markings; Bai Jamjuree is its softer, open companion for sentences.
 
 ### Hierarchy
-- **Display** (700, clamp(3rem, 4.6vw, 5rem), 0.92, uppercase): the name in the first viewport only. Drops to clamp(2.3rem, 11vw, 3.2rem) under 600px.
+- **Display** (700, clamp(2.3rem, 13cqi, 5rem), 0.92, uppercase): the name in the first viewport only. Sized in container units from `.intro` (container-type: inline-size), never from the viewport, because the board stops growing at 1360px and a vw size would push the name into the circuit on wide screens.
 - **Headline** (700, clamp(2.2rem, 4.6vw, 3.75rem), 1, uppercase, balanced wrap): section titles. A designator may precede it at max(0.95rem, 0.42em), raised and in polished copper.
 - **Title** (600, 1.05rem, 1.3, 0.08em, uppercase): sub-headings inside a section.
 - **Lede** (400, clamp(1.2rem, 1.8vw, 1.45rem), 1.45, max 46ch): the opening sentence of a case study; the hero pitch uses the same voice at clamp(1.25rem, 1.9vw, 1.5rem), max 30ch.

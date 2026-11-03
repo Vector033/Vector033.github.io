@@ -124,7 +124,8 @@ a.ref:hover { color: var(--copper-hi); }
 h1 {
   margin: 0 0 28px;
   font-family: var(--display); font-weight: 700; line-height: 0.92;
-  font-size: clamp(3rem, 4.6vw, 5rem);
+  /* sized from the intro column, not the viewport: the board stops growing at 1360px */
+  font-size: clamp(2.3rem, 13cqi, 5rem);
   letter-spacing: -0.015em; text-transform: uppercase;
   color: var(--silk);
 }
@@ -144,6 +145,7 @@ h1 {
 .pad.primary:hover { background: var(--copper-hi); border-color: var(--copper-hi); color: var(--outside); }
 
 /* ---------- the circuit ---------- */
+.intro { min-width: 0; container-type: inline-size; }
 .circuit { margin: 0; min-width: 0; }
 .circuit figcaption { margin-bottom: 14px; color: var(--silk-2); font-size: 0.95rem; }
 .circuit figcaption .ref { margin-right: 0.4em; }
@@ -319,7 +321,6 @@ table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nu
   .board-id span { display: none; }
   .connector { margin-right: 18px; padding: 8px 12px 8px 34px; font-size: 0.78rem; background-position: left 9px center, 0 0; }
   .hero, .case, .bom, .parts, .j1 { padding-left: 16px; padding-right: 16px; }
-  h1 { font-size: clamp(2.3rem, 11vw, 3.2rem); }
   .j1 li { flex: 1 1 100%; }
   .pcb .sub, .pcb .coll { display: none; }
   .pcb .name { font-size: 22px; letter-spacing: 0.03em; }
