@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nawat Wattanawong — Backend & AI</title>
+  <meta name="description" content="Portfolio of Nawat Wattanawong, Computer Science student at Chiang Mai University. Software Architect on Project Z, an AI chat widget platform delivered to a real client.">
+  <meta name="theme-color" content="#0e3b2c">
+  <link rel="preload" href="fonts/ChakraPetch-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/BaiJamjuree-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#m1">Skip to Project Z</a>
+
+  <div class="board">
+    <span class="drill tl" aria-hidden="true"></span><span class="drill tr" aria-hidden="true"></span>
+    <span class="drill bl" aria-hidden="true"></span><span class="drill br" aria-hidden="true"></span>
+
+    <header class="edge">
+      <a class="board-id" href="#top" aria-label="Back to top">NW-01 <span>REV 2026.11</span></a>
+      <nav aria-label="Sections">
+        <ul>
+          <li><a href="#m1">Project Z</a></li>
+          <li><a href="#bom">Projects</a></li>
+          <li><a href="#parts">Skills</a></li>
+          <li><a href="#j1">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="connector" href="Nawat_Wattanawong_Resume.pdf" download>Résumé PDF</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="name">
+        <div class="intro">
+          <h1 id="name">Nawat<br>Wattanawong</h1>
+          <p class="role">Computer Science, Chiang Mai University</p>
+          <p class="pitch">I design backend systems that put AI models to work, then I test them until they hold.</p>
+          <p class="status"><span class="led" aria-hidden="true"></span>Looking for a software engineering internship in backend &amp; AI</p>
+          <div class="pads">
+            <a class="pad primary" href="mailto:nawat_wattanawong@cmu.ac.th">Email me</a>
+            <a class="pad" href="Nawat_Wattanawong_Resume.pdf" download>Download résumé</a>
+          </div>
+        </div>
+
+        <figure class="circuit" aria-labelledby="circuit-title">
+          <figcaption id="circuit-title">
+            <a class="ref" href="#m1">M1</a> Project Z: the architecture I designed. Pick a flow to trace it.
+          </figcaption>
+
+          <svg class="pcb" viewBox="0 0 720 460" role="img" aria-label="Project Z architecture: Widget and Dashboard talk to three FastAPI services (Chat, Auth, Analysis), which use Redis, Firestore and Google Gemini.">
+            <defs>
+              <pattern id="pins" width="16" height="8" patternUnits="userSpaceOnUse">
+                <rect x="5" y="0" width="6" height="8" class="pin"/>
+              </pattern>
+            </defs>
+
+            <g class="traces">
+              <path class="trace" id="t-widget-chat" data-a="u5" data-b="u2" d="M180 70 H280"/>
+              <path class="trace" id="t-chat-gemini" data-a="u2" data-b="u7" d="M440 55 H560"/>
+              <path class="trace" id="t-chat-fs" data-a="u2" data-b="u8" d="M440 95 H470 L485 110 V195 L500 210 H560"/>
+              <path class="trace" id="t-chat-redis" data-a="u2" data-b="u6" d="M280 95 H255 L240 110 V215 L225 230 H180"/>
+              <path class="trace" id="t-redis-dash" data-a="u6" data-b="u4" d="M100 270 V350"/>
+              <path class="trace" id="t-dash-auth" data-a="u4" data-b="u1" d="M180 370 H240 L255 355 V245 L270 230 H280"/>
+              <path class="trace" id="t-auth-fs" data-a="u1" data-b="u8" d="M440 240 H560"/>
+              <path class="trace" id="t-dash-analysis" data-a="u4" data-b="u3" d="M180 405 H280"/>
+              <path class="trace" id="t-analysis-fs" data-a="u3" data-b="u8" d="M440 400 H560"/>
+              <path class="trace bottom" id="t-analysis-gemini" data-a="u3" data-b="u7" d="M440 370 H505 L520 355 V110 L535 95 H560"/>
+              <circle class="via" cx="447" cy="370" r="4"/><circle class="via" cx="553" cy="95" r="4"/>
+            </g>
+            <g class="pulses" aria-hidden="true"></g>
+
+            <g class="chip" id="u5">
+              <text class="ref" x="20" y="14">U5</text>
+              <rect class="court" x="14" y="18" width="172" height="104"/><rect class="pins" x="28" y="22" width="144" height="8"/><rect class="pins" x="28" y="110" width="144" height="8"/>
+              <rect class="body" x="20" y="30" width="160" height="80"/><circle class="dot" cx="31" cy="41" r="3"/>
+              <text class="name" x="100" y="70">WIDGET</text><text class="sub" x="100" y="92">Shadow DOM · SSE</text>
+            </g>
+            <g class="chip" id="u6">
+              <text class="ref" x="20" y="174">U6</text>
+              <rect class="court" x="14" y="178" width="172" height="104"/><rect class="pins" x="28" y="182" width="144" height="8"/><rect class="pins" x="28" y="270" width="144" height="8"/>
+              <rect class="body" x="20" y="190" width="160" height="80"/><circle class="dot" cx="31" cy="201" r="3"/>
+              <text class="name" x="100" y="230">REDIS 7</text><text class="sub" x="100" y="252">Pub/Sub · locks</text>
+            </g>
+            <g class="chip" id="u4">
+              <text class="ref" x="20" y="334">U4</text>
+              <rect class="court" x="14" y="338" width="172" height="104"/><rect class="pins" x="28" y="342" width="144" height="8"/><rect class="pins" x="28" y="430" width="144" height="8"/>
+              <rect class="body" x="20" y="350" width="160" height="80"/><circle class="dot" cx="31" cy="361" r="3"/>
+              <text class="name" x="100" y="390">DASHBOARD</text><text class="sub" x="100" y="412">Vue 3 · Pinia</text>
+            </g>
+            <g class="chip" id="u2">
+              <text class="ref" x="280" y="14">U2</text>
+              <rect class="court" x="274" y="18" width="172" height="104"/><rect class="pins" x="288" y="22" width="144" height="8"/><rect class="pins" x="288" y="110" width="144" height="8"/>
+              <rect class="body" x="280" y="30" width="160" height="80"/><circle class="dot" cx="291" cy="41" r="3"/>
+              <text class="name" x="360" y="70">CHAT</text><text class="sub" x="360" y="92">FastAPI · :8002</text>
+            </g>
+            <g class="chip" id="u1">
+              <text class="ref" x="280" y="174">U1</text>
+              <rect class="court" x="274" y="178" width="172" height="104"/><rect class="pins" x="288" y="182" width="144" height="8"/><rect class="pins" x="288" y="270" width="144" height="8"/>
+              <rect class="body" x="280" y="190" width="160" height="80"/><circle class="dot" cx="291" cy="201" r="3"/>
+              <text class="name" x="360" y="230">AUTH</text><text class="sub" x="360" y="252">FastAPI · :8001</text>
+            </g>
+            <g class="chip" id="u3">
+              <text class="ref" x="280" y="334">U3</text>
+              <rect class="court" x="274" y="338" width="172" height="104"/><rect class="pins" x="288" y="342" width="144" height="8"/><rect class="pins" x="288" y="430" width="144" height="8"/>
+              <rect class="body" x="280" y="350" width="160" height="80"/><circle class="dot" cx="291" cy="361" r="3"/>
+              <text class="name" x="360" y="390">ANALYSIS</text><text class="sub" x="360" y="412">FastAPI · :8003</text>
+            </g>
+            <g class="chip" id="u7">
+              <text class="ref" x="560" y="14">U7</text>
+              <rect class="court" x="554" y="18" width="152" height="104"/><rect class="pins" x="568" y="22" width="128" height="8"/><rect class="pins" x="568" y="110" width="128" height="8"/>
+              <rect class="body" x="560" y="30" width="140" height="80"/><circle class="dot" cx="571" cy="41" r="3"/>
+              <text class="name" x="630" y="70">GEMINI</text><text class="sub" x="630" y="92">Flash · 3.1 Pro</text>
+            </g>
+            <g class="chip" id="u8">
+              <text class="ref" x="560" y="174">U8</text>
+              <rect class="court" x="554" y="178" width="152" height="264"/><rect class="pins" x="568" y="182" width="128" height="8"/><rect class="pins" x="568" y="430" width="128" height="8"/>
+              <rect class="body" x="560" y="190" width="140" height="240"/><circle class="dot" cx="571" cy="201" r="3"/>
+              <text class="name" x="630" y="236">FIRESTORE</text><text class="sub" x="630" y="258">14 collections</text>
+              <text class="coll" x="578" y="300">tenants</text>
+              <text class="coll" x="578" y="322">chatSessions</text>
+              <text class="coll" x="578" y="344">messages</text>
+              <text class="coll" x="578" y="366">leads</text>
+              <text class="coll" x="578" y="388">analysisJobs</text>
+              <text class="coll" x="578" y="410">analyses …</text>
+            </g>
+            <g class="leads" aria-hidden="true"><rect class="lead" x="180" y="66" width="12" height="8"/><rect class="lead" x="268" y="66" width="12" height="8"/><rect class="lead" x="440" y="51" width="12" height="8"/><rect class="lead" x="548" y="51" width="12" height="8"/><rect class="lead" x="440" y="91" width="12" height="8"/><rect class="lead" x="548" y="206" width="12" height="8"/><rect class="lead" x="268" y="91" width="12" height="8"/><rect class="lead" x="180" y="226" width="12" height="8"/><rect class="lead" x="96" y="270" width="8" height="12"/><rect class="lead" x="96" y="338" width="8" height="12"/><rect class="lead" x="180" y="366" width="12" height="8"/><rect class="lead" x="268" y="226" width="12" height="8"/><rect class="lead" x="440" y="236" width="12" height="8"/><rect class="lead" x="548" y="236" width="12" height="8"/><rect class="lead" x="180" y="401" width="12" height="8"/><rect class="lead" x="268" y="401" width="12" height="8"/><rect class="lead" x="440" y="396" width="12" height="8"/><rect class="lead" x="548" y="396" width="12" height="8"/><rect class="lead" x="440" y="366" width="12" height="8"/><rect class="lead" x="548" y="91" width="12" height="8"/></g>
+          </svg>
+
+          <div class="switches" role="group" aria-label="Trace a request flow">
+            <span class="ref sw" aria-hidden="true">SW1</span>
+            <button type="button" data-flow="login" aria-pressed="false"><span class="toggle" aria-hidden="true"></span>Login</button>
+            <button type="button" data-flow="chat" aria-pressed="true"><span class="toggle" aria-hidden="true"></span>Chat</button>
+            <button type="button" data-flow="lead" aria-pressed="false"><span class="toggle" aria-hidden="true"></span>Lead capture</button>
+            <button type="button" data-flow="handover" aria-pressed="false"><span class="toggle" aria-hidden="true"></span>Handover</button>
+            <button type="button" data-flow="analysis" aria-pressed="false"><span class="toggle" aria-hidden="true"></span>Analysis</button>
+          </div>
+          <p class="flow-caption" id="flow-caption" aria-live="polite">A visitor types in the widget. The Chat service streams Gemini's reply back token by token over SSE and saves both sides to Firestore. If a model is busy, it falls back through four tiers.</p>
+        </figure>
+      </section>
+
+      <section class="case" id="m1" aria-labelledby="m1-title">
+        <ol class="rail" aria-label="Sprint timeline, 2026">
+          <li><span class="d">13–26 JUL</span>Sprint 1: backlog, database schema</li>
+          <li><span class="d">27 JUL–09 AUG</span>Sprint 2: UI, auth</li>
+          <li><span class="d">10–16 AUG</span>Sprint 3: widget, Gemini</li>
+          <li><span class="d">31 AUG–06 SEP</span>Sprint 3+: sessions, leads</li>
+          <li><span class="d">07–20 SEP</span>Sprint 4: handover, SSE</li>
+          <li><span class="d">21 SEP–04 OCT</span>Sprint 5: guardrails, security, tests</li>
+          <li><span class="d">10–18 OCT</span>Sprint 6: hardening, handoff</li>
+        </ol>
+
+        <div class="case-body">
+          <h2 id="m1-title"><span class="ref">M1</span> Project Z</h2>
+          <p class="lede">An AI chat widget any shop can add to its website with one <code>&lt;script&gt;</code> tag. Built for a real client in a team of four.</p>
+          <dl class="meta">
+            <div><dt>Role</dt><dd>Software Architect, backend</dd></div>
+            <div><dt>Course</dt><dd>204361 Software Engineering × Database Systems</dd></div>
+            <div><dt>When</dt><dd>Jul–Oct 2026, 6 Scrum sprints</dd></div>
+            <div><dt>Client</dt><dd>Saka</dd></div>
+          </dl>
+
+          <div class="pour">
+            <h3>The problem</h3>
+            <p>Shops couldn't answer customers around the clock. They lost the contact details of people who were ready to buy, and they had no idea how customers felt or what the bot couldn't answer. Saka wanted one widget that answers with Google Gemini, captures leads, analyzes every conversation and hands the hard ones to a person, with each merchant's data kept apart.</p>
+
+            <h3>What I owned</h3>
+            <ul class="owned">
+              <li><strong>The architecture and the database design.</strong> Three FastAPI services, each owning its own Firestore collections through a repository layer, with an access matrix so no service writes data it doesn't own.</li>
+              <li><strong>The core backend.</strong> Merchant register and login with JWT and refresh, real-time multi-turn Gemini chat with lead extraction, and AI-agent settings that sync live between dashboard and widget.</li>
+              <li><strong>The hardening pass.</strong> Server-issued widget sessions with session tokens, a fix for cross-tenant IDOR, rate limits, a transactional job claim, and splitting files and functions that had grown too large.</li>
+            </ul>
+          </div>
+
+          <h3 class="tp-title">Test points</h3>
+          <p class="tp-note">Readings from the project's test suite and final report.</p>
+          <table class="tp">
+            <thead><tr><th scope="col">Point</th><th scope="col">What was checked</th><th scope="col">Reading</th></tr></thead>
+            <tbody>
+              <tr id="tp1"><th scope="row"><a class="ref" href="#tp1"><span class="padmark" aria-hidden="true"></span>TP1</a></th><td>10 workers try to claim the same analysis job at once</td><td class="r">1 winner <span>(old code: 10)</span></td></tr>
+              <tr id="tp2"><th scope="row"><a class="ref" href="#tp2"><span class="padmark" aria-hidden="true"></span>TP2</a></th><td>Merchant A asks for merchant B's chats</td><td class="r">nothing returned</td></tr>
+              <tr id="tp3"><th scope="row"><a class="ref" href="#tp3"><span class="padmark" aria-hidden="true"></span>TP3</a></th><td>Mutation testing on core services (mutmut, model calls blocked)</td><td class="r">90–100% killed</td></tr>
+              <tr id="tp4"><th scope="row"><a class="ref" href="#tp4"><span class="padmark" aria-hidden="true"></span>TP4</a></th><td>Login attempts / public widget calls per minute</td><td class="r">10 / 30 per IP, then 429</td></tr>
+              <tr id="tp5"><th scope="row"><a class="ref" href="#tp5"><span class="padmark" aria-hidden="true"></span>TP5</a></th><td>Analysis run with nothing new to analyze</td><td class="r">~36 ms, 0 Gemini calls</td></tr>
+              <tr id="tp6"><th scope="row"><a class="ref" href="#tp6"><span class="padmark" aria-hidden="true"></span>TP6</a></th><td>Largest Vue page after the refactor</td><td class="r">2,329 → 765 lines</td></tr>
+            </tbody>
+          </table>
+
+          <div class="result">
+            <p><strong>Delivered:</strong> all 22 user stories plus 7 features beyond the MVP, accepted and signed off by the client. The team closed 161 of 161 Jira work items (212 story points) as velocity grew from 8 to 68 points a sprint. My share: 36 issues and 57 commits.</p>
+            <p class="honest">It runs on Docker Compose today. The Cloud Run setup is written but not deployed.</p>
+            <a class="trace-link" href="https://github.com/NexusG0/Project-Z" rel="noopener">Source on GitHub <svg class="stub" viewBox="0 0 28 12" aria-hidden="true"><path d="M0 6H18"/><circle cx="22" cy="6" r="4"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="bom" id="bom" aria-labelledby="bom-title">
+        <h2 id="bom-title">Other projects</h2>
+        <table>
+          <thead><tr><th scope="col">Ref</th><th scope="col">Project</th><th scope="col">Built with</th><th scope="col">Notes</th></tr></thead>
+          <tbody>
+            <tr id="m2">
+              <th scope="row"><a class="ref" href="#m2">M2</a></th>
+              <td><strong>QuizMaster</strong><span class="when">Quiz and results web app · Sem 2/2025</span></td>
+              <td class="val">Vue 3, Vite, Tailwind, FastAPI, SQLAlchemy, PostgreSQL, Docker</td>
+              <td>Team of four. I built the dashboard, leaderboard, quiz history and review pages, and account settings with Google and GitHub sign-in linking, then moved the frontend to an API-only setup. <a href="https://g11-quizmaster.vercel.app" rel="noopener">g11-quizmaster.vercel.app</a></td>
+            </tr>
+            <tr id="m3">
+              <th scope="row"><a class="ref" href="#m3">M3</a></th>
+              <td><strong>Text Checker</strong><span class="when">IMDb sentiment analysis · Sem 2/2025</span></td>
+              <td class="val">TensorFlow/Keras, PyTorch, Hugging Face</td>
+              <td>Compared a simple neural network with an LSTM on 50,000 movie reviews (~88% validation accuracy), studied the high-confidence mistakes, then fine-tuned BERT on a GPU.</td>
+            </tr>
+            <tr id="m4">
+              <th scope="row"><a class="ref" href="#m4">M4</a></th>
+              <td><strong>Kin-Arai-Dee</strong><span class="when">LLM meal-idea chatbot · Sem 1/2025</span></td>
+              <td class="val">Streamlit, LiteLLM</td>
+              <td>Backend developer and presenter for a chatbot that suggests what to eat. <a href="https://kinaraidee.streamlit.app" rel="noopener">kinaraidee.streamlit.app</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="parts" id="parts" aria-labelledby="parts-title">
+        <h2 id="parts-title">Parts I work with</h2>
+        <dl class="lib">
+          <div id="p1"><dt><a class="ref" href="#p1">P1</a>Backend &amp; web</dt><dd>Python, FastAPI, REST, SSE, JWT, SQLAlchemy, JavaScript, Vue 3, Pinia, Vite, Tailwind CSS, Shadow DOM</dd></div>
+          <div id="p2"><dt><a class="ref" href="#p2">P2</a>AI &amp; data</dt><dd>Gemini API with function calling and structured output, LiteLLM, TensorFlow/Keras, PyTorch, Hugging Face, scikit-learn, pandas</dd></div>
+          <div id="p3"><dt><a class="ref" href="#p3">P3</a>Data &amp; ops</dt><dd>Firestore, PostgreSQL, Redis, Docker Compose, GitHub Actions, Cloud Run, Vercel, Supabase</dd></div>
+          <div id="p4"><dt><a class="ref" href="#p4">P4</a>Testing &amp; process</dt><dd>unittest, Vitest, Playwright, mutmut, Scrum with Jira, pull-request reviews, AI coding agents kept in check by an AGENTS.md rulebook</dd></div>
+        </dl>
+
+        <h2 class="fab-title">Education</h2>
+        <dl class="fab">
+          <div id="e1"><dt><a class="ref" href="#e1">E1</a>2024–now</dt><dd><strong>BSc Computer Science, Chiang Mai University</strong>Coursework: Artificial Intelligence, Data Structures, Object-Oriented Programming, Software Engineering, Database Systems, Modern Application Development</dd></div>
+          <div id="e2"><dt><a class="ref" href="#e2">E2</a>2024</dt><dd><strong>Sacred Heart College, Chiang Mai</strong>High school diploma</dd></div>
+        </dl>
+      </section>
+
+      <section class="j1" id="j1" aria-labelledby="j1-title">
+        <h2 id="j1-title"><span class="ref">J1</span> Have an internship opening?</h2>
+        <p>I'd like to hear about it. Email is the fastest way to reach me.</p>
+        <ul>
+          <li><a class="pad primary" href="mailto:nawat_wattanawong@cmu.ac.th">nawat_wattanawong@cmu.ac.th</a></li>
+          <li><a class="pad" href="https://github.com/Vector033" rel="noopener">github.com/Vector033</a></li>
+          <li><a class="pad" href="Nawat_Wattanawong_Resume.pdf" download>Résumé PDF</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="edge foot">
+      <span>NW-01 · REV 2026.11</span>
+      <span>Hand-built in HTML, CSS and JavaScript. Type: Chakra Petch &amp; Bai Jamjuree by Cadson Demak, Bangkok.</span>
+    </footer>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-11-03T16:43:56.503Z",
+        "reason": "finish reviewer: .rail border-left is the sprint timeline's copper bus at trace weight, not a card accent"
+      }
+    ]
+  }
+}

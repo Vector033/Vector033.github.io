@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T16:49:57Z",
+  "title": "Design System: Nawat Wattanawong Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "outside": {
+        "role": "neutral",
+        "displayName": "Bench Black",
+        "canonical": "#06170f",
+        "cssVar": "--outside",
+        "oklch": "oklch(18.6% 0.029 162.0)",
+        "tonalRamp": [
+          "#090c0a",
+          "#202723",
+          "#3a453f",
+          "#56665d",
+          "#74887d",
+          "#99aaa1",
+          "#c0cdc6",
+          "#e8f1ec"
+        ]
+      },
+      "mask": {
+        "role": "neutral",
+        "displayName": "Solder Mask",
+        "canonical": "#0e3b2c",
+        "cssVar": "--mask",
+        "oklch": "oklch(31.7% 0.056 166.9)",
+        "tonalRamp": [
+          "#060d0a",
+          "#192922",
+          "#2f483e",
+          "#486a5c",
+          "#628d7b",
+          "#8bae9f",
+          "#b5d1c4",
+          "#e1f4eb"
+        ]
+      },
+      "mask-deep": {
+        "role": "neutral",
+        "displayName": "Deep Mask",
+        "canonical": "#0a2e22",
+        "cssVar": "--mask-deep",
+        "oklch": "oklch(27.2% 0.047 167.2)",
+        "tonalRamp": [
+          "#070d0a",
+          "#1b2823",
+          "#33473f",
+          "#4c685d",
+          "#688c7d",
+          "#8fada0",
+          "#b9cfc5",
+          "#e3f3ec"
+        ]
+      },
+      "pour": {
+        "role": "neutral",
+        "displayName": "Mask Over Pour",
+        "canonical": "#12473a",
+        "cssVar": "--pour",
+        "oklch": "oklch(35.9% 0.060 173.1)",
+        "tonalRamp": [
+          "#050d0b",
+          "#172924",
+          "#2c4940",
+          "#436b5f",
+          "#5c8e7f",
+          "#87afa2",
+          "#b2d1c7",
+          "#dff4ed"
+        ]
+      },
+      "silk": {
+        "role": "neutral",
+        "displayName": "Silkscreen",
+        "canonical": "#efece1",
+        "cssVar": "--silk",
+        "oklch": "oklch(94.2% 0.015 94.2)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#262521",
+          "#43423c",
+          "#636159",
+          "#858279",
+          "#a7a59d",
+          "#cbc9c3",
+          "#f0eeea"
+        ]
+      },
+      "silk-2": {
+        "role": "neutral",
+        "displayName": "Faded Silk",
+        "canonical": "#b8cbbd",
+        "cssVar": "--silk-2",
+        "oklch": "oklch(82.4% 0.028 153.8)",
+        "tonalRamp": [
+          "#090c0a",
+          "#212722",
+          "#3b453e",
+          "#57655b",
+          "#76887b",
+          "#9ba99f",
+          "#c1cdc4",
+          "#e9f1eb"
+        ]
+      },
+      "silk-3": {
+        "role": "neutral",
+        "displayName": "Ghost Silk",
+        "canonical": "#86a596",
+        "cssVar": "--silk-3",
+        "oklch": "oklch(69.4% 0.041 164.3)",
+        "tonalRamp": [
+          "#070d0a",
+          "#1d2823",
+          "#36463e",
+          "#50675c",
+          "#6c8a7c",
+          "#93aca0",
+          "#bbcfc5",
+          "#e5f2eb"
+        ]
+      },
+      "copper": {
+        "role": "primary",
+        "displayName": "Exposed Copper",
+        "canonical": "#c8873a",
+        "cssVar": "--copper",
+        "oklch": "oklch(67.5% 0.121 67.4)",
+        "tonalRamp": [
+          "#130801",
+          "#361f04",
+          "#5d390a",
+          "#865514",
+          "#b17323",
+          "#ce9960",
+          "#eac196",
+          "#ffe9cb"
+        ]
+      },
+      "copper-hi": {
+        "role": "primary",
+        "displayName": "Polished Copper",
+        "canonical": "#e8ac63",
+        "cssVar": "--copper-hi",
+        "oklch": "oklch(78.6% 0.114 70.2)",
+        "tonalRamp": [
+          "#130901",
+          "#342005",
+          "#5a3a0f",
+          "#83571a",
+          "#ad752a",
+          "#ca9b64",
+          "#e7c298",
+          "#ffeacd"
+        ]
+      },
+      "copper-low": {
+        "role": "tertiary",
+        "displayName": "Bottom-Layer Copper",
+        "canonical": "#6f5532",
+        "cssVar": "--copper-low",
+        "oklch": "oklch(46.8% 0.061 73.6)",
+        "tonalRamp": [
+          "#0f0a05",
+          "#2d2316",
+          "#4f3f2b",
+          "#735d41",
+          "#987d5a",
+          "#b8a184",
+          "#d8c6af",
+          "#f9ecdc"
+        ]
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Gold Plating",
+        "canonical": "#d8b35b",
+        "cssVar": "--gold",
+        "oklch": "oklch(78.2% 0.115 86.7)",
+        "tonalRamp": [
+          "#100a00",
+          "#302303",
+          "#533f08",
+          "#785d10",
+          "#a07d1f",
+          "#bea15f",
+          "#ddc795",
+          "#fdedcb"
+        ]
+      },
+      "chip": {
+        "role": "neutral",
+        "displayName": "Chip Package",
+        "canonical": "#15191a",
+        "cssVar": "--chip",
+        "oklch": "oklch(21.0% 0.006 214.4)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#242526",
+          "#404343",
+          "#5e6263",
+          "#7e8385",
+          "#a2a6a7",
+          "#c6cacb",
+          "#ecefef"
+        ]
+      },
+      "chip-edge": {
+        "role": "neutral",
+        "displayName": "Package Edge",
+        "canonical": "#2b3234",
+        "cssVar": "--chip-edge",
+        "oklch": "oklch(31.1% 0.010 216.8)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#232626",
+          "#3e4344",
+          "#5c6264",
+          "#7c8486",
+          "#a0a6a8",
+          "#c5cacc",
+          "#ebeff0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the first viewport only; uppercase silkscreen."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles, uppercase, optionally preceded by a raised copper designator."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Tracked uppercase sub-headings inside a section."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Opening sentence of a case study and the hero pitch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text, 62-72ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Board-edge nav, pads, switches, role line, definition terms."
+      },
+      "designator": {
+        "displayName": "Designator",
+        "purpose": "Reference designators (U1, M1, TP3, J1) with tabular figures; usually deep links."
+      },
+      "column-head": {
+        "displayName": "Column Head",
+        "purpose": "Table and meta-strip labels in ghost silk."
+      }
+    },
+    "shadows": [
+      {
+        "name": "board-lift",
+        "value": "0 1px 0 rgba(255,255,255,0.06) inset, 0 24px 60px -20px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.5)",
+        "purpose": "The board resting on the bench; the only elevated surface."
+      },
+      {
+        "name": "drill-ring",
+        "value": "0 0 0 5px var(--gold), 0 0 0 6px rgba(0,0,0,0.35)",
+        "purpose": "Gold plating around corner drill holes (3px ring under 600px)."
+      },
+      {
+        "name": "pad-plating",
+        "value": "inset 0 0 0 3px #b8923f",
+        "purpose": "Inner rim on round test-point pad marks."
+      },
+      {
+        "name": "current-glow",
+        "value": "drop-shadow(0 0 4px rgba(255,214,150,0.9))",
+        "purpose": "Filter on the moving pulse head only; never on resting surfaces."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "State transitions (pads, switch toggle, trace opacity) and the wake fade."
+      },
+      {
+        "name": "ease-current",
+        "value": "cubic-bezier(.45,0,.25,1)",
+        "purpose": "Pulse head and wake travel along a trace."
+      },
+      {
+        "name": "duration-control",
+        "value": "250ms",
+        "purpose": "Pad, switch and border colour changes."
+      },
+      {
+        "name": "duration-toggle",
+        "value": "300ms",
+        "purpose": "SW1 toggle block slide."
+      },
+      {
+        "name": "duration-chip",
+        "value": "400ms",
+        "purpose": "Chip outline and name fill changes."
+      },
+      {
+        "name": "duration-trace",
+        "value": "500ms",
+        "purpose": "Trace opacity and stroke changes."
+      },
+      {
+        "name": "pulse-travel",
+        "value": "clamp(320ms, length x 2.6ms, 900ms)",
+        "purpose": "Per-trace pulse duration scaled to trace length; 34px dash."
+      },
+      {
+        "name": "pulse-hop-gap",
+        "value": "120ms",
+        "purpose": "Pause before each hop in a flow."
+      },
+      {
+        "name": "chip-lit-hold",
+        "value": "900ms",
+        "purpose": "How long an arriving chip stays lit."
+      },
+      {
+        "name": "wake-fade",
+        "value": "700ms",
+        "purpose": "Wake fades out as the trace settles to its on state."
+      },
+      {
+        "name": "autoplay-delay",
+        "value": "450ms",
+        "purpose": "Chat flow plays once after the circuit is 50% visible, unless a switch was used."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "static",
+        "purpose": "Under prefers-reduced-motion traces switch on with no pulse; smooth scroll off."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "hero-stack",
+        "value": "1080px",
+        "purpose": "Hero collapses to one column."
+      },
+      {
+        "name": "tablet",
+        "value": "860px",
+        "purpose": "Edge wraps, case study stacks, BOM rows stack, definitions single column."
+      },
+      {
+        "name": "phone",
+        "value": "600px",
+        "purpose": "Board radius 10px, 16px side padding, chip sub-labels hide, bus becomes a stub, pads full width."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Pad",
+      "kind": "button",
+      "refersTo": "pad-primary",
+      "description": "Gold connector pad for the one main action in a group (email).",
+      "html": "<div class=\"ds-root\"><a class=\"ds-pad ds-pad-primary\" href=\"#\">Email me</a></div>",
+      "css": ".ds-root{--outside:#06170f;--mask:#0e3b2c;--mask-deep:#0a2e22;--pour:#12473a;--silk:#efece1;--silk-2:#b8cbbd;--silk-3:#86a596;--copper:#c8873a;--copper-hi:#e8ac63;--copper-low:#6f5532;--gold:#d8b35b;--chip:#15191a;--chip-edge:#2b3234;--display:\"Chakra Petch\",\"Bai Jamjuree\",system-ui,sans-serif;--body:\"Bai Jamjuree\",system-ui,sans-serif;background:var(--mask);color:var(--silk);font:400 1.0625rem/1.6 var(--body);padding:24px;} .ds-pad{display:inline-flex;align-items:center;gap:.6em;min-height:48px;padding:0 20px 0 18px;font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;color:var(--silk);border:1px solid rgba(239,236,225,.55);border-radius:2px;transition:background-color .25s cubic-bezier(.16,1,.3,1),color .25s,border-color .25s;} .ds-pad-primary{background:var(--gold);border-color:var(--gold);color:var(--outside);} .ds-pad-primary:hover{background:var(--copper-hi);border-color:var(--copper-hi);color:var(--outside);} :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}"
+    },
+    {
+      "name": "Outline Pad",
+      "kind": "button",
+      "refersTo": "pad-outline",
+      "description": "Silkscreen-outlined pad for secondary actions (download, GitHub).",
+      "html": "<div class=\"ds-root\"><a class=\"ds-pad\" href=\"#\">Download résumé</a></div>",
+      "css": ".ds-root{--outside:#06170f;--mask:#0e3b2c;--mask-deep:#0a2e22;--pour:#12473a;--silk:#efece1;--silk-2:#b8cbbd;--silk-3:#86a596;--copper:#c8873a;--copper-hi:#e8ac63;--copper-low:#6f5532;--gold:#d8b35b;--chip:#15191a;--chip-edge:#2b3234;--display:\"Chakra Petch\",\"Bai Jamjuree\",system-ui,sans-serif;--body:\"Bai Jamjuree\",system-ui,sans-serif;background:var(--mask);color:var(--silk);font:400 1.0625rem/1.6 var(--body);padding:24px;} .ds-pad{display:inline-flex;align-items:center;gap:.6em;min-height:48px;padding:0 20px 0 18px;font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;color:var(--silk);border:1px solid rgba(239,236,225,.55);border-radius:2px;transition:background-color .25s cubic-bezier(.16,1,.3,1),color .25s,border-color .25s;} .ds-pad:hover{background:rgba(239,236,225,.08);color:var(--silk);border-color:var(--silk);} :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}"
+    },
+    {
+      "name": "Edge Connector",
+      "kind": "button",
+      "refersTo": "edge-connector",
+      "description": "Gold-finger connector on the board edge for the résumé download.",
+      "html": "<div class=\"ds-root\"><a class=\"ds-connector\" href=\"#\">Résumé PDF</a></div>",
+      "css": ".ds-root{--outside:#06170f;--mask:#0e3b2c;--mask-deep:#0a2e22;--pour:#12473a;--silk:#efece1;--silk-2:#b8cbbd;--silk-3:#86a596;--copper:#c8873a;--copper-hi:#e8ac63;--copper-low:#6f5532;--gold:#d8b35b;--chip:#15191a;--chip-edge:#2b3234;--display:\"Chakra Petch\",\"Bai Jamjuree\",system-ui,sans-serif;--body:\"Bai Jamjuree\",system-ui,sans-serif;background:var(--mask);color:var(--silk);font:400 1.0625rem/1.6 var(--body);padding:24px;} .ds-connector{display:inline-flex;align-items:center;padding:9px 16px 9px 40px;font-family:var(--display);font-weight:600;font-size:.875rem;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;color:var(--outside);background:repeating-linear-gradient(90deg,var(--gold) 0 5px,transparent 5px 9px) left 12px center/20px 60% no-repeat,var(--silk);border-radius:2px;} .ds-connector:hover{background-color:var(--gold);} :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}"
+    },
+    {
+      "name": "Board Edge Navigation",
+      "kind": "nav",
+      "refersTo": "nav-pin",
+      "description": "Top board edge: board ID with revision, nav pins with copper hover underline.",
+      "html": "<div class=\"ds-root\"><header class=\"ds-edge\"><a class=\"ds-board-id\" href=\"#\">NW-01 <span>REV 2026.11</span></a><nav><a href=\"#\">Project Z</a><a href=\"#\">Projects</a><a href=\"#\">Skills</a><a href=\"#\">Contact</a></nav></header></div>",
+      "css": ".ds-root{--outside:#06170f;--mask:#0e3b2c;--mask-deep:#0a2e22;--pour:#12473a;--silk:#efece1;--silk-2:#b8cbbd;--silk-3:#86a596;--copper:#c8873a;--copper-hi:#e8ac63;--copper-low:#6f5532;--gold:#d8b35b;--chip:#15191a;--chip-edge:#2b3234;--display:\"Chakra Petch\",\"Bai Jamjuree\",system-ui,sans-serif;--body:\"Bai Jamjuree\",system-ui,sans-serif;background:var(--mask);color:var(--silk);font:400 1.0625rem/1.6 var(--body);padding:24px;} .ds-edge{display:flex;align-items:center;gap:24px;padding:22px 0;border-bottom:1px solid rgba(239,236,225,.16);font-family:var(--display);font-weight:600;font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;} .ds-board-id{color:var(--silk);text-decoration:none;} .ds-board-id span{color:var(--silk-3);margin-left:.5em;} .ds-edge nav{margin-left:auto;display:flex;gap:32px;} .ds-edge nav a{color:var(--silk-2);text-decoration:none;padding:6px 0;border-bottom:1px solid transparent;} .ds-edge nav a:hover{color:var(--silk);border-bottom-color:var(--copper);} :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}"
+    },
+    {
+      "name": "SW1 Flow Switches",
+      "kind": "chip",
+      "refersTo": "switch",
+      "description": "Slide-switch toggle group that selects which flow is traced; pressed state fills silk.",
+      "html": "<div class=\"ds-root\"><div class=\"ds-switches\" role=\"group\" aria-label=\"Trace a request flow\"><span class=\"ds-ref\">SW1</span><button type=\"button\" aria-pressed=\"false\"><span class=\"ds-toggle\"></span>Login</button><button type=\"button\" aria-pressed=\"true\"><span class=\"ds-toggle\"></span>Chat</button><button type=\"button\" aria-pressed=\"false\"><span class=\"ds-toggle\"></span>Lead capture</button></div></div>",
+      "css": ".ds-root{--outside:#06170f;--mask:#0e3b2c;--mask-deep:#0a2e22;--pour:#12473a;--silk:#efece1;--silk-2:#b8cbbd;--silk-3:#86a596;--copper:#c8873a;--copper-hi:#e8ac63;--copper-low:#6f5532;--gold:#d8b35b;--chip:#15191a;--chip-edge:#2b3234;--display:\"Chakra Petch\",\"Bai Jamjuree\",system-ui,sans-serif;--body:\"Bai Jamjuree\",system-ui,sans-serif;background:var(--mask);color:var(--silk);font:400 1.0625rem/1.6 var(--body);padding:24px;} .ds-switches{display:flex;flex-wrap:wrap;align-items:center;gap:8px;} .ds-ref{font-family:var(--display);font-weight:600;letter-spacing:.06em;color:var(--silk-2);font-size:.8rem;margin-right:6px;} .ds-switches button{display:inline-flex;align-items:center;gap:9px;min-height:40px;padding:0 14px 0 10px;font:600 .82rem/1 var(--display);letter-spacing:.07em;text-transform:uppercase;color:var(--silk-2);background:var(--mask-deep);border:1px solid rgba(239,236,225,.22);border-radius:2px;cursor:pointer;transition:color .25s,border-color .25s,background-color .25s;} .ds-toggle{position:relative;width:12px;height:20px;border:1.5px solid currentColor;border-radius:1px;} .ds-toggle::after{content:\"\";position:absolute;left:1.5px;right:1.5px;bottom:1.5px;height:7px;background:currentColor;transition:bottom .3s cubic-bezier(.16,1,.3,1);} .ds-switches button:hover{color:var(--silk);border-color:rgba(239,236,225,.5);} .ds-switches button[aria-pressed=\"true\"]{color:var(--outside);background:var(--silk);border-color:var(--silk);} .ds-switches button[aria-pressed=\"true\"] .ds-toggle::after{bottom:calc(100% - 8.5px);} :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}"
+    },
+    {
+      "name": "Circuit Chip with Trace",
+      "kind": "custom",
+      "refersTo": "chip",
+      "description": "Architecture node: dark package with pin rows, courtyard, designator and leads, joined by a copper trace through a via; hover lights the package.",
+      "html": "<div class=\"ds-root\"><svg class=\"ds-pcb\" viewBox=\"0 0 460 130\" width=\"460\" height=\"130\"><defs><pattern id=\"ds-pins\" width=\"16\" height=\"8\" patternUnits=\"userSpaceOnUse\"><rect x=\"5\" y=\"0\" width=\"6\" height=\"8\" fill=\"#a9a398\"/></pattern></defs><path class=\"ds-trace\" d=\"M180 70 H230 L245 55 H280\"/><circle class=\"ds-via\" cx=\"230\" cy=\"70\" r=\"4\"/><g class=\"ds-chip\"><text class=\"ds-chip-ref\" x=\"20\" y=\"14\">U5</text><rect class=\"ds-court\" x=\"14\" y=\"18\" width=\"172\" height=\"104\"/><rect fill=\"url(#ds-pins)\" x=\"28\" y=\"22\" width=\"144\" height=\"8\"/><rect fill=\"url(#ds-pins)\" x=\"28\" y=\"110\" width=\"144\" height=\"8\"/><rect class=\"ds-body\" x=\"20\" y=\"30\" width=\"160\" height=\"80\"/><circle cx=\"31\" cy=\"41\" r=\"3\" fill=\"#2f3739\"/><text class=\"ds-name\" x=\"100\" y=\"70\">WIDGET</text><text class=\"ds-sub\" x=\"100\" y=\"92\">Shadow DOM · SSE</text></g><g class=\"ds-chip\"><text class=\"ds-chip-ref\" x=\"280\" y=\"14\">U2</text><rect class=\"ds-court\" x=\"274\" y=\"18\" width=\"172\" height=\"104\"/><rect fill=\"url(#ds-pins)\" x=\"288\" y=\"22\" width=\"144\" height=\"8\"/><rect fill=\"url(#ds-pins)\" x=\"288\" y=\"110\" width=\"144\" height=\"8\"/><rect class=\"ds-body\" x=\"280\" y=\"30\" width=\"160\" height=\"80\"/><circle cx=\"291\" cy=\"41\" r=\"3\" fill=\"#2f3739\"/><text class=\"ds-name\" x=\"360\" y=\"70\">CHAT</text><text class=\"ds-sub\" x=\"360\" y=\"92\">FastAPI · :8002</text></g><rect class=\"ds-lead\" x=\"180\" y=\"66\" width=\"12\" height=\"8\"/><rect class=\"ds-lead\" x=\"268\" y=\"51\" width=\"12\" height=\"8\"/></svg></div>",
+      "css": ".ds-root{--outside:#06170f;--mask:#0e3b2c;--mask-deep:#0a2e22;--pour:#12473a;--silk:#efece1;--silk-2:#b8cbbd;--silk-3:#86a596;--copper:#c8873a;--copper-hi:#e8ac63;--copper-low:#6f5532;--gold:#d8b35b;--chip:#15191a;--chip-edge:#2b3234;--display:\"Chakra Petch\",\"Bai Jamjuree\",system-ui,sans-serif;--body:\"Bai Jamjuree\",system-ui,sans-serif;background:var(--mask);color:var(--silk);font:400 1.0625rem/1.6 var(--body);padding:24px;} .ds-pcb{display:block;max-width:100%;height:auto;} .ds-trace{fill:none;stroke:var(--copper);stroke-width:5;stroke-linejoin:round;stroke-linecap:square;opacity:.55;transition:opacity .5s cubic-bezier(.16,1,.3,1);} .ds-pcb:hover .ds-trace{opacity:.95;} .ds-via{fill:var(--mask);stroke:var(--gold);stroke-width:2.5;} .ds-body{fill:var(--chip);stroke:var(--chip-edge);stroke-width:1.5;transition:stroke .4s,fill .4s;} .ds-court{fill:none;stroke:rgba(239,236,225,.4);stroke-width:1;} .ds-lead{fill:#b9b2a5;} .ds-pcb text{font-family:var(--display);text-anchor:middle;} .ds-name{font-size:20px;font-weight:600;letter-spacing:.08em;fill:#c9ccc8;transition:fill .4s;} .ds-sub{font-size:13px;font-weight:500;letter-spacing:.04em;fill:#7f8a86;} .ds-chip-ref{font-size:13px;font-weight:600;fill:var(--silk);text-anchor:start;letter-spacing:.1em;} .ds-chip:hover .ds-body{stroke:var(--copper-hi);fill:#1d2122;} .ds-chip:hover .ds-name{fill:#fff3d8;}"
+    },
+    {
+      "name": "Copper Pour Panel",
+      "kind": "card",
+      "refersTo": "copper-pour",
+      "description": "Chamfered octagon of mask over a hatched copper ground plane for dense narrative.",
+      "html": "<div class=\"ds-root\"><div class=\"ds-pour\"><h3>What I owned</h3><ul class=\"ds-owned\"><li><strong>The architecture and the database design.</strong> Three services, each owning its own collections.</li><li><strong>The hardening pass.</strong> Session tokens, rate limits, a transactional job claim.</li></ul></div></div>",
+      "css": ".ds-root{--outside:#06170f;--mask:#0e3b2c;--mask-deep:#0a2e22;--pour:#12473a;--silk:#efece1;--silk-2:#b8cbbd;--silk-3:#86a596;--copper:#c8873a;--copper-hi:#e8ac63;--copper-low:#6f5532;--gold:#d8b35b;--chip:#15191a;--chip-edge:#2b3234;--display:\"Chakra Petch\",\"Bai Jamjuree\",system-ui,sans-serif;--body:\"Bai Jamjuree\",system-ui,sans-serif;background:var(--mask);color:var(--silk);font:400 1.0625rem/1.6 var(--body);padding:24px;} .ds-pour{padding:clamp(24px,3vw,40px);background:repeating-linear-gradient(45deg,rgba(200,135,58,.14) 0 1px,transparent 1px 7px),var(--pour);clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 18px,100% calc(100% - 18px),calc(100% - 18px) 100%,18px 100%,0 calc(100% - 18px),0 18px);} .ds-pour h3{margin:0 0 12px;font:600 1.05rem/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--silk);} .ds-owned{list-style:none;margin:0;padding:0;display:grid;gap:16px;} .ds-owned li{position:relative;padding-left:26px;max-width:68ch;color:var(--silk-2);} .ds-owned li::before{content:\"\";position:absolute;left:0;top:.55em;width:12px;height:8px;background:var(--copper);} .ds-owned strong{display:block;font-weight:600;color:var(--silk);}"
+    },
+    {
+      "name": "Test-Point Table",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Measured readings with gold pad marks, tabular designators and right-aligned copper readings.",
+      "html": "<div class=\"ds-root\"><table class=\"ds-tp\"><thead><tr><th>Point</th><th>What was checked</th><th>Reading</th></tr></thead><tbody><tr><th><a class=\"ds-tp-ref\" href=\"#\"><span class=\"ds-padmark\"></span>TP1</a></th><td>10 workers try to claim the same job at once</td><td class=\"ds-r\">1 winner <span>(old code: 10)</span></td></tr><tr><th><a class=\"ds-tp-ref\" href=\"#\"><span class=\"ds-padmark\"></span>TP5</a></th><td>Analysis run with nothing new to analyze</td><td class=\"ds-r\">~36 ms, 0 calls</td></tr></tbody></table></div>",
+      "css": ".ds-root{--outside:#06170f;--mask:#0e3b2c;--mask-deep:#0a2e22;--pour:#12473a;--silk:#efece1;--silk-2:#b8cbbd;--silk-3:#86a596;--copper:#c8873a;--copper-hi:#e8ac63;--copper-low:#6f5532;--gold:#d8b35b;--chip:#15191a;--chip-edge:#2b3234;--display:\"Chakra Petch\",\"Bai Jamjuree\",system-ui,sans-serif;--body:\"Bai Jamjuree\",system-ui,sans-serif;background:var(--mask);color:var(--silk);font:400 1.0625rem/1.6 var(--body);padding:24px;} .ds-tp{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;} .ds-tp th,.ds-tp td{padding:14px 12px;text-align:left;vertical-align:baseline;border-bottom:1px solid rgba(239,236,225,.14);} .ds-tp thead th{font:600 .72rem/1.4 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--silk-3);border-bottom-color:rgba(239,236,225,.35);padding-top:0;} .ds-tp-ref{font:600 .9rem/1.3 var(--display);letter-spacing:.08em;white-space:nowrap;color:var(--silk);text-decoration:none;} .ds-tp-ref:hover{color:var(--copper-hi);} .ds-padmark{display:inline-block;width:12px;height:12px;margin-right:10px;border-radius:50%;background:var(--gold);box-shadow:inset 0 0 0 3px #b8923f;vertical-align:-1px;} .ds-tp td{color:var(--silk-2);} .ds-r{font:600 1.05rem/1.3 var(--display);color:var(--copper-hi) !important;white-space:nowrap;text-align:right !important;} .ds-r span{display:block;font:400 .82rem/1.3 var(--body);color:var(--silk-3);} :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}"
+    },
+    {
+      "name": "Sprint Rail",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "4px copper bus with gold-ringed nodes and tabular date labels; continues as the section bus.",
+      "html": "<div class=\"ds-root\"><ol class=\"ds-rail\"><li><span class=\"ds-d\">13–26 JUL</span>Sprint 1: backlog, database schema</li><li><span class=\"ds-d\">27 JUL–09 AUG</span>Sprint 2: UI, auth</li><li><span class=\"ds-d\">10–16 AUG</span>Sprint 3: widget, Gemini</li></ol></div>",
+      "css": ".ds-root{--outside:#06170f;--mask:#0e3b2c;--mask-deep:#0a2e22;--pour:#12473a;--silk:#efece1;--silk-2:#b8cbbd;--silk-3:#86a596;--copper:#c8873a;--copper-hi:#e8ac63;--copper-low:#6f5532;--gold:#d8b35b;--chip:#15191a;--chip-edge:#2b3234;--display:\"Chakra Petch\",\"Bai Jamjuree\",system-ui,sans-serif;--body:\"Bai Jamjuree\",system-ui,sans-serif;background:var(--mask);color:var(--silk);font:400 1.0625rem/1.6 var(--body);padding:24px;} .ds-rail{list-style:none;margin:0;padding:8px 0 0;border-left:4px solid var(--copper);max-width:190px;} .ds-rail li{position:relative;padding:0 0 26px 20px;font-size:.9rem;line-height:1.4;color:var(--silk-2);} .ds-rail li::before{content:\"\";position:absolute;left:-11px;top:3px;width:10px;height:10px;border-radius:50%;background:var(--mask);border:2.5px solid var(--gold);} .ds-d{display:block;font:600 .78rem/1.4 var(--display);letter-spacing:.08em;color:var(--silk);font-variant-numeric:tabular-nums;margin-bottom:2px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Silkscreen Board",
+    "overview": "The whole site is one printed circuit board resting on a dark bench. A single rounded board of matte green solder mask carries every section; type is silkscreen printed on it, the work is drawn as chips, copper traces and test pads, and every component wears a reference designator (U1, M1, TP3, P2, J1) that is also a deep link. The page reads as an engineering artifact rather than a marketing page: hairline silkscreen rules divide the board, tables are bills of materials, and the sprint timeline is a copper bus that keeps running down the board to the contact connector.\n\nDensity is calm and technical. Large uppercase display type in Chakra Petch sets the designators and headings; Bai Jamjuree carries reading text at a comfortable 1.6 leading. Colour is almost entirely the board's own materials: green mask, off-white silk, copper and gold metal, near-black chip packages. Motion is reserved for one signature act, a pulse of current that runs along the real request path and lights chips in sequence, leaving a brightened copper wake that settles.\n\nThe world rejects the category default for developer portfolios: a dark hero with a gradient, a \"Hi, I'm\" greeting, skill pills and a grid of equal project cards.",
+    "keyCharacteristics": [
+      "One continuous board (14px corners, gold-ringed drill holes) on a near-black bench.",
+      "Reference designators on every component, set in Chakra Petch with tabular figures and used as anchors.",
+      "Copper and gold are the only warm colours, and they always read as exposed metal.",
+      "Lists are BOM tables and definition rows separated by silkscreen hairlines, never card grids.",
+      "A copper bus with gold vias ties the sections together down the left margin.",
+      "One signature motion: pulse and wake along traces, with a static fallback under reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Bare Metal Rule",
+        "body": "Warmth appears only as metal: copper, polished copper, bottom-layer copper, gold. The mask, silk and chip packages stay cool or neutral. No other warm hue enters the system.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gold Means Contact Rule",
+        "body": "Gold marks places where something connects: the main action pad, the edge connector, drill holes, vias, test pads and focus. Do not use gold as decoration on text or rules.",
+        "section": "colors"
+      },
+      {
+        "name": "The Silkscreen Caps Rule",
+        "body": "Chakra Petch is always uppercase and tracked (0.06-0.12em) except the two display sizes, which are tightened (-0.01 to -0.015em). Bai Jamjuree is never uppercase.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Designator Rule",
+        "body": "Anything that reads as a part number, date or measured value uses tabular figures so columns of designators and readings align.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Lift Rule",
+        "body": "Only the board is elevated. Components on the board are printed, plated or etched, so they never get a drop shadow; glow belongs to current in motion, not to resting surfaces.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do give every repeatable component a reference designator in Chakra Petch with tabular figures, and make it a deep link when the component has an id.",
+      "Do keep warmth to the four metal tokens (copper, copper-hi, copper-low, gold) and reserve gold for connection points and focus.",
+      "Do separate content with silkscreen hairlines (rgba(239,236,225,0.14-0.2)) and indent post-case-study sections so the copper bus can run beside them.",
+      "Do route new diagram traces in horizontal and vertical runs with 45-degree jogs, 5px wide, square caps, round joins, landing on leads.",
+      "Do keep one gold primary pad per group and the 2px machined corner on all interactive controls.",
+      "Do provide a static, fully lit fallback for any motion under prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't use a dark hero with a gradient, a \"Hi, I'm\" greeting, skill pills, or a grid of equal project cards.",
+      "Don't introduce a warm hue that is not one of the metal tokens, or use copper-low for text.",
+      "Don't add drop shadows to anything on the board; only the board lifts, and only moving current glows.",
+      "Don't round interactive controls beyond 2px or use pill shapes; circles are for holes, vias, pads and LEDs.",
+      "Don't set Bai Jamjuree in uppercase or Chakra Petch body paragraphs."
+    ]
+  }
+}

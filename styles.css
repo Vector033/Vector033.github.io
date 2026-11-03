@@ -1,0 +1,341 @@
+@font-face { font-family: "Chakra Petch"; src: url(fonts/ChakraPetch-500.woff2) format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url(fonts/ChakraPetch-600.woff2) format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Chakra Petch"; src: url(fonts/ChakraPetch-700.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Bai Jamjuree"; src: url(fonts/BaiJamjuree-400.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Bai Jamjuree"; src: url(fonts/BaiJamjuree-400i.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Bai Jamjuree"; src: url(fonts/BaiJamjuree-500.woff2) format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Bai Jamjuree"; src: url(fonts/BaiJamjuree-600.woff2) format("woff2"); font-weight: 600; font-display: swap; }
+
+:root {
+  --outside: #06170f;      /* bench under the board */
+  --mask: #0e3b2c;         /* solder mask */
+  --mask-deep: #0a2e22;    /* mask over bare laminate */
+  --pour: #12473a;         /* mask over copper pour */
+  --silk: #efece1;         /* silkscreen */
+  --silk-2: #b8cbbd;       /* secondary silkscreen, tinted from the mask */
+  --silk-3: #86a596;
+  --copper: #c8873a;
+  --copper-hi: #e8ac63;
+  --copper-low: #6f5532;   /* copper on the bottom layer, seen through laminate */
+  --gold: #d8b35b;
+  --chip: #15191a;
+  --chip-edge: #2b3234;
+
+  --display: "Chakra Petch", "Bai Jamjuree", system-ui, sans-serif;
+  --body: "Bai Jamjuree", system-ui, sans-serif;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --step: clamp(72px, 9vw, 128px);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; background: var(--outside); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  padding: clamp(8px, 1.6vw, 24px);
+  background: var(--outside);
+  color: var(--silk);
+  font: 400 1.0625rem/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--copper); color: var(--outside); }
+html { scrollbar-color: var(--copper-low) var(--outside); }
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--outside); }
+::-webkit-scrollbar-thumb { background: var(--copper-low); border: 3px solid var(--outside); }
+
+a { color: var(--copper-hi); text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+a:hover { color: var(--silk); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+code { font-family: var(--display); font-weight: 500; font-size: 0.95em; color: var(--copper-hi); }
+strong { font-weight: 600; color: var(--silk); }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 24px; top: 24px; z-index: 10; background: var(--gold); color: var(--outside); padding: 8px 14px; }
+
+/* ---------- the board ---------- */
+.board {
+  position: relative;
+  max-width: 1360px;
+  margin: 0 auto;
+  background:
+    radial-gradient(120% 80% at 30% 0%, rgba(255,255,255,0.035), transparent 60%),
+    var(--mask);
+  border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 24px 60px -20px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.drill {
+  position: absolute; width: 18px; height: 18px; border-radius: 50%;
+  background: var(--outside);
+  box-shadow: 0 0 0 5px var(--gold), 0 0 0 6px rgba(0,0,0,0.35);
+  z-index: 2;
+}
+.drill.tl { top: 18px; left: 18px; } .drill.tr { top: 18px; right: 18px; }
+.drill.bl { bottom: 18px; left: 18px; } .drill.br { bottom: 18px; right: 18px; }
+
+.ref {
+  font-family: var(--display); font-weight: 600; letter-spacing: 0.06em;
+  color: var(--silk-2); text-decoration: none; font-variant-numeric: tabular-nums;
+}
+a.ref:hover { color: var(--copper-hi); }
+
+/* ---------- board edge (nav) ---------- */
+.edge {
+  display: flex; align-items: center; gap: 24px;
+  padding: 22px var(--gutter) 22px calc(var(--gutter) + 28px);
+  border-bottom: 1px solid rgba(239,236,225,0.16);
+  font-family: var(--display); font-weight: 600; font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.board-id { color: var(--silk); text-decoration: none; white-space: nowrap; }
+.board-id span { color: var(--silk-3); margin-left: 0.5em; }
+.edge nav { margin-left: auto; }
+.edge ul { display: flex; gap: clamp(12px, 2.4vw, 32px); list-style: none; margin: 0; padding: 0; }
+.edge nav a { color: var(--silk-2); text-decoration: none; padding: 6px 0; border-bottom: 1px solid transparent; }
+.edge nav a:hover { color: var(--silk); border-bottom-color: var(--copper); }
+
+/* gold edge-connector fingers */
+.connector, .pad {
+  --finger: var(--gold);
+  display: inline-flex; align-items: center; gap: 0.6em;
+  font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none;
+}
+.connector {
+  margin-right: 28px; padding: 9px 16px 9px 40px; color: var(--outside);
+  background:
+    repeating-linear-gradient(90deg, var(--finger) 0 5px, transparent 5px 9px) left 12px center / 20px 60% no-repeat,
+    var(--silk);
+  border-radius: 2px;
+}
+.connector:hover { background-color: var(--gold); color: var(--outside); }
+
+/* ---------- first viewport ---------- */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 4vw, 64px);
+  align-items: center;
+  padding: clamp(40px, 6vw, 88px) var(--gutter) var(--step);
+  min-height: min(88vh, 860px);
+}
+h1 {
+  margin: 0 0 28px;
+  font-family: var(--display); font-weight: 700; line-height: 0.92;
+  font-size: clamp(3rem, 4.6vw, 5rem);
+  letter-spacing: -0.015em; text-transform: uppercase;
+  color: var(--silk);
+}
+.role { margin: 0 0 18px; font: 600 0.95rem/1.4 var(--display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--silk-2); }
+.pitch { margin: 0 0 22px; max-width: 30ch; font-size: clamp(1.25rem, 1.9vw, 1.5rem); line-height: 1.4; color: var(--silk); text-wrap: balance; }
+.status { display: flex; align-items: center; gap: 10px; margin: 0 0 36px; color: var(--silk-2); font-size: 0.98rem; }
+.led { flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--copper-hi); border: 2px solid #8a5f2c; }
+
+.pads { display: flex; flex-wrap: wrap; gap: 14px; }
+.pad {
+  position: relative; min-height: 48px; padding: 0 20px 0 18px;
+  color: var(--silk); border: 1px solid rgba(239,236,225,0.55); border-radius: 2px;
+  transition: background-color .25s cubic-bezier(.16,1,.3,1), color .25s, border-color .25s;
+}
+.pad:hover { background: rgba(239,236,225,0.08); color: var(--silk); border-color: var(--silk); }
+.pad.primary { background: var(--gold); border-color: var(--gold); color: var(--outside); }
+.pad.primary:hover { background: var(--copper-hi); border-color: var(--copper-hi); color: var(--outside); }
+
+/* ---------- the circuit ---------- */
+.circuit { margin: 0; min-width: 0; }
+.circuit figcaption { margin-bottom: 14px; color: var(--silk-2); font-size: 0.95rem; }
+.circuit figcaption .ref { margin-right: 0.4em; }
+
+.pcb { display: block; width: 100%; height: auto; overflow: visible; }
+.pcb .trace { fill: none; stroke: var(--copper); stroke-width: 5; stroke-linejoin: round; stroke-linecap: square; opacity: 0.55; transition: opacity .5s cubic-bezier(.16,1,.3,1), stroke .5s; }
+.pcb .trace.bottom { stroke: var(--copper-low); opacity: 0.9; }
+.pcb .trace.on { opacity: 0.95; stroke: var(--copper); }
+.pcb .trace.bottom.on { opacity: 1; stroke: #93703f; }
+.pcb .trace.near { opacity: 0.95; }
+.pcb .via { fill: var(--mask); stroke: var(--gold); stroke-width: 2.5; }
+.pcb .pulse { fill: none; stroke: #fff3d8; stroke-width: 5; stroke-linecap: round; filter: drop-shadow(0 0 4px rgba(255,214,150,0.9)); }
+
+.pcb .pin { fill: #a9a398; }
+.pcb .pins { fill: url(#pins); }
+.pcb .body { fill: var(--chip); stroke: var(--chip-edge); stroke-width: 1.5; transition: stroke .4s, fill .4s; }
+.pcb .dot { fill: #2f3739; }
+.pcb .court { fill: none; stroke: rgba(239,236,225,0.4); stroke-width: 1; }
+.pcb .lead { fill: #b9b2a5; }
+.pcb .wake { fill: none; stroke: var(--copper-hi); stroke-width: 5; stroke-linejoin: round; stroke-linecap: square; }
+.pcb text { font-family: var(--display); text-anchor: middle; }
+.pcb .name { font-size: 20px; font-weight: 600; letter-spacing: 0.08em; fill: #c9ccc8; transition: fill .4s; }
+.pcb .sub { font-size: 13px; font-weight: 500; letter-spacing: 0.04em; fill: #7f8a86; }
+.pcb .coll { font-size: 12.5px; font-weight: 500; fill: #8f9a96; text-anchor: start; letter-spacing: 0.02em; }
+.pcb .ref { font-size: 13px; font-weight: 600; fill: var(--silk); text-anchor: start; letter-spacing: 0.1em; }
+.pcb .chip.in-flow .body { stroke: rgba(232,172,99,0.55); }
+.pcb .chip.lit .body { stroke: var(--copper-hi); fill: #1d2122; }
+.pcb .chip.lit .name { fill: #fff3d8; }
+
+.switches { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; }
+.switches .sw { font-size: 0.8rem; margin-right: 6px; }
+.switches button {
+  display: inline-flex; align-items: center; gap: 9px; min-height: 40px; padding: 0 14px 0 10px;
+  font: 600 0.82rem/1 var(--display); letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--silk-2); background: var(--mask-deep); border: 1px solid rgba(239,236,225,0.22); border-radius: 2px; cursor: pointer;
+  transition: color .25s, border-color .25s, background-color .25s;
+}
+.switches .toggle { position: relative; width: 12px; height: 20px; border: 1.5px solid currentColor; border-radius: 1px; }
+.switches .toggle::after { content: ""; position: absolute; left: 1.5px; right: 1.5px; bottom: 1.5px; height: 7px; background: currentColor; transition: bottom .3s cubic-bezier(.16,1,.3,1); }
+.switches button:hover { color: var(--silk); border-color: rgba(239,236,225,0.5); }
+.switches button[aria-pressed="true"] { color: var(--outside); background: var(--silk); border-color: var(--silk); }
+.switches button[aria-pressed="true"] .toggle::after { bottom: calc(100% - 8.5px); }
+.flow-caption { margin: 16px 0 0; max-width: 62ch; min-height: 5em; color: var(--silk-2); font-size: 1rem; }
+
+/* ---------- Project Z case study ---------- */
+.case {
+  display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: clamp(28px, 4vw, 72px);
+  padding: var(--step) var(--gutter);
+  border-top: 1px solid rgba(239,236,225,0.16);
+}
+.rail { list-style: none; margin: 0; padding: 8px 0 0; position: relative; border-left: 4px solid var(--copper); }
+.rail li { position: relative; padding: 0 0 26px 20px; font-size: 0.9rem; line-height: 1.4; color: var(--silk-2); }
+.rail li::before { content: ""; position: absolute; left: -11px; top: 3px; width: 10px; height: 10px; border-radius: 50%; background: var(--mask); border: 2.5px solid var(--gold); }
+.rail .d { display: block; font: 600 0.78rem/1.4 var(--display); letter-spacing: 0.08em; color: var(--silk); font-variant-numeric: tabular-nums; margin-bottom: 2px; }
+
+h2 { margin: 0 0 18px; font-family: var(--display); font-weight: 700; line-height: 1; font-size: clamp(2.2rem, 4.6vw, 3.75rem); letter-spacing: -0.01em; text-transform: uppercase; text-wrap: balance; }
+h2 .ref { font-size: max(0.95rem, 0.42em); vertical-align: 0.55em; margin-right: 0.35em; color: var(--copper-hi); }
+h3 { margin: 40px 0 12px; font: 600 1.05rem/1.3 var(--display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--silk); }
+.case-body { max-width: 880px; }
+.lede { margin: 0 0 28px; max-width: 46ch; font-size: clamp(1.2rem, 1.8vw, 1.45rem); line-height: 1.45; text-wrap: pretty; }
+
+.meta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1.2fr) minmax(0, 0.6fr); gap: 10px 36px; margin: 0 0 48px; padding: 18px 0; border-top: 1px solid rgba(239,236,225,0.2); border-bottom: 1px solid rgba(239,236,225,0.2); }
+.meta dt { font: 600 0.72rem/1.4 var(--display); letter-spacing: 0.12em; text-transform: uppercase; color: var(--silk-3); }
+.meta dd { margin: 2px 0 0; font-size: 0.98rem; }
+
+/* copper pour panel: mask over a copper ground plane */
+.pour {
+  padding: clamp(24px, 3vw, 40px);
+  background:
+    repeating-linear-gradient(45deg, rgba(200,135,58,0.14) 0 1px, transparent 1px 7px),
+    var(--pour);
+  clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px);
+}
+.pour h3:first-child { margin-top: 0; }
+.pour p { max-width: 68ch; margin: 0; color: var(--silk); }
+.owned { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.owned li { position: relative; padding-left: 26px; max-width: 68ch; color: var(--silk-2); }
+.owned li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 12px; height: 8px; background: var(--copper); }
+.owned strong { display: block; color: var(--silk); }
+
+.tp-title { margin-top: 64px; }
+.tp-note { margin: 0 0 14px; color: var(--silk-3); font-size: 0.92rem; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.tp th, .tp td { padding: 14px 12px; text-align: left; vertical-align: baseline; border-bottom: 1px solid rgba(239,236,225,0.14); }
+.tp thead th, .bom thead th { font: 600 0.72rem/1.4 var(--display); letter-spacing: 0.12em; text-transform: uppercase; color: var(--silk-3); border-bottom: 1px solid rgba(239,236,225,0.35); padding-top: 0; }
+.tp tbody th { font: 600 0.9rem/1.3 var(--display); letter-spacing: 0.08em; white-space: nowrap; color: var(--silk); }
+.padmark { display: inline-block; width: 12px; height: 12px; margin-right: 10px; border-radius: 50%; background: var(--gold); box-shadow: inset 0 0 0 3px #b8923f; vertical-align: -1px; }
+.tp td { color: var(--silk-2); }
+.tp .r { font: 600 1.05rem/1.3 var(--display); color: var(--copper-hi); white-space: nowrap; text-align: right; }
+.tp .r span { display: block; font: 400 0.82rem/1.3 var(--body); color: var(--silk-3); }
+
+.result { margin-top: 48px; max-width: 70ch; }
+.result p { margin: 0 0 14px; }
+.honest { color: var(--silk-3); font-size: 0.95rem; }
+.trace-link .stub { width: 28px; height: 12px; fill: none; stroke: currentColor; stroke-width: 3; }
+.trace-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; font: 600 0.95rem/1 var(--display); letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 12px 0; border-bottom: 3px solid var(--copper); }
+
+/* ---------- BOM ---------- */
+.bom, .parts, .j1 { padding: var(--step) var(--gutter); border-top: 1px solid rgba(239,236,225,0.16); }
+/* the sprint rail continues as one copper bus down the rest of the board, ending on a via at J1 */
+.case, .bom, .parts, .j1 { position: relative; }
+.bom, .parts, .j1 { padding-left: calc(var(--gutter) + 40px); }
+.case::after, .bom::before, .parts::before, .j1::before { content: ""; position: absolute; top: 0; bottom: 0; left: var(--gutter); width: 4px; background: var(--copper); }
+.case::after { top: var(--step); }
+.j1::before { bottom: auto; height: calc(var(--step) + 0.4em + 7px); }
+.bom::after, .parts::after, .j1::after { content: ""; position: absolute; top: calc(var(--step) + 0.4em); left: calc(var(--gutter) - 5px); width: 14px; height: 14px; border-radius: 50%; background: var(--mask); border: 3px solid var(--gold); box-sizing: border-box; }
+.bom table { margin-top: 20px; }
+.bom th, .bom td { padding: 22px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid rgba(239,236,225,0.14); }
+.bom tbody th { width: 70px; }
+.bom tbody th .ref { font-size: 1rem; color: var(--copper-hi); }
+.bom td:nth-child(2) { width: 24%; }
+.bom td strong { display: block; font: 600 1.25rem/1.2 var(--display); letter-spacing: 0.03em; text-transform: uppercase; margin-bottom: 4px; }
+.bom .when { display: block; font-size: 0.9rem; color: var(--silk-3); }
+.bom .val { width: 24%; font: 500 0.92rem/1.5 var(--display); letter-spacing: 0.02em; color: var(--silk-2); }
+.bom td:last-child { color: var(--silk-2); max-width: 60ch; }
+.bom tr:target { background: rgba(232,172,99,0.07); }
+
+/* ---------- parts library & education ---------- */
+.lib, .fab { margin: 20px 0 0; }
+.lib div, .fab div { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 8px 32px; padding: 18px 0; border-bottom: 1px solid rgba(239,236,225,0.14); }
+.lib dt, .fab dt { font: 600 0.9rem/1.5 var(--display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--silk); font-variant-numeric: tabular-nums; }
+.lib dt .ref, .fab dt .ref { margin-right: 0.8em; color: var(--copper-hi); }
+.tp tbody th a.ref { color: var(--silk); }
+.lib dd, .fab dd { margin: 0; max-width: 72ch; color: var(--silk-2); }
+.fab dd strong { display: block; color: var(--silk); }
+.fab-title { margin-top: var(--step); }
+
+/* ---------- J1 contact ---------- */
+.j1 { padding-bottom: calc(var(--step) + 24px); }
+.j1 h2 { max-width: 16ch; }
+.j1 > p { margin: 0 0 32px; color: var(--silk-2); font-size: 1.2rem; }
+.j1 ul { list-style: none; display: flex; flex-wrap: wrap; gap: 14px; margin: 0; padding: 0; }
+.j1 .pad { text-transform: none; letter-spacing: 0.02em; }
+
+.foot {
+  justify-content: space-between; flex-wrap: wrap; gap: 8px 24px;
+  border-top: 1px solid rgba(239,236,225,0.16); border-bottom: 0;
+  padding-bottom: 30px; color: var(--silk-3); font-size: 0.75rem;
+}
+.foot span:last-child { text-transform: none; letter-spacing: 0.02em; font-family: var(--body); font-weight: 400; font-size: 0.85rem; margin-right: 28px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1080px) {
+  .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .pitch { max-width: 36ch; }
+}
+@media (max-width: 860px) {
+  .edge { flex-wrap: wrap; row-gap: 14px; }
+  .connector { margin-left: auto; }
+  .edge nav { order: 3; flex: 1 1 100%; margin-left: 0; }
+  .edge ul { gap: 20px; flex-wrap: wrap; }
+  .case { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .case-body { display: contents; }
+  .case-body > * { order: 3; }
+  .case-body > h2 { order: 0; } .case-body > .lede { order: 1; } .case-body > .meta { order: 1; }
+  .rail { order: 2; margin: 0 0 48px 6px; }
+  .case::after { display: none; }
+  .meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bom thead { display: none; }
+  .bom table, .bom tbody, .bom tr, .bom th, .bom td { display: block; width: auto !important; }
+  .bom tr { padding: 22px 0; border-bottom: 1px solid rgba(239,236,225,0.14); }
+  .bom th, .bom td { padding: 4px 0; border: 0; }
+  .bom .val { margin: 6px 0; }
+  .lib div, .fab div { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  body { padding: 6px; font-size: 1rem; }
+  .board { border-radius: 10px; }
+  .drill { width: 12px; height: 12px; box-shadow: 0 0 0 3px var(--gold); }
+  .drill.tl, .drill.tr { top: 12px; } .drill.bl, .drill.br { bottom: 12px; }
+  .drill.tl, .drill.bl { left: 12px; } .drill.tr, .drill.br { right: 12px; }
+  .edge { padding: 18px 16px 18px 36px; gap: 12px; }
+  .board-id span { display: none; }
+  .connector { margin-right: 18px; padding: 8px 12px 8px 34px; font-size: 0.78rem; background-position: left 9px center, 0 0; }
+  .hero, .case, .bom, .parts, .j1 { padding-left: 16px; padding-right: 16px; }
+  h1 { font-size: clamp(2.3rem, 11vw, 3.2rem); }
+  .j1 li { flex: 1 1 100%; }
+  .pcb .sub, .pcb .coll { display: none; }
+  .pcb .name { font-size: 22px; letter-spacing: 0.03em; }
+  .pcb .ref { font-size: 18px; }
+  .meta { grid-template-columns: minmax(0, 1fr); }
+  .pour { padding: 24px 18px; }
+  .tp thead { display: none; }
+  .tp, .tp tbody, .tp tr { display: block; }
+  .tp tr { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; padding: 14px 0; border-bottom: 1px solid rgba(239,236,225,0.14); }
+  .tp th, .tp td { padding: 0; border: 0; }
+  .tp td { grid-column: 2; }
+  .tp .r { text-align: left; white-space: normal; }
+  .foot span:last-child { margin-right: 0; }
+  .edge ul { gap: 14px; flex-wrap: nowrap; font-size: 0.75rem; }
+  .bom, .parts, .j1 { padding-left: 16px; }
+  .bom::before, .parts::before, .j1::before { top: calc(var(--step) - 30px); bottom: auto; height: 4px; width: 44px; left: 16px; }
+  .bom::after, .parts::after, .j1::after { top: calc(var(--step) - 35px); left: 58px; }
+  .j1 .pad { width: 100%; }
+}
