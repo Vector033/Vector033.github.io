@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-11-03T16:43:56.503Z",
         "reason": "finish reviewer: .rail border-left is the sprint timeline's copper bus at trace weight, not a card accent"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-14T18:15:27.464Z",
+        "reason": "user confirmed: picked direction A (Bench Report) from a mockup showing the #f5f3ec paper ground, 2026-11-14"
       }
     ]
   }

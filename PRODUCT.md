@@ -8,19 +8,19 @@ web
 
 ## Stack
 
-Static HTML/CSS/JS, no build step, no dependencies (user's choice; Node.js is not installed on this machine). Deploy target: GitHub Pages.
+Static HTML/CSS/JS, no build step, no dependencies (user's choice, reconfirmed 2026-11-14 even though Node.js is now installed). Deploy target: GitHub Pages.
 
 ## Users
 
-Recruiters, engineering leads and internship coordinators screening Nawat Wattanawong, a 3rd-year Computer Science student at Chiang Mai University, for a software engineering internship. They usually arrive from the link on his résumé or GitHub profile, skim in a minute or two, and decide whether to shortlist. No specific employer is targeted yet (inferred: generic backend & AI internship audience).
+Recruiters and engineering leads screening Nawat Wattanawong, a 3rd-year Computer Science student at Chiang Mai University, for a full-term co-op placement (June to October 2027, Bangkok; companies recruit November 2026 to February 2027). They arrive from the link on his résumé or GitHub profile, skim for one or two minutes, and decide whether to shortlist.
 
 ## Product Purpose
 
-A personal portfolio that is the "linked proof" behind the one-page résumé: it shows how he works on real projects, not just a list of tools. Success = a reviewer understands within the first screen what he does (backend + AI-integrated web systems), sees evidence in Project Z, and either emails him or downloads the résumé.
+A personal portfolio that is the "linked proof" behind the one-page résumé. Success = a reviewer understands within the first screen that he is a full-stack developer with four live apps and one client-accepted team project, opens at least one live link, and either emails him or downloads the résumé.
 
 ## Positioning
 
-He was the Software Architect on Project Z, a delivered multi-tenant AI chat-widget SaaS for an external client (Saka), and drove its security and test hardening. The claim a neighbouring student can't copy: architecture + hardening on a client-accepted product, with real numbers from Jira and the test suite.
+Full-stack developer who ships and measures. Four solo apps are deployed (FactFit, HarnKan, SlipJot, PingKhana), each with an eval that has a held-out set, and each with an honest status line. Project Z remains the large team piece: he was the Software Architect on a multi-tenant AI chat-widget SaaS delivered to an external client (Saka).
 
 ## Operating Context
 
@@ -30,21 +30,24 @@ Visitors read on laptops and phones, often between other applications. Résumé 
 
 - English only.
 - Public contact: email (nawat_wattanawong@cmu.ac.th) and GitHub (github.com/Vector033). No phone number on the site; the phone stays only in the downloadable PDF.
-- One page, with Project Z as the lead case study; other projects shorter.
-- Undecided: custom domain, LinkedIn profile (none provided), English test score.
+- One page: hero with readings, four solo projects, Project Z, how I work, earlier coursework, skills, contact.
+- The four solo repositories are private. No source links to them until the owner makes them public.
+- MorPlan is not shown yet.
+- AI coding agents were used to build the projects and this site. Never claim "hand-built".
 
 ## Evidence on Hand
 
-- Résumé: `C:\Users\User\Desktop\resume\Nawat_Wattanawong_Resume_v2.pdf` / `.docx`.
-- Project Z final report (Team 08), source repo github.com/NexusG0/Project-Z, High-Level Architecture diagrams in the repo's `documents&designs/`.
-- Project Z facts: 22/22 user stories + 7 beyond-MVP features, client sign-off; 161/161 Jira work items, 212 story points, velocity 8 → 68; his share 36 issues, 42 points, 57 commits; mutation score 90–100% on core services; job-claim race fixed (10 concurrent workers → 1 winner); SettingsPage.vue 2,329 → 765 lines; login rate limit 10/min, public widget endpoints 30/min per IP; lead regex pre-parse < 0.5 ms; analysis fast-exit ~36 ms (p95 46 ms).
-- Other projects: QuizMaster (g11-quizmaster.vercel.app), Text Checker IMDb sentiment (~88% val accuracy, 50,000 reviews), Kin-Arai-Dee FoodBot (kinaraidee.streamlit.app).
-- Absent, must not be fabricated: testimonials, work experience, employer logos, awards, client quotes, live Project Z deployment (it runs on Docker Compose; not on Cloud Run yet).
+- Résumé: `C:\Users\User\Desktop\resume\Nawat_Wattanawong_Resume_v4.pdf` / `.docx`.
+- Numbers for the four solo projects: `C:\Users\User\Desktop\PORTFOLIO_REDESIGN_PROMPT.md` (as of 2026-11-14). Use only those. Do not use the old FactFit figure 180/186.
+- Project Z final report (Team 08), source repo github.com/NexusG0/Project-Z.
+- Project Z facts: 22/22 user stories + 7 beyond-MVP features, client sign-off; 161/161 Jira work items, 212 story points, velocity 8 → 68; his share 36 issues, 57 commits; mutation score 90–100% on core services; job-claim race fixed (10 concurrent workers → 1 winner); SettingsPage.vue 2,329 → 765 lines; login rate limit 10/min, public widget endpoints 30/min per IP; analysis fast-exit ~36 ms.
+- Earlier coursework: QuizMaster (g11-quizmaster.vercel.app), Text Checker IMDb sentiment (~88% val accuracy, 50,000 reviews), Kin-Arai-Dee FoodBot (kinaraidee.streamlit.app).
+- Absent, must not be fabricated: real users of the four solo apps, testimonials, work experience, employer logos, awards, client quotes, live Project Z deployment (it runs on Docker Compose; not on Cloud Run yet).
 
 ## Product Principles
 
 1. Proof over adjectives: every claim is backed by a number, a link or an artifact.
-2. Show the reasoning: architecture decisions and trade-offs, not just screenshots.
+2. Honest status: say plainly when an app has no real users or an eval uses synthetic data.
 3. Honest scope: mark team work as team work and his share as his.
 4. One clear next step: email or download the résumé.
 5. Plain, selectable, fast: readable by people and by screening tools.
