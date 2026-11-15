@@ -112,7 +112,7 @@ h3 { font-size: 1.35rem; font-weight: 700; line-height: 1.25; }
 }
 .hello { display: flex; align-items: center; flex-wrap: wrap; gap: 20px 24px; margin-bottom: 32px; }
 /* the ring from the hero wireframe: a slowly turning pink arc around the portrait */
-.portrait { position: relative; flex: none; width: clamp(112px, 12vw, 168px); aspect-ratio: 1; padding: 5px; border-radius: 50%; }
+.portrait { position: relative; flex: none; width: clamp(140px, 17vw, 240px); aspect-ratio: 1; padding: 5px; border-radius: 50%; }
 .portrait::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, var(--accent-hi), rgba(236, 72, 153, 0.05) 40%, rgba(236, 72, 153, 0.05) 60%, var(--accent-hi)); }
 .portrait img { position: relative; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--bg0); box-shadow: 0 0 40px -6px rgba(236, 72, 153, 0.5); }
 @media (prefers-reduced-motion: no-preference) { .portrait::before { animation: spin 14s linear infinite; } }
@@ -199,7 +199,7 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
 .state .dot { position: relative; top: -1px; }
 .state strong { color: var(--text); }
 
-.bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
+.bento { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
 .card { display: flex; flex-direction: column; padding: clamp(16px, 2vw, 24px); }
 .card .gallery { margin-bottom: 20px; }
 .card > p:not(.tagline):not(.state) { font-size: 0.96rem; }
@@ -275,6 +275,8 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
   .hero, .flagship, .contact { grid-template-columns: minmax(0, 1fr); }
   .hero { min-height: 0; }
   .glance ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bento .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .pz-grid { grid-template-columns: minmax(0, 1fr); }
   .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sk.wide { grid-column: span 2; }
@@ -286,6 +288,7 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
   .top nav { order: 3; flex: 1 1 100%; margin-left: 0; }
   .top ul { gap: 20px; flex-wrap: wrap; }
   .glance ul, .bento, .skill-grid, .readings { grid-template-columns: minmax(0, 1fr); }
+  .bento .card:last-child:nth-child(odd) { grid-column: auto; }
   .card .readings, .flagship .readings { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sk.wide { grid-column: auto; }
   .pcb .sub, .pcb .coll { display: none; }

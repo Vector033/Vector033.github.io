@@ -60,6 +60,7 @@ Deep near-black ground (#07080a to #0d0f14) lit by soft fixed pink light. Conten
 - **Hero:** portrait in a slowly turning pink conic ring (the ring from the hero wireframe), pulsing radar pill, gradient name, five floating glance cards that link to each project.
 - **MorPlan switcher:** five screens behind pill buttons (`aria-pressed`); clicking the shot opens a native `<dialog>`.
 - **Project Z circuit:** the real architecture (not a generic client/edge/backend/database picture), tier labels per node, five flow buttons that send glowing pulses along the traces. Logic lives in the first block of `main.js`.
+- **Link preview:** `img/og-card.png` (1200x630, made with PIL and Segoe UI) via og:/twitter: meta tags.
 - **Contact:** copy-email button with a polite status message, live local clock (Chiang Mai, GMT+7).
 
 ## Typography
@@ -68,7 +69,7 @@ Plus Jakarta Sans (variable 400â€“800) for everything read; JetBrains Mono (400â
 
 ## Layout
 
-Max width 1200px. Hero 7fr/5fr; flagship card 7fr/5fr; the other four projects in a 2-column bento; Project Z circuit full width then two panels; skills in a 3-column bento; contact 5fr/6fr.
+Max width 1200px. Hero 7fr/5fr with a 240px portrait; two featured cards 7fr/5fr (MorPlan, then PingKhana, which the user values most after MorPlan); FactFit, HarnKan and SlipJot in a 3-column bento (2 columns with the last card full width at 999px and below); Project Z circuit full width then two panels; skills in a 3-column bento; contact 5fr/6fr.
 
 - 999px and below: hero, flagship and contact stack; glance cards go 2 across; skills 2 across.
 - 720px and below: one column everywhere; nav wraps under the name; buttons go full width; diagram hides small labels and enlarges node names.

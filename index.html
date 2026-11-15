@@ -6,6 +6,15 @@
   <title>Nawat Wattanawong · Full-Stack Developer</title>
   <meta name="description" content="Portfolio of Nawat Wattanawong, a Computer Science student at Chiang Mai University. Five live full-stack apps built solo, each with measured results, plus Project Z, an AI chat widget delivered to a client in a team of four.">
   <meta name="theme-color" content="#07080a">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vector033.github.io/">
+  <meta property="og:title" content="Nawat Wattanawong · Full-Stack Developer">
+  <meta property="og:description" content="Five live full-stack apps built solo, each with measured results, plus Project Z, a client project built in a team of four.">
+  <meta property="og:image" content="https://vector033.github.io/img/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nawat Wattanawong, Full-Stack Developer, with a portrait and the five live apps.">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" href="fonts/PlusJakartaSans-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -32,7 +41,7 @@
     <section class="hero wrap" aria-labelledby="name">
       <div class="hero-copy">
         <div class="hello">
-          <div class="portrait"><img src="img/nawat-320.webp" srcset="img/nawat-320.webp 320w, img/nawat-640.webp 640w" sizes="(min-width: 720px) 168px, 112px" width="320" height="320" alt="Nawat Wattanawong, smiling, in a white hoodie on a lawn at night."></div>
+          <div class="portrait"><img src="img/nawat-320.webp" srcset="img/nawat-320.webp 320w, img/nawat-640.webp 640w" sizes="(min-width: 720px) 240px, 140px" width="320" height="320" alt="Nawat Wattanawong, smiling, in a white hoodie on a lawn at night."></div>
           <p class="pill"><span class="radar" aria-hidden="true"></span><span class="pill-text">Looking for Co-op 2027 · Open to relocation</span></p>
         </div>
         <h1 id="name"><span class="grad">Nawat Wattanawong</span><span class="role">Full-Stack Developer</span></h1>
@@ -92,6 +101,37 @@
           </ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live, no real users yet. The regulation PDFs are scanned and OCR sometimes misreads Thai digits, so every answer links to the original page.</span></p>
           <a class="btn primary" href="https://morplan.vercel.app" rel="noopener">Open morplan.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+        </div>
+      </article>
+
+      <article class="flagship glass tilt" id="pingkhana" aria-labelledby="pingkhana-title">
+        <div class="fl-media gallery">
+          <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/pingkhana-home-1280.webp" srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" sizes="(min-width: 1000px) 640px, 100vw" width="1280" height="800" loading="lazy" alt="PingKhana home page: 352 announcements from 13 sites, 14 with a closing date, and a list of the ones closing soonest."></button>
+          <div class="switcher" role="group" aria-label="PingKhana screens">
+            <button type="button" aria-pressed="true" data-src="img/pingkhana-home-1280.webp" data-srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" data-alt="PingKhana home page: 352 announcements from 13 sites, 14 with a closing date, and a list of the ones closing soonest.">Home</button>
+            <button type="button" aria-pressed="false" data-src="img/pingkhana-drawer-1280.webp" data-srcset="img/pingkhana-drawer-640.webp 640w, img/pingkhana-drawer-1280.webp 1280w" data-alt="PingKhana announcement details: the poster, a short Thai summary, the closing date with days left, and a button for a LINE reminder.">Details</button>
+            <button type="button" aria-pressed="false" data-src="img/pingkhana-line-1280.webp" data-srcset="img/pingkhana-line-640.webp 640w, img/pingkhana-line-1280.webp 1280w" data-alt="PingKhana LINE bot replying with a carousel of open announcements, each with its closing date and a reminder button.">LINE</button>
+            <button type="button" aria-pressed="false" data-src="img/pingkhana-dark-1280.webp" data-srcset="img/pingkhana-dark-640.webp 640w, img/pingkhana-dark-1280.webp 1280w" data-alt="PingKhana in dark mode: filter chips and a grid of announcement cards with photos.">Dark mode</button>
+          </div>
+        </div>
+        <div class="fl-body">
+          <p class="kicker">Solo · web + LINE bot · Nov 2026</p>
+          <h3 id="pingkhana-title">PingKhana</h3>
+          <p class="tagline">Scholarship, co-op and job announcements with their deadlines, in one place and on LINE.</p>
+          <dl class="readings">
+            <div><dt>news sources collected every hour</dt><dd>13</dd></div>
+            <div><dt>announcements gathered (14 Nov 2026)</dt><dd>352</dd></div>
+          </dl>
+          <ul class="feat">
+            <li>A FastAPI collector reads CMU faculty sites and education news every hour, follows robots.txt, and merges an announcement posted on several sites into one.</li>
+            <li>Gemini reads closing dates from text, posters and PDFs. The LINE bot reminds you 3 days and 1 day before, or export deadlines to .ics or Google Calendar.</li>
+            <li>It grew from a CMU-only bot after a teacher asked for school news. Anyone can add a source by pasting a link (SSRF-guarded, admin-approved), and a watchdog emails me if a source goes quiet for 6 hours.</li>
+          </ul>
+          <ul class="tags" aria-label="Stack">
+            <li>Python 3.12</li><li>FastAPI</li><li>SQLAlchemy 2</li><li>PostgreSQL</li><li>Next.js 16</li><li>LINE LIFF</li><li>Gemini</li><li>pytest</li>
+          </ul>
+          <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live, not opened to real users yet.</span></p>
+          <a class="btn primary" href="https://pingkhana.vercel.app" rel="noopener">Open pingkhana.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
         </div>
       </article>
 
@@ -160,28 +200,6 @@
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase</li><li>tesseract.js</li><li>Gemini</li><li>Recharts</li></ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every number comes from synthetic slips.</span></p>
           <a class="btn glass" href="https://slipjot.vercel.app" rel="noopener">Open slipjot.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
-        </article>
-
-        <article class="card glass tilt" id="pingkhana" aria-labelledby="pingkhana-title">
-          <div class="gallery">
-            <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/pingkhana-home-1280.webp" srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="PingKhana home page: 352 announcements from 13 sites, 14 with a closing date, and a list of the ones closing soonest."></button>
-            <div class="switcher" role="group" aria-label="PingKhana screens">
-              <button type="button" aria-pressed="true" data-src="img/pingkhana-home-1280.webp" data-srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" data-alt="PingKhana home page: 352 announcements from 13 sites, 14 with a closing date, and a list of the ones closing soonest.">Home</button>
-              <button type="button" aria-pressed="false" data-src="img/pingkhana-drawer-1280.webp" data-srcset="img/pingkhana-drawer-640.webp 640w, img/pingkhana-drawer-1280.webp 1280w" data-alt="PingKhana announcement details: the poster, a short Thai summary, the closing date with days left, and a button for a LINE reminder.">Details</button>
-              <button type="button" aria-pressed="false" data-src="img/pingkhana-line-1280.webp" data-srcset="img/pingkhana-line-640.webp 640w, img/pingkhana-line-1280.webp 1280w" data-alt="PingKhana LINE bot replying with a carousel of open announcements, each with its closing date and a reminder button.">LINE</button>
-              <button type="button" aria-pressed="false" data-src="img/pingkhana-dark-1280.webp" data-srcset="img/pingkhana-dark-640.webp 640w, img/pingkhana-dark-1280.webp 1280w" data-alt="PingKhana in dark mode: filter chips and a grid of announcement cards with photos.">Dark mode</button>
-            </div>
-          </div>
-          <h3 id="pingkhana-title">PingKhana</h3>
-          <p class="tagline">A website and LINE bot for scholarship, co-op and job deadlines.</p>
-          <dl class="readings">
-            <div><dt>news sources collected every hour</dt><dd>13</dd></div>
-            <div><dt>announcements gathered (14 Nov 2026)</dt><dd>352</dd></div>
-          </dl>
-          <p>A FastAPI collector follows robots.txt, reads closing dates from text, posters and PDFs, merges duplicates, and LINE reminds you 3 days and 1 day before.</p>
-          <ul class="tags" aria-label="Stack"><li>Python 3.12</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js 16</li><li>LIFF</li><li>pytest</li></ul>
-          <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live, not opened to real users yet.</span></p>
-          <a class="btn glass" href="https://pingkhana.vercel.app" rel="noopener">Open pingkhana.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
         </article>
       </div>
     </section>
