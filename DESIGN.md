@@ -60,7 +60,7 @@ Deep near-black ground (#07080a to #0d0f14) lit by soft fixed emerald light. Con
 - **Hero:** portrait in a slowly turning emerald conic ring (the ring from the hero wireframe), pulsing radar pill, gradient name, five floating glance cards that link to each project.
 - **MorPlan switcher:** five screens behind pill buttons (`aria-pressed`); clicking the shot opens a native `<dialog>`.
 - **Project Z circuit:** the real architecture (not a generic client/edge/backend/database picture), tier labels per node, five flow buttons that send glowing pulses along the traces. Logic lives in the first block of `main.js`.
-- **Contact:** copy-email button with a polite status message, live Bangkok clock (GMT+7).
+- **Contact:** copy-email button with a polite status message, live local clock (Chiang Mai, GMT+7).
 
 ## Typography
 

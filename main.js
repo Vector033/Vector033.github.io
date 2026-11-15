@@ -136,7 +136,7 @@
   io.observe(svg);
 })();
 
-// Page interactions: cursor, tilt, MorPlan screenshot switcher and viewer, copy email, Bangkok clock.
+// Page interactions: cursor, tilt, screenshot switchers and viewer, copy email, local clock.
 (() => {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = window.matchMedia('(pointer: fine)').matches;
@@ -177,24 +177,24 @@
     });
   }
 
-  // MorPlan screenshot switcher.
-  const shot = document.getElementById('mp-shot');
-  const shotButtons = [...document.querySelectorAll('.switcher button')];
-  shotButtons.forEach((b) => b.addEventListener('click', () => {
-    const n = b.dataset.shot;
-    shot.src = `img/morplan-${n}-1600.webp`;
-    shot.srcset = `img/morplan-${n}-800.webp 800w, img/morplan-${n}-1600.webp 1600w`;
-    shot.alt = b.dataset.alt;
-    shotButtons.forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
-  }));
-
-  // Enlarge the current screenshot in a native modal dialog (Esc and focus return come with it).
+  // Screenshot switchers: each .gallery swaps its own image; clicking the image enlarges it
+  // in a native modal dialog (Esc and focus return come with it).
   const viewer = document.getElementById('viewer');
   const viewerImg = document.getElementById('viewer-img');
-  document.querySelector('.shot-open').addEventListener('click', () => {
-    viewerImg.src = shot.src; // the 1600px file, not the smaller srcset pick
-    viewerImg.alt = shot.alt;
-    viewer.showModal();
+  document.querySelectorAll('.gallery').forEach((g) => {
+    const shot = g.querySelector('.shot-open img');
+    const buttons = [...g.querySelectorAll('.switcher button')];
+    buttons.forEach((b) => b.addEventListener('click', () => {
+      shot.src = b.dataset.src;
+      shot.srcset = b.dataset.srcset;
+      shot.alt = b.dataset.alt;
+      buttons.forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+    }));
+    g.querySelector('.shot-open').addEventListener('click', () => {
+      viewerImg.src = shot.getAttribute('src'); // the largest file, not the smaller srcset pick
+      viewerImg.alt = shot.alt;
+      viewer.showModal();
+    });
   });
   viewer.addEventListener('click', (e) => { if (e.target === viewer) viewer.close(); });
 
@@ -213,7 +213,7 @@
     setTimeout(() => { copy.textContent = 'Copy'; }, 2000);
   });
 
-  // Bangkok clock.
+  // Local clock (Thailand is one time zone, named Asia/Bangkok).
   const time = document.getElementById('bkk-time');
   const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Bangkok', hour: '2-digit', minute: '2-digit' });
   const tick = () => { const now = new Date(); time.textContent = fmt.format(now); time.dateTime = now.toISOString(); };

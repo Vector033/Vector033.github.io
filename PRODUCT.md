@@ -12,7 +12,7 @@ Static HTML/CSS/JS, no build step, no dependencies (user's choice, reconfirmed 2
 
 ## Users
 
-Recruiters and engineering leads screening Nawat Wattanawong, a 3rd-year Computer Science student at Chiang Mai University, for a full-term co-op placement (June to October 2027, Bangkok; companies recruit November 2026 to February 2027). They arrive from the link on his résumé or GitHub profile, skim for one or two minutes, and decide whether to shortlist.
+Recruiters and engineering leads screening Nawat Wattanawong, a 3rd-year Computer Science student at Chiang Mai University, for a full-term co-op placement (June to October 2027, open to relocation, not only Bangkok; companies recruit November 2026 to February 2027). They arrive from the link on his résumé or GitHub profile, skim for one or two minutes, and decide whether to shortlist.
 
 ## Product Purpose
 

@@ -197,7 +197,7 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
 
 .bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
 .card { display: flex; flex-direction: column; padding: clamp(16px, 2vw, 24px); }
-.card img { border: 1px solid var(--line); border-radius: 12px; margin-bottom: 20px; background: #fff; }
+.card .gallery { margin-bottom: 20px; }
 .card > p:not(.tagline):not(.state) { font-size: 0.96rem; }
 .card .readings { margin: 16px 0; }
 .card .btn { align-self: flex-start; margin-top: auto; }
@@ -288,6 +288,8 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
   /* the diagram renders at ~0.45x here, so labels go big and the small ones go */
   .pcb .tier { display: none; }
   .pcb .name { font-size: 28px; transform: translateY(8px); }
+  .pill { border-radius: 14px; } /* wraps to two even lines on phones */
+  .pill-text { text-wrap: balance; }
   .c-row { padding-left: 16px; padding-right: 8px; }
   .c-row a { font-size: 0.875rem; }
   .tp dd { white-space: normal; }
