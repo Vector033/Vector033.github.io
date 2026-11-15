@@ -89,6 +89,10 @@ h3 { font-size: 1.35rem; font-weight: 700; line-height: 1.25; }
 .cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; z-index: 300; pointer-events: none; display: none; border-radius: 50%; will-change: transform; }
 .has-cursor .cursor-dot, .has-cursor .cursor-ring { display: block; }
 .has-cursor, .has-cursor * { cursor: none !important; }
+/* a modal dialog renders in the top layer, above the custom cursor, so it keeps the native pointer */
+.has-cursor .viewer, .has-cursor .viewer * { cursor: default !important; }
+.has-cursor .viewer button { cursor: pointer !important; }
+.viewer::backdrop { cursor: zoom-out; }
 .cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: var(--emerald-hi); }
 .cursor-ring { width: 36px; height: 36px; margin: -18px 0 0 -18px; border: 1px solid rgba(52, 211, 153, 0.55); transition: border-color .25s, background-color .25s; }
 .cursor-ring.hover { border-color: rgba(52, 211, 153, 0.9); background: rgba(16, 185, 129, 0.08); }
