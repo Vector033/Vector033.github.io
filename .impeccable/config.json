@@ -20,6 +20,51 @@
         ],
         "createdAt": "2026-11-14T18:15:27.464Z",
         "reason": "user confirmed: picked direction A (Bench Report) from a mockup showing the #f5f3ec paper ground, 2026-11-14"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-15T16:09:27.691Z",
+        "reason": "user requested a gradient headline in the 2026-11-15 redesign brief"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-15T16:09:27.836Z",
+        "reason": "user requested emerald glow (glowing primary button, ambient emerald light) in the 2026-11-15 redesign brief"
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-15T16:11:36.551Z",
+        "reason": "user requested Plus Jakarta Sans and JetBrains Mono in the 2026-11-15 redesign brief"
+      },
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-11-15T16:11:36.819Z",
+        "reason": "user requested Plus Jakarta Sans and JetBrains Mono in the 2026-11-15 redesign brief"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-11-15T16:11:36.987Z",
+        "reason": "user requested a gradient headline in the 2026-11-15 redesign brief"
       }
     ]
   }

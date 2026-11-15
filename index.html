@@ -4,186 +4,171 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nawat Wattanawong · Full-Stack Developer</title>
-  <meta name="description" content="Portfolio of Nawat Wattanawong, a Computer Science student at Chiang Mai University. Four live full-stack apps built solo, each with measured results, plus Project Z, an AI chat widget delivered to a client in a team of four.">
-  <meta name="theme-color" content="#f5f3ec">
-  <link rel="preload" href="fonts/IBMPlexSans-var.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="description" content="Portfolio of Nawat Wattanawong, a Computer Science student at Chiang Mai University. Five live full-stack apps built solo, each with measured results, plus Project Z, an AI chat widget delivered to a client in a team of four.">
+  <meta name="theme-color" content="#07080a">
+  <link rel="preload" href="fonts/PlusJakartaSans-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
   <a class="skip" href="#work">Skip to projects</a>
 
   <header class="top wrap">
     <a class="who" href="#top">Nawat Wattanawong</a>
     <nav aria-label="Sections">
       <ul>
-        <li><a href="#work">Solo projects</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="#project-z">Project Z</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="btn small" href="Nawat_Wattanawong_Resume.pdf" download>Résumé PDF</a>
+    <a class="btn glass small" href="Nawat_Wattanawong_Resume.pdf" download>Résumé PDF</a>
   </header>
 
   <main id="top">
     <section class="hero wrap" aria-labelledby="name">
-      <div class="intro">
-        <p class="role">Full-stack developer · Computer Science, Chiang Mai University, year 3</p>
-        <h1 id="name">Nawat Wattanawong</h1>
-        <p class="pitch">I build web apps end to end, put them online, and measure whether they work. Four are live now. A fifth was built in a team of four and signed off by a client.</p>
-        <p class="status"><span class="dot" aria-hidden="true"></span>Looking for a full-term co-op placement in Bangkok, June to October 2027</p>
+      <div class="hero-copy">
+        <div class="hello">
+          <div class="portrait"><img src="img/nawat-320.webp" srcset="img/nawat-320.webp 320w, img/nawat-640.webp 640w" sizes="(min-width: 720px) 168px, 112px" width="320" height="320" alt="Nawat Wattanawong, smiling, in a white hoodie on a lawn at night."></div>
+          <p class="pill"><span class="radar" aria-hidden="true"></span>Looking for Co-op 2027 · Bangkok</p>
+        </div>
+        <h1 id="name"><span class="grad">Nawat Wattanawong</span><span class="role">Full-Stack Developer</span></h1>
+        <p class="pitch">I build web apps end to end, ship them, and measure whether they work. Five are live and built solo. Project Z was built in a team of four and signed off by a client.</p>
+        <p class="meta-line">Computer Science, Chiang Mai University, year 3 · full-term co-op, June to October 2027</p>
         <div class="actions">
           <a class="btn primary" href="mailto:nawat_wattanawong@cmu.ac.th">Email me</a>
-          <a class="btn" href="Nawat_Wattanawong_Resume.pdf" download>Download résumé</a>
+          <a class="btn glass" href="Nawat_Wattanawong_Resume.pdf" download>Download résumé</a>
         </div>
       </div>
 
       <div class="glance">
-        <h2 id="glance-title">Readings at a glance</h2>
+        <h2 class="mono-label" id="glance-title">Measured readings</h2>
         <ul aria-labelledby="glance-title">
-          <li><a href="#factfit">FactFit</a><span class="what">made-up claims blocked on a blind test set</span><span class="num">164/172</span></li>
-          <li><a href="#harnkan">HarnKan</a><span class="what">wrong auto-ticks on 60 synthetic payment slips</span><span class="num">0</span></li>
-          <li><a href="#slipjot">SlipJot</a><span class="what">silent errors reading held-out slips on-device</span><span class="num">0%</span></li>
-          <li><a href="#pingkhana">PingKhana</a><span class="what">news sources collected every hour</span><span class="num">13</span></li>
-          <li><a href="#project-z">Project Z</a><span class="what">user stories delivered, with client sign-off</span><span class="num">22/22</span></li>
+          <li><a class="g-card glass" href="#morplan"><span class="g-name">MorPlan</span><span class="g-num">90.3%</span><span class="g-what">Thai rule questions with the right page in the top 5</span></a></li>
+          <li><a class="g-card glass" href="#project-z"><span class="g-name">Project Z</span><span class="g-num">22/22</span><span class="g-what">user stories delivered, client sign-off</span></a></li>
+          <li><a class="g-card glass" href="#factfit"><span class="g-name">FactFit</span><span class="g-num">164/172</span><span class="g-what">made-up claims blocked on a blind test set</span></a></li>
+          <li><a class="g-card glass" href="#harnkan"><span class="g-name">HarnKan</span><span class="g-num">0</span><span class="g-what">wrong auto-ticks on 60 synthetic slips</span></a></li>
+          <li><a class="g-card glass" href="#slipjot"><span class="g-name">SlipJot</span><span class="g-num">0%</span><span class="g-what">silent errors on held-out synthetic slips</span></a></li>
         </ul>
       </div>
     </section>
 
     <section class="work wrap" id="work" aria-labelledby="work-title">
-      <h2 id="work-title">Four apps, built solo and live</h2>
-      <p class="section-lede">Each one has a link you can open, numbers I measured, and a plain note on where it stands today. The repositories are private for now.</p>
+      <h2 id="work-title">Five apps, built solo and live</h2>
+      <p class="lede">Each has a link you can open, numbers I measured, and a plain note on where it stands. The repositories are private for now.</p>
 
-      <article class="project" id="factfit" aria-labelledby="factfit-title">
-        <div class="head">
-          <h3 id="factfit-title">FactFit</h3>
-          <p class="tagline">Tailors a résumé to a job posting without inventing facts.</p>
-        </div>
-        <div class="side">
-          <div class="shots">
-            <img style="--r:1.6" src="img/factfit-studio-1280.webp" srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" sizes="(min-width: 980px) 480px, 100vw" width="1280" height="800" alt="FactFit bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts.">
-            <img class="phone" style="--r:0.462" src="img/factfit-mobile-390.webp" width="390" height="844" loading="lazy" alt="FactFit on a phone: a job application scored 73% fit, with each matched skill linked to the fact that backs it.">
-          </div>
-          <div class="extra">
-            <p class="more">On the tuning set the guard blocked 547 of 547. A model told to "add metrics" was blocked 25 times out of 25. A prompt rewrite raised bullets that follow the XYZ format from 31.6% to 75%.</p>
-            <p class="stack">Next.js 16 · TypeScript · Tailwind 4 · Supabase Auth and Postgres · Drizzle · Gemini · @react-pdf/renderer · Vitest · GitHub Actions</p>
+      <article class="flagship glass tilt" id="morplan" aria-labelledby="morplan-title">
+        <div class="fl-media">
+          <button type="button" class="shot-open" aria-label="Enlarge screenshot">
+            <img id="mp-shot" src="img/morplan-planner-1600.webp" srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" sizes="(min-width: 1000px) 640px, 100vw" width="1600" height="1067" alt="MorPlan week grid with five courses placed; two Tuesday and Friday classes overlap and are marked in red, and an alert names the clash.">
+          </button>
+          <div class="switcher" role="group" aria-label="MorPlan screens">
+            <button type="button" aria-pressed="true" data-shot="planner" data-alt="MorPlan week grid with five courses placed; two Tuesday and Friday classes overlap and are marked in red, and an alert names the clash.">Planner</button>
+            <button type="button" aria-pressed="false" data-shot="drag" data-alt="Dragging a course in MorPlan: every section of it shows as a slot on the grid, and the slots that would clash are red.">Drag</button>
+            <button type="button" aria-pressed="false" data-shot="compare" data-alt="MorPlan comparing plans side by side by credits, clashes, free days and earliest and latest class.">Compare</button>
+            <button type="button" aria-pressed="false" data-shot="ask" data-alt="MorPlan answering a question about CMU regulations in Thai, citing the document title and page.">Rule Q&amp;A</button>
+            <button type="button" aria-pressed="false" data-shot="curriculum" data-alt="MorPlan curriculum progress: credits passed by category against the study plan.">Curriculum</button>
           </div>
         </div>
-        <div class="detail">
+        <div class="fl-body">
+          <p class="kicker">Flagship · solo · Nov 2026</p>
+          <h3 id="morplan-title">MorPlan</h3>
+          <p class="tagline">CMU timetable planner and Thai regulation Q&amp;A.</p>
           <dl class="readings">
-            <div><dt>made-up claims blocked on a blind held-out set (95.3%)</dt><dd>164/172</dd></div>
-            <div><dt>honest bullets accepted on the same set</dt><dd>24/30</dd></div>
+            <div><dt>of 145 answerable Thai rule questions find the right page in the top 5</dt><dd>90.3%</dd></div>
+            <div><dt>right call between answering and "not found" on a held-out split</dt><dd>78.8%</dd></div>
           </dl>
-          <p>You keep a bank of short facts about your work. Paste a job description and FactFit maps its skills to your facts, scores the fit, and drafts bullets in Google's XYZ format. A guard written in plain code blocks any bullet whose numbers or tool names don't trace back to a fact you wrote. Then it exports a PDF that applicant tracking systems can read.</p>
-          <p class="state"><span class="dot" aria-hidden="true"></span><strong>Status:</strong> live, with a demo account. Every eval case is fictional data.</p>
-          <a class="btn" href="https://factfit-five.vercel.app" rel="noopener">Open factfit-five.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+          <ul class="feat">
+            <li>Drag courses onto a week grid, or place them from the keyboard. Class, midterm, final and duplicate clashes show at once.</li>
+            <li>Compare plans A to E side by side, share a read-only link, export .ics or PNG.</li>
+            <li>Ask the regulations in Thai: every answer cites the document and page, and says "not found" when the documents don't cover it.</li>
+          </ul>
+          <ul class="tags" aria-label="Stack">
+            <li>Next.js 16</li><li>TypeScript</li><li>Tailwind 4</li><li>dnd-kit</li><li>Supabase</li><li>Drizzle</li><li>Vitest + fast-check</li><li>Playwright</li>
+          </ul>
+          <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live, no real users yet. The regulation PDFs are scanned and OCR sometimes misreads Thai digits, so every answer links to the original page.</span></p>
+          <a class="btn primary" href="https://morplan.vercel.app" rel="noopener">Open morplan.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
         </div>
       </article>
 
-      <article class="project" id="harnkan" aria-labelledby="harnkan-title">
-        <div class="head">
+      <div class="bento">
+        <article class="card glass tilt" id="factfit" aria-labelledby="factfit-title">
+          <img src="img/factfit-studio-1280.webp" srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="FactFit bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts.">
+          <h3 id="factfit-title">FactFit</h3>
+          <p class="tagline">Tailors a résumé to a job posting without inventing facts.</p>
+          <dl class="readings">
+            <div><dt>made-up claims blocked on a blind held-out set</dt><dd>164/172</dd></div>
+            <div><dt>honest bullets accepted on the same set</dt><dd>24/30</dd></div>
+          </dl>
+          <p>A guard written in plain code blocks any drafted bullet whose numbers or tool names don't trace back to a fact you wrote.</p>
+          <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase</li><li>Drizzle</li><li>Gemini</li><li>Vitest</li></ul>
+          <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every eval case is fictional.</span></p>
+          <a class="btn glass" href="https://factfit-five.vercel.app" rel="noopener">Open factfit-five.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+        </article>
+
+        <article class="card glass tilt" id="harnkan" aria-labelledby="harnkan-title">
+          <img src="img/harnkan-desktop-1280.webp" srcset="img/harnkan-desktop-640.webp 640w, img/harnkan-desktop-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="HarnKan on a laptop: the trip's expense list on the left and who pays whom on the right, with transfers marked as received.">
           <h3 id="harnkan-title">HarnKan</h3>
           <p class="tagline">Splits trip costs in real time and reads the payment slip for you.</p>
-        </div>
-        <div class="side">
-          <div class="shots">
-            <img class="phone" style="--r:0.491" src="img/harnkan-expenses-480.webp" width="480" height="977" loading="lazy" alt="HarnKan expense list for a four-person trip, showing the trip total and each person's share.">
-            <img class="phone" style="--r:0.491" src="img/harnkan-settle-480.webp" width="480" height="977" loading="lazy" alt="HarnKan settle-up screen: who pays whom, arranged into three transfers, with a button for a PromptPay QR code.">
-            <img class="phone" style="--r:0.491" src="img/harnkan-qr-480.webp" width="480" height="977" loading="lazy" alt="HarnKan PromptPay QR code with the 220 baht amount already filled in.">
-          </div>
-          <div class="extra">
-            <p class="more">More than 120 unit tests cover rounding, settlement checked against brute force, and PromptPay codes checked against a reference library. Playwright drives two browsers to test real-time edits and conflicts.</p>
-            <p class="stack">Next.js 16 · TypeScript · Tailwind 4 · PWA with a hand-written service worker · Supabase Postgres, Realtime and RLS · SQL functions · IndexedDB outbox · Gemini and OCR · Playwright</p>
-          </div>
-        </div>
-        <div class="detail">
           <dl class="readings">
             <div><dt>of 60 synthetic slips ticked as paid automatically</dt><dd>92%</dd></div>
             <div><dt>wrong ticks on the same 60 slips</dt><dd>0</dd></div>
           </dl>
-          <p>Nobody signs up: start a trip and invite friends by link or QR. Everyone sees a new expense at once, split equally, by share or by exact amounts. HarnKan works out who pays whom in the fewest transfers, makes a PromptPay QR with the amount filled in, and reads the transfer slip to tick the payment. The person who was paid still confirms it. It keeps working offline and syncs later.</p>
-          <p class="state"><span class="dot" aria-hidden="true"></span><strong>Status:</strong> live and installable. Not used on a real trip yet, and the slip eval uses synthetic slips.</p>
-          <a class="btn" href="https://harnkan-ten.vercel.app" rel="noopener">Open harnkan-ten.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
-        </div>
-      </article>
+          <p>No sign-up. Settles in the fewest transfers, makes a PromptPay QR with the amount filled in, and works offline.</p>
+          <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase Realtime + RLS</li><li>PWA</li><li>IndexedDB</li><li>Playwright</li></ul>
+          <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live and installable. Not used on a real trip yet.</span></p>
+          <a class="btn glass" href="https://harnkan-ten.vercel.app" rel="noopener">Open harnkan-ten.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+        </article>
 
-      <article class="project" id="slipjot" aria-labelledby="slipjot-title">
-        <div class="head">
+        <article class="card glass tilt" id="slipjot" aria-labelledby="slipjot-title">
+          <img src="img/slipjot-dashboard-1280.webp" srcset="img/slipjot-dashboard-640.webp 640w, img/slipjot-dashboard-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="SlipJot dashboard for one month: total spending, a bar for each day, spending by category and the most frequent payees.">
           <h3 id="slipjot-title">SlipJot</h3>
           <p class="tagline">Photograph a bank slip and it logs the expense under the right category.</p>
-        </div>
-        <div class="side">
-          <div class="shots">
-            <img style="--r:1.6" src="img/slipjot-dashboard-1280.webp" srcset="img/slipjot-dashboard-640.webp 640w, img/slipjot-dashboard-1280.webp 1280w" sizes="(min-width: 980px) 480px, 100vw" width="1280" height="800" loading="lazy" alt="SlipJot dashboard for one month: total spending, a bar for each day, spending by category and the most frequent payees.">
-            <img class="phone" style="--r:0.491" src="img/slipjot-review-480.webp" width="480" height="977" loading="lazy" alt="SlipJot review screen on a phone: a slip whose date the reader was unsure about, waiting for the user to check it before saving.">
-          </div>
-          <div class="extra">
-            <p class="more">Gemini Flash-Lite read all 40 held-out slips correctly. Over 90 days of simulated data, the share of slips that needed the LLM for a category fell from 23.3% in the first week to 0.8% in the last month.</p>
-            <p class="stack">Next.js 16 · TypeScript · Tailwind 4 · Supabase Auth and Postgres · Drizzle · Recharts · Gemini · tesseract.js Thai OCR · sharp · jsQR · Vitest · Playwright · PWA share target</p>
-          </div>
-        </div>
-        <div class="detail">
           <dl class="readings">
-            <div><dt>of held-out slips with every key field right, using on-device OCR</dt><dd>93%</dd></div>
+            <div><dt>of held-out slips fully correct with on-device OCR</dt><dd>93%</dd></div>
             <div><dt>silent errors: unsure slips go to a review queue</dt><dd>0%</dd></div>
           </dl>
-          <p>Upload many slips at once, or share one straight from a banking app on Android. SlipJot reads the amount, the time (converting Buddhist-era years), the payee, the bank and the last four account digits. When it isn't sure, the slip waits in a review queue and is never saved wrong quietly. Categories come from rules first and an LLM second, and it learns from your corrections. It also catches duplicate slips, tracks budgets and exports CSV.</p>
-          <p class="state"><span class="dot" aria-hidden="true"></span><strong>Status:</strong> live, with a demo account. Every number comes from synthetic slips I made. Real slips are not evaluated yet.</p>
-          <a class="btn" href="https://slipjot.vercel.app" rel="noopener">Open slipjot.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
-        </div>
-      </article>
+          <p>Reads amount, time, payee and bank in Thai. Categories come from rules first and an LLM second, and it learns from your corrections.</p>
+          <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase</li><li>tesseract.js</li><li>Gemini</li><li>Recharts</li></ul>
+          <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every number comes from synthetic slips.</span></p>
+          <a class="btn glass" href="https://slipjot.vercel.app" rel="noopener">Open slipjot.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+        </article>
 
-      <article class="project" id="pingkhana" aria-labelledby="pingkhana-title">
-        <div class="head">
+        <article class="card glass tilt" id="pingkhana" aria-labelledby="pingkhana-title">
+          <img src="img/pingkhana-home-1280.webp" srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="PingKhana home page: 352 announcements from 13 sites, 14 with a closing date, and a list of the ones closing soonest.">
           <h3 id="pingkhana-title">PingKhana</h3>
-          <p class="tagline">A website and LINE bot that gather scholarship, co-op and job announcements with their deadlines.</p>
-        </div>
-        <div class="side">
-          <div class="shots">
-            <img style="--r:1.6" src="img/pingkhana-home-1280.webp" srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" sizes="(min-width: 980px) 480px, 100vw" width="1280" height="800" loading="lazy" alt="PingKhana home page: 352 announcements from 13 sites, 14 with a closing date, and a list of the ones closing soonest.">
-            <img class="phone" style="--r:0.491" src="img/pingkhana-mobile-480.webp" width="480" height="977" loading="lazy" alt="PingKhana on a phone in dark mode, showing the same feed with category filters.">
-          </div>
-          <div class="extra">
-            <p class="more">It began as a bot for Chiang Mai University students and grew into a multi-source reader after a teacher asked for news from the Office of the Basic Education Commission.</p>
-            <p class="stack">Python 3.12 · FastAPI · SQLAlchemy 2 async · Alembic · httpx · selectolax · pytest on real Postgres · Next.js 16 · TypeScript · LIFF · Neon · Render · Vercel · Gemini</p>
-          </div>
-        </div>
-        <div class="detail">
+          <p class="tagline">A website and LINE bot for scholarship, co-op and job deadlines.</p>
           <dl class="readings">
             <div><dt>news sources collected every hour</dt><dd>13</dd></div>
-            <div><dt>announcements gathered, 14 of them open with a closing date (14 Nov 2026)</dt><dd>352</dd></div>
+            <div><dt>announcements gathered (14 Nov 2026)</dt><dd>352</dd></div>
           </dl>
-          <p>A FastAPI collector reads Chiang Mai University pages and education news sources every hour, and it follows each site's robots.txt. It pulls the closing date out of text, posters and PDFs, and merges an announcement that appears on several sites into one. The LINE bot reminds you three days and one day before a deadline. Anyone can suggest a source by pasting a link, guarded against SSRF and approved by an admin. A watchdog emails me when a source goes six hours without an update.</p>
-          <p class="state"><span class="dot" aria-hidden="true"></span><strong>Status:</strong> live, but not opened to real users yet. Nobody has set a reminder.</p>
-          <a class="btn" href="https://pingkhana.vercel.app" rel="noopener">Open pingkhana.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
-          <span class="aside">LINE bot: @524osura</span>
-        </div>
-      </article>
+          <p>A FastAPI collector follows robots.txt, reads closing dates from text, posters and PDFs, merges duplicates, and LINE reminds you 3 days and 1 day before.</p>
+          <ul class="tags" aria-label="Stack"><li>Python 3.12</li><li>FastAPI</li><li>SQLAlchemy</li><li>Next.js 16</li><li>LIFF</li><li>pytest</li></ul>
+          <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live, not opened to real users yet.</span></p>
+          <a class="btn glass" href="https://pingkhana.vercel.app" rel="noopener">Open pingkhana.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+        </article>
+      </div>
     </section>
 
-    <section class="case wrap" id="project-z" aria-labelledby="pz-title">
+    <section class="pz wrap" id="project-z" aria-labelledby="pz-title">
+      <p class="kicker">Team of four · client project · Jul–Oct 2026</p>
       <h2 id="pz-title">Project Z</h2>
-      <p class="lede">An AI chat widget any shop can add to its website with one <code>&lt;script&gt;</code> tag. Built for a real client in a team of four.</p>
-      <dl class="meta">
-        <div><dt>Role</dt><dd>Software Architect, backend</dd></div>
-        <div><dt>Course</dt><dd>204361 Software Engineering × Database Systems</dd></div>
-        <div><dt>When</dt><dd>Jul–Oct 2026, 6 Scrum sprints</dd></div>
-        <div><dt>Client</dt><dd>Saka</dd></div>
-      </dl>
+      <p class="lede">An AI chat widget any shop can add to its website with one <code>&lt;script&gt;</code> tag. I was the Software Architect and built the core backend.</p>
 
-      <figure class="circuit" aria-labelledby="circuit-title">
-        <span class="drill tl" aria-hidden="true"></span><span class="drill tr" aria-hidden="true"></span>
-        <span class="drill bl" aria-hidden="true"></span><span class="drill br" aria-hidden="true"></span>
-        <figcaption id="circuit-title">The architecture I designed, drawn as a circuit board. Pick a flow to trace it.</figcaption>
+      <figure class="circuit glass">
+        <figcaption id="circuit-title">The architecture I designed. Pick a flow to trace it.</figcaption>
+        <div class="switches" role="group" aria-label="Trace a request flow">
+          <button type="button" data-flow="login" aria-pressed="false">Login</button>
+          <button type="button" data-flow="chat" aria-pressed="true">Chat</button>
+          <button type="button" data-flow="lead" aria-pressed="false">Lead capture</button>
+          <button type="button" data-flow="handover" aria-pressed="false">Handover</button>
+          <button type="button" data-flow="analysis" aria-pressed="false">Analysis</button>
+        </div>
 
         <svg class="pcb" viewBox="0 0 720 460" role="img" aria-label="Project Z architecture: Widget and Dashboard talk to three FastAPI services (Chat, Auth, Analysis), which use Redis, Firestore and Google Gemini.">
-          <defs>
-            <pattern id="pins" width="16" height="8" patternUnits="userSpaceOnUse">
-              <rect x="5" y="0" width="6" height="8" class="pin"/>
-            </pattern>
-          </defs>
-
           <g class="traces">
             <path class="trace" id="t-widget-chat" data-a="u5" data-b="u2" d="M180 70 H280"/>
             <path class="trace" id="t-chat-gemini" data-a="u2" data-b="u7" d="M440 55 H560"/>
@@ -194,181 +179,92 @@
             <path class="trace" id="t-auth-fs" data-a="u1" data-b="u8" d="M440 240 H560"/>
             <path class="trace" id="t-dash-analysis" data-a="u4" data-b="u3" d="M180 405 H280"/>
             <path class="trace" id="t-analysis-fs" data-a="u3" data-b="u8" d="M440 400 H560"/>
-            <path class="trace bottom" id="t-analysis-gemini" data-a="u3" data-b="u7" d="M440 370 H505 L520 355 V110 L535 95 H560"/>
-            <circle class="via" cx="447" cy="370" r="4"/><circle class="via" cx="553" cy="95" r="4"/>
+            <path class="trace" id="t-analysis-gemini" data-a="u3" data-b="u7" d="M440 370 H505 L520 355 V110 L535 95 H560"/>
           </g>
           <g class="pulses" aria-hidden="true"></g>
 
-          <g class="chip" id="u5">
-            <text class="ref" x="20" y="14">U5</text>
-            <rect class="court" x="14" y="18" width="172" height="104"/><rect class="pins" x="28" y="22" width="144" height="8"/><rect class="pins" x="28" y="110" width="144" height="8"/>
-            <rect class="body" x="20" y="30" width="160" height="80"/><circle class="dot" cx="31" cy="41" r="3"/>
-            <text class="name" x="100" y="70">WIDGET</text><text class="sub" x="100" y="92">Shadow DOM · SSE</text>
+          <g class="chip" id="u5"><rect class="body" x="20" y="30" width="160" height="80" rx="10"/><text class="tier" x="100" y="52">CLIENT</text><text class="name" x="100" y="78">Widget</text><text class="sub" x="100" y="97">Shadow DOM · SSE</text></g>
+          <g class="chip" id="u6"><rect class="body" x="20" y="190" width="160" height="80" rx="10"/><text class="tier" x="100" y="212">EDGE</text><text class="name" x="100" y="238">Redis 7</text><text class="sub" x="100" y="257">Pub/Sub · locks</text></g>
+          <g class="chip" id="u4"><rect class="body" x="20" y="350" width="160" height="80" rx="10"/><text class="tier" x="100" y="372">CLIENT</text><text class="name" x="100" y="398">Dashboard</text><text class="sub" x="100" y="417">Vue 3 · Pinia</text></g>
+          <g class="chip" id="u2"><rect class="body" x="280" y="30" width="160" height="80" rx="10"/><text class="tier" x="360" y="52">BACKEND</text><text class="name" x="360" y="78">Chat</text><text class="sub" x="360" y="97">FastAPI · :8002</text></g>
+          <g class="chip" id="u1"><rect class="body" x="280" y="190" width="160" height="80" rx="10"/><text class="tier" x="360" y="212">BACKEND</text><text class="name" x="360" y="238">Auth</text><text class="sub" x="360" y="257">FastAPI · :8001</text></g>
+          <g class="chip" id="u3"><rect class="body" x="280" y="350" width="160" height="80" rx="10"/><text class="tier" x="360" y="372">BACKEND</text><text class="name" x="360" y="398">Analysis</text><text class="sub" x="360" y="417">FastAPI · :8003</text></g>
+          <g class="chip" id="u7"><rect class="body" x="560" y="30" width="140" height="80" rx="10"/><text class="tier" x="630" y="52">MODEL</text><text class="name" x="630" y="78">Gemini</text><text class="sub" x="630" y="97">Flash · 3.1 Pro</text></g>
+          <g class="chip" id="u8"><rect class="body" x="560" y="190" width="140" height="240" rx="10"/><text class="tier" x="630" y="212">DATABASE</text><text class="name" x="630" y="238">Firestore</text><text class="sub" x="630" y="257">14 collections</text>
+            <text class="coll" x="580" y="300">tenants</text><text class="coll" x="580" y="322">chatSessions</text><text class="coll" x="580" y="344">messages</text><text class="coll" x="580" y="366">leads</text><text class="coll" x="580" y="388">analysisJobs</text><text class="coll" x="580" y="410">analyses …</text>
           </g>
-          <g class="chip" id="u6">
-            <text class="ref" x="20" y="174">U6</text>
-            <rect class="court" x="14" y="178" width="172" height="104"/><rect class="pins" x="28" y="182" width="144" height="8"/><rect class="pins" x="28" y="270" width="144" height="8"/>
-            <rect class="body" x="20" y="190" width="160" height="80"/><circle class="dot" cx="31" cy="201" r="3"/>
-            <text class="name" x="100" y="230">REDIS 7</text><text class="sub" x="100" y="252">Pub/Sub · locks</text>
-          </g>
-          <g class="chip" id="u4">
-            <text class="ref" x="20" y="334">U4</text>
-            <rect class="court" x="14" y="338" width="172" height="104"/><rect class="pins" x="28" y="342" width="144" height="8"/><rect class="pins" x="28" y="430" width="144" height="8"/>
-            <rect class="body" x="20" y="350" width="160" height="80"/><circle class="dot" cx="31" cy="361" r="3"/>
-            <text class="name" x="100" y="390">DASHBOARD</text><text class="sub" x="100" y="412">Vue 3 · Pinia</text>
-          </g>
-          <g class="chip" id="u2">
-            <text class="ref" x="280" y="14">U2</text>
-            <rect class="court" x="274" y="18" width="172" height="104"/><rect class="pins" x="288" y="22" width="144" height="8"/><rect class="pins" x="288" y="110" width="144" height="8"/>
-            <rect class="body" x="280" y="30" width="160" height="80"/><circle class="dot" cx="291" cy="41" r="3"/>
-            <text class="name" x="360" y="70">CHAT</text><text class="sub" x="360" y="92">FastAPI · :8002</text>
-          </g>
-          <g class="chip" id="u1">
-            <text class="ref" x="280" y="174">U1</text>
-            <rect class="court" x="274" y="178" width="172" height="104"/><rect class="pins" x="288" y="182" width="144" height="8"/><rect class="pins" x="288" y="270" width="144" height="8"/>
-            <rect class="body" x="280" y="190" width="160" height="80"/><circle class="dot" cx="291" cy="201" r="3"/>
-            <text class="name" x="360" y="230">AUTH</text><text class="sub" x="360" y="252">FastAPI · :8001</text>
-          </g>
-          <g class="chip" id="u3">
-            <text class="ref" x="280" y="334">U3</text>
-            <rect class="court" x="274" y="338" width="172" height="104"/><rect class="pins" x="288" y="342" width="144" height="8"/><rect class="pins" x="288" y="430" width="144" height="8"/>
-            <rect class="body" x="280" y="350" width="160" height="80"/><circle class="dot" cx="291" cy="361" r="3"/>
-            <text class="name" x="360" y="390">ANALYSIS</text><text class="sub" x="360" y="412">FastAPI · :8003</text>
-          </g>
-          <g class="chip" id="u7">
-            <text class="ref" x="560" y="14">U7</text>
-            <rect class="court" x="554" y="18" width="152" height="104"/><rect class="pins" x="568" y="22" width="128" height="8"/><rect class="pins" x="568" y="110" width="128" height="8"/>
-            <rect class="body" x="560" y="30" width="140" height="80"/><circle class="dot" cx="571" cy="41" r="3"/>
-            <text class="name" x="630" y="70">GEMINI</text><text class="sub" x="630" y="92">Flash · 3.1 Pro</text>
-          </g>
-          <g class="chip" id="u8">
-            <text class="ref" x="560" y="174">U8</text>
-            <rect class="court" x="554" y="178" width="152" height="264"/><rect class="pins" x="568" y="182" width="128" height="8"/><rect class="pins" x="568" y="430" width="128" height="8"/>
-            <rect class="body" x="560" y="190" width="140" height="240"/><circle class="dot" cx="571" cy="201" r="3"/>
-            <text class="name" x="630" y="236">FIRESTORE</text><text class="sub" x="630" y="258">14 collections</text>
-            <text class="coll" x="578" y="300">tenants</text>
-            <text class="coll" x="578" y="322">chatSessions</text>
-            <text class="coll" x="578" y="344">messages</text>
-            <text class="coll" x="578" y="366">leads</text>
-            <text class="coll" x="578" y="388">analysisJobs</text>
-            <text class="coll" x="578" y="410">analyses …</text>
-          </g>
-          <g class="leads" aria-hidden="true"><rect class="lead" x="180" y="66" width="12" height="8"/><rect class="lead" x="268" y="66" width="12" height="8"/><rect class="lead" x="440" y="51" width="12" height="8"/><rect class="lead" x="548" y="51" width="12" height="8"/><rect class="lead" x="440" y="91" width="12" height="8"/><rect class="lead" x="548" y="206" width="12" height="8"/><rect class="lead" x="268" y="91" width="12" height="8"/><rect class="lead" x="180" y="226" width="12" height="8"/><rect class="lead" x="96" y="270" width="8" height="12"/><rect class="lead" x="96" y="338" width="8" height="12"/><rect class="lead" x="180" y="366" width="12" height="8"/><rect class="lead" x="268" y="226" width="12" height="8"/><rect class="lead" x="440" y="236" width="12" height="8"/><rect class="lead" x="548" y="236" width="12" height="8"/><rect class="lead" x="180" y="401" width="12" height="8"/><rect class="lead" x="268" y="401" width="12" height="8"/><rect class="lead" x="440" y="396" width="12" height="8"/><rect class="lead" x="548" y="396" width="12" height="8"/><rect class="lead" x="440" y="366" width="12" height="8"/><rect class="lead" x="548" y="91" width="12" height="8"/></g>
         </svg>
-
-        <div class="switches" role="group" aria-label="Trace a request flow">
-          <button type="button" data-flow="login" aria-pressed="false"><span class="toggle" aria-hidden="true"></span>Login</button>
-          <button type="button" data-flow="chat" aria-pressed="true"><span class="toggle" aria-hidden="true"></span>Chat</button>
-          <button type="button" data-flow="lead" aria-pressed="false"><span class="toggle" aria-hidden="true"></span>Lead capture</button>
-          <button type="button" data-flow="handover" aria-pressed="false"><span class="toggle" aria-hidden="true"></span>Handover</button>
-          <button type="button" data-flow="analysis" aria-pressed="false"><span class="toggle" aria-hidden="true"></span>Analysis</button>
-        </div>
         <p class="flow-caption" id="flow-caption" aria-live="polite">A visitor types in the widget. The Chat service streams Gemini's reply back token by token over SSE and saves both sides to Firestore. If a model is busy, it falls back through four tiers.</p>
       </figure>
 
-      <div class="two">
-        <div>
-          <h3>The problem</h3>
-          <p>Shops couldn't answer customers around the clock. They lost the contact details of people who were ready to buy, and they had no idea how customers felt or what the bot couldn't answer. Saka wanted one widget that answers with Google Gemini, captures leads, analyzes every conversation and hands the hard ones to a person, with each merchant's data kept apart.</p>
-        </div>
-        <div>
+      <div class="pz-grid">
+        <div class="glass panel">
           <h3>What I owned</h3>
           <ul class="owned">
-            <li><strong>The architecture and the database design.</strong> Three FastAPI services, each owning its own Firestore collections through a repository layer, with an access matrix so no service writes data it doesn't own.</li>
-            <li><strong>The core backend.</strong> Merchant register and login with JWT and refresh, real-time multi-turn Gemini chat with lead extraction, and AI-agent settings that sync live between dashboard and widget.</li>
-            <li><strong>The hardening pass.</strong> Server-issued widget sessions with session tokens, a fix for cross-tenant IDOR, rate limits, a transactional job claim, and splitting files and functions that had grown too large.</li>
+            <li><strong>Architecture and database design.</strong> Three FastAPI services, each owning its own Firestore collections, with an access matrix so no service writes data it doesn't own.</li>
+            <li><strong>Core backend.</strong> JWT login and refresh, real-time multi-turn Gemini chat with lead extraction, and agent settings that sync live to the widget.</li>
+            <li><strong>Hardening.</strong> Server-issued widget sessions, a cross-tenant IDOR fix, rate limits and a transactional job claim.</li>
           </ul>
+        </div>
+        <div class="glass panel">
+          <h3>Test points</h3>
+          <dl class="tp">
+            <div><dt>10 workers claim the same analysis job at once</dt><dd>1 winner <span>(old code: 10)</span></dd></div>
+            <div><dt>Merchant A asks for merchant B's chats</dt><dd>nothing returned</dd></div>
+            <div><dt>Mutation testing on core services</dt><dd>90–100% killed</dd></div>
+            <div><dt>Login / public widget calls per minute per IP</dt><dd>10 / 30, then 429</dd></div>
+            <div><dt>Analysis run with nothing new</dt><dd>~36 ms, 0 Gemini calls</dd></div>
+          </dl>
         </div>
       </div>
 
-      <h3>Test points</h3>
-      <p class="note">Readings from the project's test suite and final report.</p>
-      <table class="tp">
-        <thead><tr><th scope="col">Point</th><th scope="col">What was checked</th><th scope="col">Reading</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">TP1</th><td>10 workers try to claim the same analysis job at once</td><td class="r">1 winner <span>(old code: 10)</span></td></tr>
-          <tr><th scope="row">TP2</th><td>Merchant A asks for merchant B's chats</td><td class="r">nothing returned</td></tr>
-          <tr><th scope="row">TP3</th><td>Mutation testing on core services (mutmut, model calls blocked)</td><td class="r">90–100% killed</td></tr>
-          <tr><th scope="row">TP4</th><td>Login attempts / public widget calls per minute</td><td class="r">10 / 30 per IP, then 429</td></tr>
-          <tr><th scope="row">TP5</th><td>Analysis run with nothing new to analyze</td><td class="r">~36 ms, 0 Gemini calls</td></tr>
-          <tr><th scope="row">TP6</th><td>Largest Vue page after the refactor</td><td class="r">2,329 to 765 lines</td></tr>
-        </tbody>
-      </table>
-
-      <div class="result">
-        <p><strong>Delivered:</strong> all 22 user stories plus 7 features beyond the MVP, accepted and signed off by the client. The team closed 161 of 161 Jira work items (212 story points) as velocity grew from 8 to 68 points a sprint. My share: 36 issues and 57 commits.</p>
-        <p class="state"><span class="dot" aria-hidden="true"></span><strong>Status:</strong> it runs on Docker Compose today. The Cloud Run setup is written but not deployed.</p>
-        <a class="btn" href="https://github.com/NexusG0/Project-Z" rel="noopener">Source on GitHub<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+      <div class="pz-foot">
+        <p><strong>Delivered:</strong> all 22 user stories plus 7 beyond the MVP, signed off by the client. The team closed 161 of 161 Jira items (212 points) as velocity grew from 8 to 68 a sprint. My share: 36 issues and 57 commits.</p>
+        <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> runs on Docker Compose. The Cloud Run setup is written but not deployed.</span></p>
+        <a class="btn glass" href="https://github.com/NexusG0/Project-Z" rel="noopener">Source on GitHub<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
       </div>
-    </section>
-
-    <section class="how wrap" aria-labelledby="how-title">
-      <h2 id="how-title">How I work</h2>
-      <dl class="rows">
-        <div><dt>Solo, end to end</dt><dd>I designed, built and deployed each of the four apps above myself, from the database schema to the interface.</dd></div>
-        <div><dt>Measured</dt><dd>Each app has an eval that produces numbers, with a held-out set I keep away from tuning.</dd></div>
-        <div><dt>Checked by CI</dt><dd>Every one of them runs its tests in continuous integration.</dd></div>
-        <div><dt>One database project</dt><dd>FactFit, HarnKan and SlipJot share a single Supabase project, each in its own schema.</dd></div>
-        <div><dt>AI coding agents</dt><dd>I build with AI coding agents and say so. The tests and evals are how their output gets checked.</dd></div>
-      </dl>
-    </section>
-
-    <section class="earlier wrap" aria-labelledby="earlier-title">
-      <h2 id="earlier-title">Earlier coursework</h2>
-      <table class="bom">
-        <thead><tr><th scope="col">Project</th><th scope="col">Built with</th><th scope="col">Notes</th></tr></thead>
-        <tbody>
-          <tr>
-            <th scope="row">QuizMaster<span class="when">Quiz and results web app · Sem 2/2025</span></th>
-            <td class="val">Vue 3, Vite, Tailwind, FastAPI, SQLAlchemy, PostgreSQL, Docker</td>
-            <td>Team of four. I built the dashboard, leaderboard, quiz history and review pages, and account settings with Google and GitHub sign-in linking, then moved the frontend to an API-only setup. <a href="https://g11-quizmaster.vercel.app" rel="noopener">g11-quizmaster.vercel.app</a></td>
-          </tr>
-          <tr>
-            <th scope="row">Text Checker<span class="when">IMDb sentiment analysis · Sem 2/2025</span></th>
-            <td class="val">TensorFlow/Keras, PyTorch, Hugging Face</td>
-            <td>Compared a simple neural network with an LSTM on 50,000 movie reviews (~88% validation accuracy), studied the high-confidence mistakes, then fine-tuned BERT on a GPU.</td>
-          </tr>
-          <tr>
-            <th scope="row">Kin-Arai-Dee<span class="when">LLM meal-idea chatbot · Sem 1/2025</span></th>
-            <td class="val">Streamlit, LiteLLM</td>
-            <td>Backend developer and presenter for a chatbot that suggests what to eat. <a href="https://kinaraidee.streamlit.app" rel="noopener">kinaraidee.streamlit.app</a></td>
-          </tr>
-        </tbody>
-      </table>
     </section>
 
     <section class="skills wrap" id="skills" aria-labelledby="skills-title">
       <h2 id="skills-title">Skills</h2>
-      <dl class="rows">
-        <div><dt>Frontend and web</dt><dd>TypeScript, JavaScript, Next.js (App Router, Server Actions), Vue 3, Pinia, Tailwind CSS, PWA and service workers, Recharts</dd></div>
-        <div><dt>Backend</dt><dd>Python, FastAPI, SQLAlchemy, Alembic, REST, SSE, JWT, Supabase Auth, Drizzle</dd></div>
-        <div><dt>Data and ops</dt><dd>PostgreSQL with row-level security, Supabase Realtime, Firestore, Redis, Docker Compose, GitHub Actions, Vercel, Render, Neon</dd></div>
-        <div><dt>AI and data</dt><dd>Gemini API with function calling and structured output, OCR with tesseract.js, LiteLLM, TensorFlow/Keras, PyTorch, Hugging Face, scikit-learn, pandas</dd></div>
-        <div><dt>Testing and process</dt><dd>Vitest, Playwright, pytest, unittest, mutmut, Scrum with Jira, pull-request reviews</dd></div>
-      </dl>
-
-      <h2 class="second">Education</h2>
-      <dl class="rows">
-        <div><dt>2024–now</dt><dd><strong>BSc Computer Science, Chiang Mai University</strong>Coursework: Artificial Intelligence, Data Structures, Object-Oriented Programming, Software Engineering, Database Systems, Modern Application Development</dd></div>
-        <div><dt>2024</dt><dd><strong>Sacred Heart College, Chiang Mai</strong>High school diploma</dd></div>
-      </dl>
+      <div class="skill-grid">
+        <div class="glass sk"><h3>Frontend</h3><p>TypeScript, Next.js (App Router, Server Actions), React, Vue 3, Tailwind CSS, PWA and service workers, dnd-kit</p></div>
+        <div class="glass sk"><h3>Backend</h3><p>Python, FastAPI, SQLAlchemy, Alembic, REST, SSE, JWT, Supabase Auth, Drizzle, zod</p></div>
+        <div class="glass sk"><h3>Data and ops</h3><p>PostgreSQL with RLS, Supabase Realtime, Firestore, Redis, Docker Compose, GitHub Actions, Vercel, Render, Neon</p></div>
+        <div class="glass sk"><h3>AI and search</h3><p>Gemini structured output, BM25 and hybrid retrieval, Thai OCR with Tesseract, retrieval evals with held-out splits</p></div>
+        <div class="glass sk"><h3>Testing</h3><p>Vitest, fast-check, Playwright, pytest, mutmut, Scrum with Jira, pull-request reviews</p></div>
+        <div class="glass sk"><h3>How I work</h3><p>Every app above has an eval with a held-out set and runs its tests in CI. I build with AI coding agents; the tests and evals are how their output gets checked.</p></div>
+        <div class="glass sk wide"><h3>Education</h3><p><strong>BSc Computer Science, Chiang Mai University</strong>, 2024 to now. Coursework: Software Engineering, Database Systems, Modern Application Development, Data Structures, Artificial Intelligence, Object-Oriented Programming.</p></div>
+      </div>
     </section>
 
     <section class="contact wrap" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Have a co-op or internship opening?</h2>
-      <p>I'd like to hear about it. Email is the fastest way to reach me.</p>
-      <ul>
-        <li><a class="btn primary" href="mailto:nawat_wattanawong@cmu.ac.th">nawat_wattanawong@cmu.ac.th</a></li>
-        <li><a class="btn" href="https://github.com/Vector033" rel="noopener">github.com/Vector033</a></li>
-        <li><a class="btn" href="Nawat_Wattanawong_Resume.pdf" download>Résumé PDF</a></li>
+      <div class="contact-copy">
+        <h2 id="contact-title">Have a <span class="nw">co-op</span> opening?</h2>
+        <p>I'd like to hear about it. Email is the fastest way to reach me.</p>
+        <p class="clock mono-label"><span class="dot" aria-hidden="true"></span>Bangkok, TH · GMT+7 · <time id="bkk-time">--:--</time></p>
+      </div>
+      <ul class="contact-list">
+        <li class="glass c-row">
+          <a href="mailto:nawat_wattanawong@cmu.ac.th"><span class="mono-label">Email</span>nawat_wattanawong@cmu.ac.th</a>
+          <button type="button" class="btn glass small" id="copy-email" data-email="nawat_wattanawong@cmu.ac.th">Copy</button>
+        </li>
+        <li class="glass c-row"><a href="https://github.com/Vector033" rel="noopener"><span class="mono-label">GitHub</span>github.com/Vector033</a></li>
+        <li class="glass c-row"><a href="Nawat_Wattanawong_Resume.pdf" download><span class="mono-label">Résumé</span>Download PDF</a></li>
       </ul>
+      <p class="sr-only" id="copy-status" role="status"></p>
     </section>
   </main>
 
   <footer class="foot wrap">
     <span>Nawat Wattanawong · 2026</span>
-    <span>Plain HTML, CSS and JavaScript, built with help from AI coding agents. Type: IBM Plex, and Chakra Petch by Cadson Demak on the circuit board.</span>
+    <span>Plain HTML, CSS and JavaScript, built with help from AI coding agents. Type: Plus Jakarta Sans and JetBrains Mono.</span>
   </footer>
+
+  <dialog class="viewer" id="viewer" aria-label="Screenshot">
+    <form method="dialog"><button class="btn glass small close" aria-label="Close">Close</button></form>
+    <img id="viewer-img" src="img/morplan-planner-1600.webp" width="1600" height="1067" loading="lazy" alt="">
+  </dialog>
 
   <script src="main.js" defer></script>
 </body>

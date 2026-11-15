@@ -135,3 +135,88 @@
   }, { threshold: 0.5 });
   io.observe(svg);
 })();
+
+// Page interactions: cursor, tilt, MorPlan screenshot switcher and viewer, copy email, Bangkok clock.
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = window.matchMedia('(pointer: fine)').matches;
+
+  // Dual-layer cursor: the dot follows the pointer, the ring trails it and grows over anything clickable.
+  if (fine && !reduce) {
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+    let x = -100, y = -100, rx = x, ry = y, s = 1, target = 1;
+    document.documentElement.classList.add('has-cursor');
+    addEventListener('pointermove', (e) => {
+      x = e.clientX; y = e.clientY;
+      dot.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      const hot = e.target.closest('a, button, [role="button"], summary');
+      target = hot ? 1.8 : 1;
+      ring.classList.toggle('hover', !!hot);
+    }, { passive: true });
+    document.addEventListener('pointerleave', () => { x = y = -100; });
+    (function frame() {
+      rx += (x - rx) * 0.18; ry += (y - ry) * 0.18; s += (target - s) * 0.2;
+      ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) scale(${s})`;
+      requestAnimationFrame(frame);
+    })();
+  }
+
+  // 3D tilt with a specular highlight that follows the pointer.
+  if (fine && !reduce) {
+    document.querySelectorAll('.tilt').forEach((el) => {
+      el.addEventListener('pointermove', (e) => {
+        const r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+        el.style.setProperty('--mx', `${px * 100}%`);
+        el.style.setProperty('--my', `${py * 100}%`);
+        el.style.transition = 'transform .12s linear';
+        el.style.transform = `perspective(1000px) rotateX(${(0.5 - py) * 5}deg) rotateY(${(px - 0.5) * 5}deg)`;
+      });
+      el.addEventListener('pointerleave', () => { el.style.transition = ''; el.style.transform = ''; });
+    });
+  }
+
+  // MorPlan screenshot switcher.
+  const shot = document.getElementById('mp-shot');
+  const shotButtons = [...document.querySelectorAll('.switcher button')];
+  shotButtons.forEach((b) => b.addEventListener('click', () => {
+    const n = b.dataset.shot;
+    shot.src = `img/morplan-${n}-1600.webp`;
+    shot.srcset = `img/morplan-${n}-800.webp 800w, img/morplan-${n}-1600.webp 1600w`;
+    shot.alt = b.dataset.alt;
+    shotButtons.forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
+  }));
+
+  // Enlarge the current screenshot in a native modal dialog (Esc and focus return come with it).
+  const viewer = document.getElementById('viewer');
+  const viewerImg = document.getElementById('viewer-img');
+  document.querySelector('.shot-open').addEventListener('click', () => {
+    viewerImg.src = shot.src; // the 1600px file, not the smaller srcset pick
+    viewerImg.alt = shot.alt;
+    viewer.showModal();
+  });
+  viewer.addEventListener('click', (e) => { if (e.target === viewer) viewer.close(); });
+
+  // Copy email.
+  const copy = document.getElementById('copy-email');
+  const status = document.getElementById('copy-status');
+  copy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(copy.dataset.email);
+      copy.textContent = 'Copied!';
+      status.textContent = 'Email address copied';
+    } catch {
+      copy.textContent = 'Copy failed';
+      status.textContent = 'Could not copy. Select the address to copy it.';
+    }
+    setTimeout(() => { copy.textContent = 'Copy'; }, 2000);
+  });
+
+  // Bangkok clock.
+  const time = document.getElementById('bkk-time');
+  const fmt = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Bangkok', hour: '2-digit', minute: '2-digit' });
+  const tick = () => { const now = new Date(); time.textContent = fmt.format(now); time.dateTime = now.toISOString(); };
+  tick();
+  setInterval(tick, 15000);
+})();
