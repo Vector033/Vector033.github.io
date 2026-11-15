@@ -148,6 +148,7 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
   .glance li { animation: float 7s ease-in-out infinite; }
   .glance li:nth-child(2) { animation-delay: -1.4s; } .glance li:nth-child(3) { animation-delay: -2.8s; }
   .glance li:nth-child(4) { animation-delay: -4.2s; } .glance li:nth-child(5) { animation-delay: -5.6s; }
+  .glance li:nth-child(6) { animation-delay: -3.5s; }
 }
 @keyframes float { 50% { transform: translate3d(0, -5px, 0); } }
 @media (prefers-reduced-motion: reduce) { .radar::after { animation: none; } }
