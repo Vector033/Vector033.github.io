@@ -36,7 +36,7 @@ Visitors read on laptops and phones, often between other applications. Résumé 
 
 ## Evidence on Hand
 
-- Résumé: `C:\Users\User\Desktop\resume\Nawat_Wattanawong_Resume_v9.pdf` / `.docx`.
+- Résumé: `C:\Users\User\Desktop\resume\Nawat_Wattanawong_Resume_v10.pdf` / `.docx`.
 - MorPlan numbers: `Desktop\MorPlan\README.md`, section RAG evaluation (production BM25: R@5 90.3% on 145 answerable questions; 78.8% right answer-vs-not-found call on the held-out split). There is no clash-detection accuracy number; do not invent one.
 - Numbers for the four solo projects: `C:\Users\User\Desktop\PORTFOLIO_REDESIGN_PROMPT.md` (as of 2026-11-14). Use only those. Do not use the old FactFit figure 180/186.
 - Project Z final report (Team 08), source repo github.com/NexusG0/Project-Z.
