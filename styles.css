@@ -207,6 +207,10 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
 .card .btn { align-self: flex-start; margin-top: auto; }
 .links { display: flex; flex-wrap: wrap; gap: 10px; }
 .card .links { margin-top: auto; }
+.side { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(20px, 3vw, 36px); align-items: start; margin-top: 20px; }
+.side .gallery { margin-bottom: 0; }
+.side .feat li { font-size: 0.94rem; }
+.side-body > p:not(.kicker):not(.tagline) { margin: 14px 0 16px; font-size: 0.96rem; color: var(--text-2); }
 .links .btn { margin-top: 0; }
 
 /* screenshot viewer */
@@ -275,7 +279,7 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
 
 /* ---------- responsive ---------- */
 @media (max-width: 999px) {
-  .hero, .flagship, .contact { grid-template-columns: minmax(0, 1fr); }
+  .hero, .flagship, .contact, .side { grid-template-columns: minmax(0, 1fr); }
   .hero { min-height: 0; }
   .glance ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }

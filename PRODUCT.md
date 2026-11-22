@@ -20,7 +20,7 @@ A personal portfolio that is the "linked proof" behind the one-page résumé. Su
 
 ## Positioning
 
-Full-stack developer who ships and measures. Five solo apps are deployed, MorPlan first (MorPlan, PingKhana, ProofMyCV (formerly FactFit, now at proofmycv.vercel.app), HarnKan, SlipJot), each with an eval that has a held-out set, and each with an honest status line. Project Z remains the large team piece: he was the Software Architect on a multi-tenant AI chat-widget SaaS delivered to an external client (Saka).
+Full-stack developer who ships and measures. Five solo apps are deployed, MorPlan first (MorPlan, PingKhana, ProofMyCV (formerly FactFit, now at proofmycv.vercel.app), HarnKan, SlipJot), each with an eval that has a held-out set, and each with an honest status line. BMI Print is a small side project shown below them: a slip printer a PE teacher at Sacred Heart College Chiang Mai asked for, now used by teachers there (keep it understated; no metrics). Project Z remains the large team piece: he was the Software Architect on a multi-tenant AI chat-widget SaaS delivered to an external client (Saka).
 
 ## Operating Context
 
