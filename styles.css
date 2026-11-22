@@ -205,6 +205,9 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
 .card > p:not(.tagline):not(.state) { font-size: 0.96rem; }
 .card .readings { margin: 16px 0; }
 .card .btn { align-self: flex-start; margin-top: auto; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.card .links { margin-top: auto; }
+.links .btn { margin-top: 0; }
 
 /* screenshot viewer */
 .viewer { width: min(1400px, 94vw); max-height: 92vh; padding: 12px; color: var(--text); background: var(--bg1); border: 1px solid var(--line); border-radius: 16px; }

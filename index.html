@@ -68,19 +68,20 @@
 
     <section class="work wrap" id="work" aria-labelledby="work-title">
       <h2 id="work-title">Five apps, built solo and live</h2>
-      <p class="lede">Each has a link you can open, numbers I measured, and a plain note on where it stands. The repositories are private for now.</p>
+      <p class="lede">Each has a link you can open, numbers I measured, and a plain note on where it stands. The code for all five is public on GitHub.</p>
 
       <article class="flagship glass tilt" id="morplan" aria-labelledby="morplan-title">
         <div class="fl-media gallery">
           <button type="button" class="shot-open" aria-label="Enlarge screenshot">
-            <img src="img/morplan-planner-1600.webp" srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" sizes="(min-width: 1000px) 640px, 100vw" width="1600" height="1067" alt="MorPlan week grid with five courses placed; two Tuesday and Friday classes overlap and are marked in red, and an alert names the clash.">
+            <img src="img/morplan-planner-1600.webp" srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" sizes="(min-width: 1000px) 640px, 100vw" width="1600" height="1067" alt="MorPlan week grid with 4 courses and 12 credits; 2 clashes are marked in red and an alert names the overlapping courses.">
           </button>
           <div class="switcher" role="group" aria-label="MorPlan screens">
-            <button type="button" aria-pressed="true" data-src="img/morplan-planner-1600.webp" data-srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" data-alt="MorPlan week grid with five courses placed; two Tuesday and Friday classes overlap and are marked in red, and an alert names the clash.">Planner</button>
+            <button type="button" aria-pressed="true" data-src="img/morplan-planner-1600.webp" data-srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" data-alt="MorPlan week grid with 4 courses and 12 credits; 2 clashes are marked in red and an alert names the overlapping courses.">Planner</button>
+            <button type="button" aria-pressed="false" data-src="img/morplan-import-1600.webp" data-srcset="img/morplan-import-800.webp 800w, img/morplan-import-1600.webp 1600w" data-alt="MorPlan import: a course table pasted as text and read in the browser into courses, sections and times.">Import</button>
             <button type="button" aria-pressed="false" data-src="img/morplan-drag-1600.webp" data-srcset="img/morplan-drag-800.webp 800w, img/morplan-drag-1600.webp 1600w" data-alt="Dragging a course in MorPlan: every section of it shows as a slot on the grid, and the slots that would clash are red.">Drag</button>
-            <button type="button" aria-pressed="false" data-src="img/morplan-compare-1600.webp" data-srcset="img/morplan-compare-800.webp 800w, img/morplan-compare-1600.webp 1600w" data-alt="MorPlan comparing plans side by side by credits, clashes, free days and earliest and latest class.">Compare</button>
+            <button type="button" aria-pressed="false" data-src="img/morplan-compare-1600.webp" data-srcset="img/morplan-compare-800.webp 800w, img/morplan-compare-1600.webp 1600w" data-alt="MorPlan comparing plans A and B side by side by credits, clashes, free days and earliest and latest class, with a small timetable of each.">Compare</button>
             <button type="button" aria-pressed="false" data-src="img/morplan-ask-1600.webp" data-srcset="img/morplan-ask-800.webp 800w, img/morplan-ask-1600.webp 1600w" data-alt="MorPlan answering a question about CMU regulations in Thai, citing the document title and page.">Rule Q&amp;A</button>
-            <button type="button" aria-pressed="false" data-src="img/morplan-curriculum-1600.webp" data-srcset="img/morplan-curriculum-800.webp 800w, img/morplan-curriculum-1600.webp 1600w" data-alt="MorPlan curriculum progress: credits passed by category against the study plan.">Curriculum</button>
+            <button type="button" aria-pressed="false" data-src="img/morplan-curriculum-1600.webp" data-srcset="img/morplan-curriculum-800.webp 800w, img/morplan-curriculum-1600.webp 1600w" data-alt="MorPlan curriculum setup: pick the university, faculty, major and entry year from lists, and it finds the matching curriculum and study plan.">Curriculum</button>
           </div>
         </div>
         <div class="fl-body">
@@ -93,23 +94,24 @@
           </dl>
           <ul class="feat">
             <li>Drag courses onto a week grid or place them from the keyboard. Class, midterm, final and duplicate clashes show at once, and plans A to E compare side by side and export to .ics or PNG.</li>
-            <li>Works for the 77 universities in the TCAS list. You paste your course table and the browser reads it, so MorPlan never asks for your registration password.</li>
+            <li>Pick any of the 77 TCAS universities and your major, and it finds your curriculum: what you passed, what is overdue and which electives fit. Course tables are pasted and read in the browser, so it never asks for your registration password.</li>
             <li>Rule answers cite the document and page. Hybrid search scored a little higher (91.7%), but its embedding model is too big for a Vercel function, so production runs BM25 at about 1 ms a question.</li>
           </ul>
           <ul class="tags" aria-label="Stack">
             <li>Next.js 16</li><li>TypeScript</li><li>Tailwind 4</li><li>dnd-kit</li><li>Supabase</li><li>Drizzle</li><li>Vitest + fast-check</li><li>Playwright</li>
           </ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live, no real users yet. The regulation PDFs are scanned and OCR sometimes misreads Thai digits, so every answer links to the original page.</span></p>
-          <a class="btn primary" href="https://morplan.vercel.app" rel="noopener">Open morplan.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+          <div class="links"><a class="btn primary" href="https://morplan.vercel.app" rel="noopener">Open morplan.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a><a class="btn glass" href="https://github.com/Vector033/MorPlan" rel="noopener">Source on GitHub<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></div>
         </div>
       </article>
 
       <article class="flagship glass tilt" id="pingkhana" aria-labelledby="pingkhana-title">
         <div class="fl-media gallery">
-          <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/pingkhana-home-1280.webp" srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" sizes="(min-width: 1000px) 640px, 100vw" width="1280" height="800" loading="lazy" alt="PingKhana home page: 352 announcements from 13 sites, 14 with a closing date, and a list of the ones closing soonest."></button>
+          <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/pingkhana-home-1280.webp" srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" sizes="(min-width: 1000px) 640px, 100vw" width="1280" height="800" loading="lazy" alt="PingKhana home page: scholarships, co-op, jobs and events that are open now, with the ones closing soonest listed first."></button>
           <div class="switcher" role="group" aria-label="PingKhana screens">
-            <button type="button" aria-pressed="true" data-src="img/pingkhana-home-1280.webp" data-srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" data-alt="PingKhana home page: 352 announcements from 13 sites, 14 with a closing date, and a list of the ones closing soonest.">Home</button>
-            <button type="button" aria-pressed="false" data-src="img/pingkhana-drawer-1280.webp" data-srcset="img/pingkhana-drawer-640.webp 640w, img/pingkhana-drawer-1280.webp 1280w" data-alt="PingKhana announcement details: the poster, a short Thai summary, the closing date with days left, and a button for a LINE reminder.">Details</button>
+            <button type="button" aria-pressed="true" data-src="img/pingkhana-home-1280.webp" data-srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" data-alt="PingKhana home page: scholarships, co-op, jobs and events that are open now, with the ones closing soonest listed first.">Home</button>
+            <button type="button" aria-pressed="false" data-src="img/pingkhana-drawer-1280.webp" data-srcset="img/pingkhana-drawer-640.webp 640w, img/pingkhana-drawer-1280.webp 1280w" data-alt="PingKhana announcement details: a short Thai summary, the closing date with days left, and buttons for Google Calendar, .ics and a LINE reminder.">Details</button>
+            <button type="button" aria-pressed="false" data-src="img/pingkhana-follow-1280.webp" data-srcset="img/pingkhana-follow-640.webp 640w, img/pingkhana-follow-1280.webp 1280w" data-alt="PingKhana follow page: tick the CMU, teacher and general news sources you want, without an account.">Follow</button>
             <button type="button" aria-pressed="false" data-src="img/pingkhana-line-1280.webp" data-srcset="img/pingkhana-line-640.webp 640w, img/pingkhana-line-1280.webp 1280w" data-alt="PingKhana LINE bot replying with a carousel of open announcements, each with its closing date and a reminder button.">LINE</button>
             <button type="button" aria-pressed="false" data-src="img/pingkhana-dark-1280.webp" data-srcset="img/pingkhana-dark-640.webp 640w, img/pingkhana-dark-1280.webp 1280w" data-alt="PingKhana in dark mode: filter chips and a grid of announcement cards with photos.">Dark mode</button>
           </div>
@@ -123,15 +125,15 @@
             <div><dt>announcements collected (22 Nov 2026)</dt><dd>611</dd></div>
           </dl>
           <ul class="feat">
-            <li>A FastAPI collector reads CMU faculty sites and education news every hour. It follows robots.txt, retries on 5xx and 429, and merges an announcement posted on several sites into one.</li>
+            <li>A FastAPI collector reads CMU faculty sites and education news every hour. It follows robots.txt, retries on 5xx and 429, and merges an announcement posted on several sites into one. Anyone can add a source by pasting a link (public hosts only, admin-approved).</li>
             <li>Gemini reads closing dates from text, posters and PDFs, and a rule-based extractor takes over when Gemini fails. On the held-out set the rules beat Gemini, 94.1% to 91.2%.</li>
-            <li>LINE's free plan allows 300 pushes a month, so the bot sends one digest a day and keeps a reserve for reminders 3 days and 1 day before a deadline. Anyone can add a source by pasting a link (public hosts only, admin-approved).</li>
+            <li>Follow only the sources you care about, no account needed. LINE's free plan allows 300 pushes a month, so the bot sends one digest a day and keeps a reserve for reminders 3 days and 1 day before a deadline.</li>
           </ul>
           <ul class="tags" aria-label="Stack">
             <li>Python 3.12</li><li>FastAPI</li><li>SQLAlchemy 2</li><li>PostgreSQL</li><li>Next.js 16</li><li>LINE LIFF</li><li>Gemini</li><li>pytest</li>
           </ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live, not opened to real users yet.</span></p>
-          <a class="btn primary" href="https://pingkhana.vercel.app" rel="noopener">Open pingkhana.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+          <div class="links"><a class="btn primary" href="https://pingkhana.vercel.app" rel="noopener">Open pingkhana.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a><a class="btn glass" href="https://github.com/Vector033/PingKhana" rel="noopener">Source on GitHub<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></div>
         </div>
       </article>
 
@@ -141,8 +143,8 @@
             <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/factfit-studio-1280.webp" srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="ProofMyCV bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts."></button>
             <div class="switcher" role="group" aria-label="ProofMyCV screens">
               <button type="button" aria-pressed="true" data-src="img/factfit-studio-1280.webp" data-srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" data-alt="ProofMyCV bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts.">Bullets</button>
-              <button type="button" aria-pressed="false" data-src="img/factfit-application-1280.webp" data-srcset="img/factfit-application-640.webp 640w, img/factfit-application-1280.webp 1280w" data-alt="ProofMyCV application view: a 73% fit score for a junior full-stack job, with each matched skill linked to the fact that backs it.">Fit score</button>
-              <button type="button" aria-pressed="false" data-src="img/factfit-factbank-1280.webp" data-srcset="img/factfit-factbank-640.webp 640w, img/factfit-factbank-1280.webp 1280w" data-alt="ProofMyCV fact bank: work and project entries written as short facts with their numbers and tools.">Fact bank</button>
+              <button type="button" aria-pressed="false" data-src="img/factfit-application-1280.webp" data-srcset="img/factfit-application-640.webp 640w, img/factfit-application-1280.webp 1280w" data-alt="ProofMyCV application view: an 83% fit score for a junior full-stack job, with each matched skill linked to the fact that backs it.">Fit score</button>
+              <button type="button" aria-pressed="false" data-src="img/factfit-factbank-1280.webp" data-srcset="img/factfit-factbank-640.webp 640w, img/factfit-factbank-1280.webp 1280w" data-alt="ProofMyCV fact bank: the résumé header and work entries written as short facts with their numbers and tools.">Fact bank</button>
               <button type="button" aria-pressed="false" data-src="img/factfit-guard-1280.webp" data-srcset="img/factfit-guard-640.webp 640w, img/factfit-guard-1280.webp 1280w" data-alt="ProofMyCV guard sandbox: a draft bullet that mentions MongoDB is blocked because that tool is not in the cited fact.">Guard</button>
             </div>
           </div>
@@ -154,12 +156,12 @@
           </dl>
           <ul class="feat">
             <li>A plain-code guard blocks any bullet whose numbers or tools aren't in your facts.</li>
-            <li>Job links are fetched with an SSRF check on every redirect.</li>
-            <li>Uploads are read in memory only, with size, page and zip-bomb caps.</li>
+            <li>Takes a job as a link, a poster photo or text; links get an SSRF check on every redirect.</li>
+            <li>Tracks each application's status and deadline, and adds a missing skill as a fact in one step.</li>
           </ul>
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase</li><li>Drizzle</li><li>Gemini</li><li>Vitest</li></ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every eval case is fictional. I use it for my own applications.</span></p>
-          <a class="btn glass" href="https://proofmycv.vercel.app" rel="noopener">Open proofmycv.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+          <div class="links"><a class="btn glass" href="https://proofmycv.vercel.app" rel="noopener">Open proofmycv.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a><a class="btn glass" href="https://github.com/Vector033/ProofMyCV" rel="noopener">Source on GitHub<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></div>
         </article>
 
         <article class="card glass tilt" id="harnkan" aria-labelledby="harnkan-title">
@@ -185,7 +187,7 @@
           </ul>
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase Realtime + RLS</li><li>PWA</li><li>IndexedDB</li><li>Playwright</li></ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live and installable. Not used on a real trip yet.</span></p>
-          <a class="btn glass" href="https://harnkan-ten.vercel.app" rel="noopener">Open harnkan-ten.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+          <div class="links"><a class="btn glass" href="https://harnkan-ten.vercel.app" rel="noopener">Open harnkan-ten.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a><a class="btn glass" href="https://github.com/Vector033/HarnKan" rel="noopener">Source on GitHub<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></div>
         </article>
 
         <article class="card glass tilt" id="slipjot" aria-labelledby="slipjot-title">
@@ -195,7 +197,7 @@
               <button type="button" aria-pressed="true" data-src="img/slipjot-dashboard-1280.webp" data-srcset="img/slipjot-dashboard-640.webp 640w, img/slipjot-dashboard-1280.webp 1280w" data-alt="SlipJot dashboard for one month: total spending, a bar for each day, spending by category and the most frequent payees.">Dashboard</button>
               <button type="button" aria-pressed="false" data-src="img/slipjot-review-1280.webp" data-srcset="img/slipjot-review-640.webp 640w, img/slipjot-review-1280.webp 1280w" data-alt="SlipJot review queue: a slip with a field the reader was unsure about, highlighted for the user to check before saving.">Review</button>
               <button type="button" aria-pressed="false" data-src="img/slipjot-expenses-1280.webp" data-srcset="img/slipjot-expenses-640.webp 640w, img/slipjot-expenses-1280.webp 1280w" data-alt="SlipJot expense list grouped by day, with a category on each payment and a total for each day.">Expenses</button>
-              <button type="button" aria-pressed="false" data-src="img/slipjot-phone-1280.webp" data-srcset="img/slipjot-phone-640.webp 640w, img/slipjot-phone-1280.webp 1280w" data-alt="SlipJot on a phone reading two uploaded slips, with counters for saved, to-review and duplicate slips.">Phone</button>
+              <button type="button" aria-pressed="false" data-src="img/slipjot-landing-1280.webp" data-srcset="img/slipjot-landing-640.webp 640w, img/slipjot-landing-1280.webp 1280w" data-alt="SlipJot home page: a sample bank slip next to the expense it becomes, and a table of reading accuracy by bank for Gemini and on-device OCR.">Home page</button>
             </div>
           </div>
           <h3 id="slipjot-title">SlipJot</h3>
@@ -205,13 +207,13 @@
             <div><dt>silent errors: unsure slips go to a review queue</dt><dd>0%</dd></div>
           </dl>
           <ul class="feat">
-            <li>Reads Thai slips on the device (tesseract.js, about 0.75 s) or with Gemini.</li>
+            <li>Share slips straight from a banking app (Android); it reads them on the device in about 0.75 s or with Gemini.</li>
             <li>Learned payees, then keywords, then an LLM: 13 of 381 slips needed the LLM.</li>
             <li>Catches duplicates by hash, QR payload, reference or look-alike image.</li>
           </ul>
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase</li><li>tesseract.js</li><li>Gemini</li><li>Recharts</li></ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every number comes from synthetic slips.</span></p>
-          <a class="btn glass" href="https://slipjot.vercel.app" rel="noopener">Open slipjot.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+          <div class="links"><a class="btn glass" href="https://slipjot.vercel.app" rel="noopener">Open slipjot.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a><a class="btn glass" href="https://github.com/Vector033/SlipJot" rel="noopener">Source on GitHub<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a></div>
         </article>
       </div>
     </section>

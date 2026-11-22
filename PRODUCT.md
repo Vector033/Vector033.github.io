@@ -31,7 +31,7 @@ Visitors read on laptops and phones, often between other applications. Résumé 
 - English only.
 - Public contact: email (nawat_wattanawong@cmu.ac.th) and GitHub (github.com/Vector033). No phone number on the site; the phone stays only in the downloadable PDF.
 - One page: hero with portrait and readings, MorPlan flagship, four other solo projects, Project Z, skills (with how I work and education), contact.
-- The five solo repositories are private. No source links to them until the owner makes them public.
+- The five solo repositories are public since 2026-11-22 (github.com/Vector033/{MorPlan,PingKhana,ProofMyCV,HarnKan,SlipJot}); each card links its source.
 - AI coding agents were used to build the projects and this site. Never claim "hand-built".
 
 ## Evidence on Hand
