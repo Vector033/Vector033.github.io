@@ -20,7 +20,7 @@ A personal portfolio that is the "linked proof" behind the one-page résumé. Su
 
 ## Positioning
 
-Full-stack developer who ships and measures. Five solo apps are deployed, MorPlan first (MorPlan, FactFit, HarnKan, SlipJot, PingKhana), each with an eval that has a held-out set, and each with an honest status line. Project Z remains the large team piece: he was the Software Architect on a multi-tenant AI chat-widget SaaS delivered to an external client (Saka).
+Full-stack developer who ships and measures. Five solo apps are deployed, MorPlan first (MorPlan, PingKhana, ProofMyCV (formerly FactFit, now at proofmycv.vercel.app), HarnKan, SlipJot), each with an eval that has a held-out set, and each with an honest status line. Project Z remains the large team piece: he was the Software Architect on a multi-tenant AI chat-widget SaaS delivered to an external client (Saka).
 
 ## Operating Context
 
@@ -36,9 +36,9 @@ Visitors read on laptops and phones, often between other applications. Résumé 
 
 ## Evidence on Hand
 
-- Résumé: `C:\Users\User\Desktop\resume\Nawat_Wattanawong_Resume_v10.pdf` / `.docx`.
+- Résumé: `C:\Users\User\Desktop\resume\Nawat_Wattanawong_Resume_v11.pdf` / `.docx`.
 - MorPlan numbers: `Desktop\MorPlan\README.md`, section RAG evaluation (production BM25: R@5 90.3% on 145 answerable questions; 78.8% right answer-vs-not-found call on the held-out split). There is no clash-detection accuracy number; do not invent one.
-- Numbers for the four solo projects: `C:\Users\User\Desktop\PORTFOLIO_REDESIGN_PROMPT.md` (as of 2026-11-14). Use only those. Do not use the old FactFit figure 180/186.
+- Numbers for the other four solo projects: each project's README.md and HANDOFF.md (re-read 2026-11-22). PingKhana deadline eval 94.1% blind on 34 real held-out passages (rules; Gemini 91.2%), 611 announcements on 22 Nov. ProofMyCV holdout3 164/172 and 24/30. HarnKan 92% and 0 wrong on 60 synthetic slips. SlipJot 93% and 0% silent errors on held-out synthetic slips; 13 of 381 slips (3.4%) needed the LLM to categorise. Earlier source: `PORTFOLIO_REDESIGN_PROMPT.md` (2026-11-14). Do not use the old FactFit figure 180/186.
 - Project Z final report (Team 08), source repo github.com/NexusG0/Project-Z.
 - Project Z facts: 22/22 user stories + 7 beyond-MVP features, client sign-off; 161/161 Jira work items, 212 story points, velocity 8 → 68; his share 36 issues, 57 commits; mutation score 90–100% on core services; job-claim race fixed (10 concurrent workers → 1 winner); SettingsPage.vue 2,329 → 765 lines; login rate limit 10/min, public widget endpoints 30/min per IP; analysis fast-exit ~36 ms.
 - Earlier coursework: QuizMaster (g11-quizmaster.vercel.app), Text Checker IMDb sentiment (~88% val accuracy, 50,000 reviews), Kin-Arai-Dee FoodBot (kinaraidee.streamlit.app).

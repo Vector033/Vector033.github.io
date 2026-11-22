@@ -58,10 +58,10 @@
         <ul aria-labelledby="glance-title">
           <li><a class="g-card glass" href="#morplan"><span class="g-name">MorPlan</span><span class="g-num">90.3%</span><span class="g-what">Thai rule questions with the right page in the top 5</span></a></li>
           <li><a class="g-card glass" href="#project-z"><span class="g-name">Project Z</span><span class="g-num">22/22</span><span class="g-what">user stories delivered, client sign-off</span></a></li>
-          <li><a class="g-card glass" href="#factfit"><span class="g-name">FactFit</span><span class="g-num">164/172</span><span class="g-what">made-up claims blocked on a blind test set</span></a></li>
+          <li><a class="g-card glass" href="#factfit"><span class="g-name">ProofMyCV</span><span class="g-num">164/172</span><span class="g-what">made-up claims blocked on a blind test set</span></a></li>
           <li><a class="g-card glass" href="#harnkan"><span class="g-name">HarnKan</span><span class="g-num">0</span><span class="g-what">wrong auto-ticks on 60 synthetic slips</span></a></li>
           <li><a class="g-card glass" href="#slipjot"><span class="g-name">SlipJot</span><span class="g-num">0%</span><span class="g-what">silent errors on held-out synthetic slips</span></a></li>
-          <li><a class="g-card glass" href="#pingkhana"><span class="g-name">PingKhana</span><span class="g-num">13</span><span class="g-what">news sources collected every hour</span></a></li>
+          <li><a class="g-card glass" href="#pingkhana"><span class="g-name">PingKhana</span><span class="g-num">94.1%</span><span class="g-what">closing dates read right on 34 real passages, blind run</span></a></li>
         </ul>
       </div>
     </section>
@@ -86,15 +86,15 @@
         <div class="fl-body">
           <p class="kicker">Flagship · solo · Nov 2026</p>
           <h3 id="morplan-title">MorPlan</h3>
-          <p class="tagline">CMU timetable planner and Thai regulation Q&amp;A.</p>
+          <p class="tagline">Timetable planner and rule Q&amp;A for students at any Thai university.</p>
           <dl class="readings">
             <div><dt>of 145 answerable Thai rule questions find the right page in the top 5</dt><dd>90.3%</dd></div>
             <div><dt>right call between answering and "not found" on a held-out split</dt><dd>78.8%</dd></div>
           </dl>
           <ul class="feat">
-            <li>Drag courses onto a week grid, or place them from the keyboard. Class, midterm, final and duplicate clashes show at once.</li>
-            <li>Compare plans A to E side by side, share a read-only link, export .ics or PNG.</li>
-            <li>Ask the regulations in Thai: every answer cites the document and page, and says "not found" when the documents don't cover it.</li>
+            <li>Drag courses onto a week grid or place them from the keyboard. Class, midterm, final and duplicate clashes show at once, and plans A to E compare side by side and export to .ics or PNG.</li>
+            <li>Works for the 77 universities in the TCAS list. You paste your course table and the browser reads it, so MorPlan never asks for your registration password.</li>
+            <li>Rule answers cite the document and page. Hybrid search scored a little higher (91.7%), but its embedding model is too big for a Vercel function, so production runs BM25 at about 1 ms a question.</li>
           </ul>
           <ul class="tags" aria-label="Stack">
             <li>Next.js 16</li><li>TypeScript</li><li>Tailwind 4</li><li>dnd-kit</li><li>Supabase</li><li>Drizzle</li><li>Vitest + fast-check</li><li>Playwright</li>
@@ -119,13 +119,13 @@
           <h3 id="pingkhana-title">PingKhana</h3>
           <p class="tagline">Scholarship, co-op and job announcements with their deadlines, in one place and on LINE.</p>
           <dl class="readings">
-            <div><dt>news sources collected every hour</dt><dd>13</dd></div>
-            <div><dt>announcements gathered (14 Nov 2026)</dt><dd>352</dd></div>
+            <div><dt>closing dates read right on 34 real held-out passages, first blind run</dt><dd>94.1%</dd></div>
+            <div><dt>announcements collected (22 Nov 2026)</dt><dd>611</dd></div>
           </dl>
           <ul class="feat">
-            <li>A FastAPI collector reads CMU faculty sites and education news every hour, follows robots.txt, and merges an announcement posted on several sites into one.</li>
-            <li>Gemini reads closing dates from text, posters and PDFs. The LINE bot reminds you 3 days and 1 day before, or export deadlines to .ics or Google Calendar.</li>
-            <li>It grew from a CMU-only bot after a teacher asked for school news. Anyone can add a source by pasting a link (SSRF-guarded, admin-approved), and a watchdog emails me if a source goes quiet for 6 hours.</li>
+            <li>A FastAPI collector reads CMU faculty sites and education news every hour. It follows robots.txt, retries on 5xx and 429, and merges an announcement posted on several sites into one.</li>
+            <li>Gemini reads closing dates from text, posters and PDFs, and a rule-based extractor takes over when Gemini fails. On the held-out set the rules beat Gemini, 94.1% to 91.2%.</li>
+            <li>LINE's free plan allows 300 pushes a month, so the bot sends one digest a day and keeps a reserve for reminders 3 days and 1 day before a deadline. Anyone can add a source by pasting a link (public hosts only, admin-approved).</li>
           </ul>
           <ul class="tags" aria-label="Stack">
             <li>Python 3.12</li><li>FastAPI</li><li>SQLAlchemy 2</li><li>PostgreSQL</li><li>Next.js 16</li><li>LINE LIFF</li><li>Gemini</li><li>pytest</li>
@@ -138,24 +138,28 @@
       <div class="bento">
         <article class="card glass tilt" id="factfit" aria-labelledby="factfit-title">
           <div class="gallery">
-            <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/factfit-studio-1280.webp" srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="FactFit bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts."></button>
-            <div class="switcher" role="group" aria-label="FactFit screens">
-              <button type="button" aria-pressed="true" data-src="img/factfit-studio-1280.webp" data-srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" data-alt="FactFit bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts.">Bullets</button>
-              <button type="button" aria-pressed="false" data-src="img/factfit-application-1280.webp" data-srcset="img/factfit-application-640.webp 640w, img/factfit-application-1280.webp 1280w" data-alt="FactFit application view: a 73% fit score for a junior full-stack job, with each matched skill linked to the fact that backs it.">Fit score</button>
-              <button type="button" aria-pressed="false" data-src="img/factfit-factbank-1280.webp" data-srcset="img/factfit-factbank-640.webp 640w, img/factfit-factbank-1280.webp 1280w" data-alt="FactFit fact bank: work and project entries written as short facts with their numbers and tools.">Fact bank</button>
-              <button type="button" aria-pressed="false" data-src="img/factfit-guard-1280.webp" data-srcset="img/factfit-guard-640.webp 640w, img/factfit-guard-1280.webp 1280w" data-alt="FactFit guard sandbox: a draft bullet that mentions MongoDB is blocked because that tool is not in the cited fact.">Guard</button>
+            <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/factfit-studio-1280.webp" srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="ProofMyCV bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts."></button>
+            <div class="switcher" role="group" aria-label="ProofMyCV screens">
+              <button type="button" aria-pressed="true" data-src="img/factfit-studio-1280.webp" data-srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" data-alt="ProofMyCV bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts.">Bullets</button>
+              <button type="button" aria-pressed="false" data-src="img/factfit-application-1280.webp" data-srcset="img/factfit-application-640.webp 640w, img/factfit-application-1280.webp 1280w" data-alt="ProofMyCV application view: a 73% fit score for a junior full-stack job, with each matched skill linked to the fact that backs it.">Fit score</button>
+              <button type="button" aria-pressed="false" data-src="img/factfit-factbank-1280.webp" data-srcset="img/factfit-factbank-640.webp 640w, img/factfit-factbank-1280.webp 1280w" data-alt="ProofMyCV fact bank: work and project entries written as short facts with their numbers and tools.">Fact bank</button>
+              <button type="button" aria-pressed="false" data-src="img/factfit-guard-1280.webp" data-srcset="img/factfit-guard-640.webp 640w, img/factfit-guard-1280.webp 1280w" data-alt="ProofMyCV guard sandbox: a draft bullet that mentions MongoDB is blocked because that tool is not in the cited fact.">Guard</button>
             </div>
           </div>
-          <h3 id="factfit-title">FactFit</h3>
-          <p class="tagline">Tailors a résumé to a job posting without inventing facts.</p>
+          <h3 id="factfit-title">ProofMyCV</h3>
+          <p class="tagline">Tailors a résumé to each job posting without inventing facts. Formerly FactFit.</p>
           <dl class="readings">
             <div><dt>made-up claims blocked on a blind held-out set</dt><dd>164/172</dd></div>
             <div><dt>honest bullets accepted on the same set</dt><dd>24/30</dd></div>
           </dl>
-          <p>A guard written in plain code blocks any drafted bullet whose numbers or tool names don't trace back to a fact you wrote.</p>
+          <ul class="feat">
+            <li>A plain-code guard blocks any bullet whose numbers or tools aren't in your facts.</li>
+            <li>Job links are fetched with an SSRF check on every redirect.</li>
+            <li>Uploads are read in memory only, with size, page and zip-bomb caps.</li>
+          </ul>
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase</li><li>Drizzle</li><li>Gemini</li><li>Vitest</li></ul>
-          <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every eval case is fictional.</span></p>
-          <a class="btn glass" href="https://factfit-five.vercel.app" rel="noopener">Open factfit-five.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
+          <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every eval case is fictional. I use it for my own applications.</span></p>
+          <a class="btn glass" href="https://proofmycv.vercel.app" rel="noopener">Open proofmycv.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
         </article>
 
         <article class="card glass tilt" id="harnkan" aria-labelledby="harnkan-title">
@@ -174,7 +178,11 @@
             <div><dt>of 60 synthetic slips ticked as paid automatically</dt><dd>92%</dd></div>
             <div><dt>wrong ticks on the same 60 slips</dt><dd>0</dd></div>
           </dl>
-          <p>No sign-up. Settles in the fewest transfers, makes a PromptPay QR with the amount filled in, and works offline.</p>
+          <ul class="feat">
+            <li>Fewest transfers: exact search up to 16 people, greedy above.</li>
+            <li>Offline edits queue in IndexedDB and replay once, in order.</li>
+            <li>Stores a salted hash of each slip reference, never the image.</li>
+          </ul>
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase Realtime + RLS</li><li>PWA</li><li>IndexedDB</li><li>Playwright</li></ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live and installable. Not used on a real trip yet.</span></p>
           <a class="btn glass" href="https://harnkan-ten.vercel.app" rel="noopener">Open harnkan-ten.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
@@ -196,7 +204,11 @@
             <div><dt>of held-out slips fully correct with on-device OCR</dt><dd>93%</dd></div>
             <div><dt>silent errors: unsure slips go to a review queue</dt><dd>0%</dd></div>
           </dl>
-          <p>Reads amount, time, payee and bank in Thai. Categories come from rules first and an LLM second, and it learns from your corrections.</p>
+          <ul class="feat">
+            <li>Reads Thai slips on the device (tesseract.js, about 0.75 s) or with Gemini.</li>
+            <li>Learned payees, then keywords, then an LLM: 13 of 381 slips needed the LLM.</li>
+            <li>Catches duplicates by hash, QR payload, reference or look-alike image.</li>
+          </ul>
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase</li><li>tesseract.js</li><li>Gemini</li><li>Recharts</li></ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every number comes from synthetic slips.</span></p>
           <a class="btn glass" href="https://slipjot.vercel.app" rel="noopener">Open slipjot.vercel.app<svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
