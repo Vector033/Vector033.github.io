@@ -220,3 +220,99 @@
   tick();
   setInterval(tick, 15000);
 })();
+
+// Scroll motion: hero readings count up, sections rise in. Both skip reduced motion; content is visible without JS.
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ease = (k) => 1 - Math.pow(1 - k, 3);
+
+  // "90.3%" counts 0 → 90.3; "164/172" counts the first number and keeps "/172".
+  const countUp = (el) => {
+    const m = el.textContent.match(/^(\d+(?:\.\d+)?)(.*)$/);
+    if (!m || parseFloat(m[1]) === 0) return;
+    const end = parseFloat(m[1]), dec = (m[1].split('.')[1] || '').length, rest = m[2], t0 = performance.now();
+    el.style.minWidth = `${el.offsetWidth}px`; // no width jitter while digits change
+    (function tick(now) {
+      const k = Math.min(1, (now - t0) / 1200);
+      el.textContent = (end * ease(k)).toFixed(dec) + rest;
+      if (k < 1) requestAnimationFrame(tick);
+    })(t0);
+  };
+  const counter = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (e.isIntersecting) { counter.unobserve(e.target); countUp(e.target); }
+  }), { threshold: 0.6 });
+  document.querySelectorAll('.g-num').forEach((n) => counter.observe(n));
+
+  const targets = document.querySelectorAll('section:not(.hero) > h2, section:not(.hero) > .kicker, section:not(.hero) > .lede, .flagship, .bento .card, .side, .circuit, .skill-grid > *, .contact-copy, .contact-list');
+  const reveal = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    reveal.unobserve(e.target);
+    e.target.classList.add('revealed');
+    e.target.addEventListener('transitionend', () => e.target.style.removeProperty('--d'), { once: true }); // tilt reset shouldn't wait for the stagger
+  }), { rootMargin: '0px 0px -8% 0px' });
+  targets.forEach((el) => {
+    const i = [...el.parentElement.children].indexOf(el);
+    if (el.parentElement.matches('.bento, .skill-grid')) el.style.setProperty('--d', `${i * 70}ms`);
+    el.classList.add('reveal');
+    reveal.observe(el);
+  });
+})();
+
+// Ambient particles behind the page: slow drift, scroll parallax with inertia, a gentle push and faint links near the pointer.
+(() => {
+  const c = document.getElementById('bg-canvas');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!c || reduce.matches) return;
+  const ctx = c.getContext('2d');
+  const LINK = 120, PUSH = 140;
+  let w = 0, h = 0, pts = [], mx = -1e4, my = -1e4, lastY = scrollY, drift = 0, raf = 0;
+
+  const size = () => {
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    w = innerWidth; h = innerHeight;
+    c.width = w * dpr; c.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const n = Math.min(80, Math.round((w * h) / 16000));
+    pts = Array.from({ length: n }, () => ({
+      x: Math.random() * w, y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.16, vy: (Math.random() - 0.5) * 0.16, z: 0.4 + Math.random() * 0.6,
+    }));
+  };
+
+  const frame = () => {
+    drift += ((scrollY - lastY) - drift) * 0.08; // inertia: particles lag behind fast scrolls
+    lastY = scrollY;
+    ctx.clearRect(0, 0, w, h);
+    for (const p of pts) {
+      p.x += p.vx; p.y += p.vy - drift * 0.12 * p.z;
+      const dx = p.x - mx, dy = p.y - my, d = Math.hypot(dx, dy);
+      if (d < PUSH && d > 0.5) { const f = (1 - d / PUSH) * 0.8; p.x += (dx / d) * f; p.y += (dy / d) * f; }
+      if (p.x < -10) p.x = w + 10; else if (p.x > w + 10) p.x = -10;
+      if (p.y < -10) p.y = h + 10; else if (p.y > h + 10) p.y = -10;
+    }
+    ctx.lineWidth = 1;
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i];
+      for (let j = i + 1; j < pts.length; j++) {
+        const b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d > LINK) continue;
+        const near = Math.max(0, 1 - Math.hypot((a.x + b.x) / 2 - mx, (a.y + b.y) / 2 - my) / 220);
+        ctx.strokeStyle = `rgba(236, 72, 153, ${(1 - d / LINK) * (0.04 + near * 0.1)})`;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      }
+      ctx.fillStyle = `rgba(244, 114, 182, ${0.12 + a.z * 0.16})`;
+      ctx.beginPath(); ctx.arc(a.x, a.y, 0.6 + a.z, 0, 6.283); ctx.fill();
+    }
+    raf = requestAnimationFrame(frame);
+  };
+
+  const start = () => { if (!raf && !document.hidden && !reduce.matches) raf = requestAnimationFrame(frame); };
+  const stop = () => { cancelAnimationFrame(raf); raf = 0; };
+  size(); start();
+  let resizing = 0;
+  addEventListener('resize', () => { cancelAnimationFrame(resizing); resizing = requestAnimationFrame(size); });
+  addEventListener('pointermove', (e) => { mx = e.clientX; my = e.clientY; }, { passive: true });
+  document.addEventListener('pointerleave', () => { mx = my = -1e4; });
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+  reduce.addEventListener('change', () => { if (reduce.matches) { stop(); ctx.clearRect(0, 0, w, h); } });
+})();

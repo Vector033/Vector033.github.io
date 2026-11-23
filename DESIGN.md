@@ -57,6 +57,8 @@ Deep near-black ground (#07080a to #0d0f14) lit by soft fixed pink light. Conten
 
 - **Cursor:** on fine pointers without reduced motion, a 6px pink dot follows the pointer and a 36px ring trails it, growing to 1.8x over links and buttons. Touch and reduced-motion users keep the native cursor.
 - **Tilt:** `.tilt` cards rotate up to 2.5 degrees toward the pointer (perspective 1000px) with a radial specular light at the pointer. Off for touch and reduced motion.
+- **Ambient canvas:** `#bg-canvas` (fixed, z -2) draws at most 80 pink particles that drift, lag behind scrolling, move away from the pointer and link with faint lines (alpha up to 0.14 near the pointer). Pauses when the tab is hidden; off under reduced motion. The page background sits on `html` so the canvas and the `body::before` glow show through.
+- **Scroll motion:** hero readings count up from 0 over 1.2s (ease-out cubic, keeps decimals and the "/172" part); section headings, cards, the circuit, skills and contact rise 16px and fade in with `cubic-bezier(0.16, 1, 0.3, 1)`, staggered 70ms in grids. JS adds `.reveal`, so content shows without JS or with reduced motion.
 - **Hero:** portrait in a slowly turning pink conic ring (the ring from the hero wireframe), pulsing radar pill, gradient name, five floating glance cards that link to each project.
 - **MorPlan switcher:** five screens behind pill buttons (`aria-pressed`); clicking the shot opens a native `<dialog>`.
 - **Project Z circuit:** the real architecture (not a generic client/edge/backend/database picture), tier labels per node, five flow buttons that send glowing pulses along the traces. Logic lives in the first block of `main.js`.
