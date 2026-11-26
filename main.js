@@ -177,26 +177,67 @@
     });
   }
 
-  // Screenshot switchers: each .gallery swaps its own image; clicking the image enlarges it
-  // in a native modal dialog (Esc and focus return come with it).
+  // Screenshot & video tour switchers: each .gallery swaps its own image or feature video tour
   const viewer = document.getElementById('viewer');
   const viewerImg = document.getElementById('viewer-img');
+  const viewerVideo = document.getElementById('viewer-video');
   document.querySelectorAll('.gallery').forEach((g) => {
     const shot = g.querySelector('.shot-open img');
+    const video = g.querySelector('.shot-open video');
     const buttons = [...g.querySelectorAll('.switcher button')];
     buttons.forEach((b) => b.addEventListener('click', () => {
-      shot.src = b.dataset.src;
-      shot.srcset = b.dataset.srcset;
-      shot.alt = b.dataset.alt;
+      if (b.dataset.video) {
+        if (shot) shot.style.display = 'none';
+        if (video) {
+          video.style.display = 'block';
+          video.play().catch(() => {});
+        }
+      } else {
+        if (video) {
+          video.pause();
+          video.style.display = 'none';
+        }
+        if (shot) {
+          shot.style.display = 'block';
+          shot.src = b.dataset.src;
+          if (b.dataset.srcset) shot.srcset = b.dataset.srcset;
+          shot.alt = b.dataset.alt;
+        }
+      }
       buttons.forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
     }));
     g.querySelector('.shot-open').addEventListener('click', () => {
-      viewerImg.src = shot.getAttribute('src'); // the largest file, not the smaller srcset pick
-      viewerImg.alt = shot.alt;
+      if (video && video.style.display !== 'none' && !video.paused) {
+        video.pause();
+        if (viewerVideo) {
+          viewerVideo.src = video.src;
+          viewerVideo.style.display = 'block';
+          if (viewerImg) viewerImg.style.display = 'none';
+          viewerVideo.play().catch(() => {});
+        }
+      } else {
+        if (viewerVideo) {
+          viewerVideo.pause();
+          viewerVideo.style.display = 'none';
+        }
+        if (viewerImg) {
+          viewerImg.style.display = 'block';
+          viewerImg.src = shot.getAttribute('src');
+          viewerImg.alt = shot.alt;
+        }
+      }
       viewer.showModal();
     });
   });
-  viewer.addEventListener('click', (e) => { if (e.target === viewer) viewer.close(); });
+  viewer.addEventListener('click', (e) => {
+    if (e.target === viewer) {
+      if (viewerVideo) viewerVideo.pause();
+      viewer.close();
+    }
+  });
+  viewer.addEventListener('close', () => {
+    if (viewerVideo) viewerVideo.pause();
+  });
 
   // Copy email.
   const copy = document.getElementById('copy-email');

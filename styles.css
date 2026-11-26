@@ -317,3 +317,30 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
   opacity: 1; transform: none;
   transition: opacity .7s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0ms), transform .7s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0ms);
 }
+
+/* Video tour styling */
+.tour-btn {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+.tour-btn:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+.tour-btn[aria-pressed="true"] {
+  background: var(--accent-hi) !important;
+  color: #07080a !important;
+  border-color: var(--accent-hi) !important;
+  font-weight: 700 !important;
+}
+.shot-video {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: opacity .2s;
+}
