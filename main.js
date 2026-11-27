@@ -177,26 +177,194 @@
     });
   }
 
-  // Screenshot switchers: each .gallery swaps its own image; clicking the image enlarges it
-  // in a native modal dialog (Esc and focus return come with it).
+  // Media switchers, YouTube-style hover video preview, and multi-item viewer (<dialog> with prev/next + sound).
   const viewer = document.getElementById('viewer');
   const viewerImg = document.getElementById('viewer-img');
+  const viewerVid = document.getElementById('viewer-video');
+  const viewerTitle = document.getElementById('viewer-title');
+  const viewerStep = document.getElementById('viewer-step');
+  const viewerCap = document.getElementById('viewer-cap');
+  const viewerPills = document.getElementById('viewer-pills');
+  const viewerPrev = document.getElementById('viewer-prev');
+  const viewerNext = document.getElementById('viewer-next');
+
+  let activeGallery = null;
+  let viewerIndex = 0;
+
+  function stopViewerVideo() {
+    viewerVid.pause();
+  }
+
+  function renderViewerItem(idx, startAt = 0) {
+    if (!activeGallery) return;
+    const { title, items } = activeGallery;
+    const len = items.length;
+    viewerIndex = ((idx % len) + len) % len;
+    const item = items[viewerIndex];
+
+    viewerTitle.textContent = title || 'Preview';
+    viewerStep.textContent = len > 1 ? `${viewerIndex + 1} / ${len} · ${item.label}` : item.label;
+    viewerCap.textContent = item.alt || '';
+    viewerPrev.hidden = len <= 1;
+    viewerNext.hidden = len <= 1;
+
+    [...viewerPills.children].forEach((p, i) => {
+      p.setAttribute('aria-pressed', String(i === viewerIndex));
+    });
+
+    if (item.type === 'video') {
+      viewerImg.hidden = true;
+      viewerVid.hidden = false;
+      viewerVid.poster = item.poster || '';
+      if (viewerVid.getAttribute('src') !== item.video) {
+        viewerVid.src = item.video;
+      }
+      viewerVid.muted = false;
+      const seekAndPlay = () => {
+        if (startAt > 0.25 && Number.isFinite(viewerVid.duration) && startAt < viewerVid.duration - 0.5) {
+          viewerVid.currentTime = startAt;
+        } else if (startAt === 0) {
+          viewerVid.currentTime = 0;
+        }
+        viewerVid.play().catch(() => {
+          viewerVid.muted = true;
+          viewerVid.play().catch(() => {});
+        });
+      };
+      if (viewerVid.readyState >= 1) seekAndPlay();
+      else viewerVid.addEventListener('loadedmetadata', seekAndPlay, { once: true });
+    } else {
+      stopViewerVideo();
+      viewerVid.hidden = true;
+      viewerImg.hidden = false;
+      viewerImg.src = item.src;
+      viewerImg.alt = item.alt;
+    }
+  }
+
+  function openViewer(galleryObj, idx, startAt = 0) {
+    activeGallery = galleryObj;
+    viewerPills.replaceChildren();
+    if (galleryObj.items.length > 1) {
+      viewerPills.hidden = false;
+      galleryObj.items.forEach((it, i) => {
+        const pill = document.createElement('button');
+        pill.type = 'button';
+        pill.textContent = it.label;
+        pill.setAttribute('aria-pressed', String(i === idx));
+        pill.addEventListener('click', () => renderViewerItem(i));
+        viewerPills.appendChild(pill);
+      });
+    } else {
+      viewerPills.hidden = true;
+    }
+    renderViewerItem(idx, startAt);
+    if (!viewer.open) viewer.showModal();
+  }
+
+  viewerPrev.addEventListener('click', () => renderViewerItem(viewerIndex - 1));
+  viewerNext.addEventListener('click', () => renderViewerItem(viewerIndex + 1));
+  viewer.addEventListener('click', (e) => { if (e.target === viewer) viewer.close(); });
+  viewer.addEventListener('close', stopViewerVideo);
+  document.addEventListener('keydown', (e) => {
+    if (!viewer.open || !activeGallery || activeGallery.items.length <= 1) return;
+    if (document.activeElement === viewerVid) return;
+    if (e.key === 'ArrowLeft') { e.preventDefault(); renderViewerItem(viewerIndex - 1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); renderViewerItem(viewerIndex + 1); }
+  });
+
+  const formatTime = (s) => `0:${String(Math.min(59, Math.max(0, Math.floor(s)))).padStart(2, '0')}`;
+
   document.querySelectorAll('.gallery').forEach((g) => {
-    const shot = g.querySelector('.shot-open img');
+    const shotOpen = g.querySelector('.shot-open');
+    const shot = shotOpen.querySelector('img');
+    const previewVid = shotOpen.querySelector('.preview-video');
+    const durChip = shotOpen.querySelector('.yt-dur');
+    const barSpan = shotOpen.querySelector('.yt-bar span');
     const buttons = [...g.querySelectorAll('.switcher button')];
-    buttons.forEach((b) => b.addEventListener('click', () => {
-      shot.src = b.dataset.src;
-      shot.srcset = b.dataset.srcset;
-      shot.alt = b.dataset.alt;
+    const title = g.dataset.title || g.closest('article')?.querySelector('h3')?.textContent?.trim() || '';
+
+    const items = buttons.length
+      ? buttons.map((b) => ({
+          label: b.textContent.trim(),
+          type: b.dataset.type === 'video' ? 'video' : 'image',
+          video: b.dataset.video || '',
+          poster: b.dataset.poster || b.dataset.src,
+          src: b.dataset.src,
+          srcset: b.dataset.srcset || '',
+          alt: b.dataset.alt || '',
+        }))
+      : [{
+          label: title,
+          type: 'image',
+          src: shot.getAttribute('src'),
+          srcset: shot.getAttribute('srcset') || '',
+          alt: shot.alt || '',
+        }];
+
+    const galleryObj = { title, items };
+    let activeIndex = Math.max(0, buttons.findIndex((b) => b.getAttribute('aria-pressed') === 'true'));
+    let hoverTimer = 0;
+
+    function stopPreview(reset = true) {
+      clearTimeout(hoverTimer);
+      hoverTimer = 0;
+      if (!previewVid) return;
+      previewVid.pause();
+      shotOpen.classList.remove('is-playing');
+      if (reset) {
+        if (barSpan) barSpan.style.width = '0%';
+        if (durChip) durChip.textContent = 'DEMO · 0:16';
+      }
+    }
+
+    function startPreview() {
+      const current = items[activeIndex];
+      if (!previewVid || current.type !== 'video' || !fine || reduce) return;
+      if (!previewVid.getAttribute('src')) {
+        previewVid.src = previewVid.dataset.src;
+      }
+      previewVid.muted = true;
+      previewVid.play().then(() => {
+        if (!shotOpen.matches(':hover')) { previewVid.pause(); return; }
+        shotOpen.classList.add('is-playing');
+      }).catch(() => {});
+    }
+
+    if (previewVid) {
+      previewVid.addEventListener('timeupdate', () => {
+        if (!shotOpen.classList.contains('is-playing') || !previewVid.duration) return;
+        const pct = Math.min(100, (previewVid.currentTime / previewVid.duration) * 100);
+        if (barSpan) barSpan.style.width = `${pct}%`;
+        if (durChip) durChip.textContent = `PREVIEW · ${formatTime(previewVid.currentTime)}`;
+      });
+
+      shotOpen.addEventListener('pointerenter', () => {
+        if (items[activeIndex].type !== 'video' || !fine || reduce) return;
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(startPreview, 130);
+      });
+      shotOpen.addEventListener('pointerleave', () => stopPreview(true));
+    }
+
+    buttons.forEach((b, idx) => b.addEventListener('click', () => {
+      stopPreview(true);
+      activeIndex = idx;
+      const item = items[idx];
+      shot.src = item.src;
+      shot.srcset = item.srcset;
+      shot.alt = item.alt;
+      shotOpen.dataset.mode = item.type === 'video' ? 'video' : 'screen';
+      shotOpen.setAttribute('aria-label', item.type === 'video' ? `Play ${title} demo video or enlarge` : `Enlarge ${title} ${item.label} screenshot`);
       buttons.forEach((o) => o.setAttribute('aria-pressed', String(o === b)));
     }));
-    g.querySelector('.shot-open').addEventListener('click', () => {
-      viewerImg.src = shot.getAttribute('src'); // the largest file, not the smaller srcset pick
-      viewerImg.alt = shot.alt;
-      viewer.showModal();
+
+    shotOpen.addEventListener('click', () => {
+      const resumeAt = previewVid && shotOpen.classList.contains('is-playing') ? previewVid.currentTime : 0;
+      stopPreview(true);
+      openViewer(galleryObj, activeIndex, resumeAt);
     });
   });
-  viewer.addEventListener('click', (e) => { if (e.target === viewer) viewer.close(); });
 
   // Copy email.
   const copy = document.getElementById('copy-email');

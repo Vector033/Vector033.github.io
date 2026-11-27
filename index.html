@@ -72,12 +72,20 @@
       <p class="lede">Each has a link you can open, numbers I measured, and a plain note on where it stands. The code for all five is public on GitHub.</p>
 
       <article class="flagship glass tilt" id="morplan" aria-labelledby="morplan-title">
-        <div class="fl-media gallery">
-          <button type="button" class="shot-open" aria-label="Enlarge screenshot">
-            <img src="img/morplan-planner-1600.webp" srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" sizes="(min-width: 1000px) 640px, 100vw" width="1600" height="1067" alt="MorPlan week grid with 4 courses and 12 credits; 2 clashes are marked in red and an alert names the overlapping courses.">
+        <div class="fl-media gallery" data-title="MorPlan">
+          <button type="button" class="shot-open" data-mode="video" aria-label="Play MorPlan demo video or enlarge">
+            <img src="img/morplan-planner-1600.webp" srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" sizes="(min-width: 1000px) 640px, 100vw" width="1600" height="1067" alt="MorPlan interactive demo: drag-and-drop course scheduling, clash detection, Thai rule Q&amp;A and curriculum setup.">
+            <video class="preview-video" muted loop playsinline preload="none" poster="img/morplan-planner-1600.webp" data-src="video/morplan-showcase.mp4" aria-hidden="true"></video>
+            <span class="yt-ui" aria-hidden="true">
+              <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="yt-pill">Hover to preview · Click for sound</span>
+              <span class="yt-dur">DEMO · 0:16</span>
+              <span class="yt-bar"><span></span></span>
+            </span>
           </button>
-          <div class="switcher" role="group" aria-label="MorPlan screens">
-            <button type="button" aria-pressed="true" data-src="img/morplan-planner-1600.webp" data-srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" data-alt="MorPlan week grid with 4 courses and 12 credits; 2 clashes are marked in red and an alert names the overlapping courses.">Planner</button>
+          <div class="switcher" role="group" aria-label="MorPlan media">
+            <button type="button" aria-pressed="true" data-type="video" data-video="video/morplan-showcase.mp4" data-poster="img/morplan-planner-1600.webp" data-src="img/morplan-planner-1600.webp" data-srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" data-alt="MorPlan interactive demo: drag-and-drop course scheduling, clash detection, Thai rule Q&amp;A and curriculum setup.">Demo · 0:16</button>
+            <button type="button" aria-pressed="false" data-src="img/morplan-planner-1600.webp" data-srcset="img/morplan-planner-800.webp 800w, img/morplan-planner-1600.webp 1600w" data-alt="MorPlan week grid with 4 courses and 12 credits; 2 clashes are marked in red and an alert names the overlapping courses.">Planner</button>
             <button type="button" aria-pressed="false" data-src="img/morplan-import-1600.webp" data-srcset="img/morplan-import-800.webp 800w, img/morplan-import-1600.webp 1600w" data-alt="MorPlan import: a course table pasted as text and read in the browser into courses, sections and times.">Import</button>
             <button type="button" aria-pressed="false" data-src="img/morplan-drag-1600.webp" data-srcset="img/morplan-drag-800.webp 800w, img/morplan-drag-1600.webp 1600w" data-alt="Dragging a course in MorPlan: every section of it shows as a slot on the grid, and the slots that would clash are red.">Drag</button>
             <button type="button" aria-pressed="false" data-src="img/morplan-compare-1600.webp" data-srcset="img/morplan-compare-800.webp 800w, img/morplan-compare-1600.webp 1600w" data-alt="MorPlan comparing plans A and B side by side by credits, clashes, free days and earliest and latest class, with a small timetable of each.">Compare</button>
@@ -107,10 +115,20 @@
       </article>
 
       <article class="flagship glass tilt" id="pingkhana" aria-labelledby="pingkhana-title">
-        <div class="fl-media gallery">
-          <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/pingkhana-home-1280.webp" srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" sizes="(min-width: 1000px) 640px, 100vw" width="1280" height="800" loading="lazy" alt="PingKhana home page: scholarships, co-op, jobs and events that are open now, with a big countdown on the one closing soonest."></button>
-          <div class="switcher" role="group" aria-label="PingKhana screens">
-            <button type="button" aria-pressed="true" data-src="img/pingkhana-home-1280.webp" data-srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" data-alt="PingKhana home page: scholarships, co-op, jobs and events that are open now, with a big countdown on the one closing soonest.">Home</button>
+        <div class="fl-media gallery" data-title="PingKhana">
+          <button type="button" class="shot-open" data-mode="video" aria-label="Play PingKhana demo video or enlarge">
+            <img src="img/pingkhana-home-1280.webp" srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" sizes="(min-width: 1000px) 640px, 100vw" width="1280" height="800" loading="lazy" alt="PingKhana interactive demo: dark mode toggle, tag filtering, announcement poster drawer and LINE QR reminder.">
+            <video class="preview-video" muted loop playsinline preload="none" poster="img/pingkhana-home-1280.webp" data-src="video/pingkhana-showcase.mp4" aria-hidden="true"></video>
+            <span class="yt-ui" aria-hidden="true">
+              <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+              <span class="yt-pill">Hover to preview · Click for sound</span>
+              <span class="yt-dur">DEMO · 0:16</span>
+              <span class="yt-bar"><span></span></span>
+            </span>
+          </button>
+          <div class="switcher" role="group" aria-label="PingKhana media">
+            <button type="button" aria-pressed="true" data-type="video" data-video="video/pingkhana-showcase.mp4" data-poster="img/pingkhana-home-1280.webp" data-src="img/pingkhana-home-1280.webp" data-srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" data-alt="PingKhana interactive demo: dark mode toggle, tag filtering, announcement poster drawer and LINE QR reminder.">Demo · 0:16</button>
+            <button type="button" aria-pressed="false" data-src="img/pingkhana-home-1280.webp" data-srcset="img/pingkhana-home-640.webp 640w, img/pingkhana-home-1280.webp 1280w" data-alt="PingKhana home page: scholarships, co-op, jobs and events that are open now, with a big countdown on the one closing soonest.">Home</button>
             <button type="button" aria-pressed="false" data-src="img/pingkhana-drawer-1280.webp" data-srcset="img/pingkhana-drawer-640.webp 640w, img/pingkhana-drawer-1280.webp 1280w" data-alt="PingKhana announcement details: the poster, a short Thai summary, the closing date with days left, and buttons for Google Calendar, .ics and a LINE reminder.">Details</button>
             <button type="button" aria-pressed="false" data-src="img/pingkhana-follow-1280.webp" data-srcset="img/pingkhana-follow-640.webp 640w, img/pingkhana-follow-1280.webp 1280w" data-alt="PingKhana follow page: tick the CMU, teacher and general news sources you want, without an account.">Follow</button>
             <button type="button" aria-pressed="false" data-src="img/pingkhana-line-1280.webp" data-srcset="img/pingkhana-line-640.webp 640w, img/pingkhana-line-1280.webp 1280w" data-alt="PingKhana LINE bot replying with a carousel of open announcements, each with its closing date and a reminder button.">LINE</button>
@@ -140,10 +158,20 @@
 
       <div class="bento">
         <article class="card glass tilt" id="factfit" aria-labelledby="factfit-title">
-          <div class="gallery">
-            <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/factfit-studio-1280.webp" srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="ProofMyCV bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts."></button>
-            <div class="switcher" role="group" aria-label="ProofMyCV screens">
-              <button type="button" aria-pressed="true" data-src="img/factfit-studio-1280.webp" data-srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" data-alt="ProofMyCV bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts.">Bullets</button>
+          <div class="gallery" data-title="ProofMyCV">
+            <button type="button" class="shot-open" data-mode="video" aria-label="Play ProofMyCV demo video or enlarge">
+              <img src="img/factfit-studio-1280.webp" srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="ProofMyCV interactive demo: adding a verified fact, guard blocking an unsupported claim, reverting and previewing the resume.">
+              <video class="preview-video" muted loop playsinline preload="none" poster="img/factfit-studio-1280.webp" data-src="video/proofmycv-showcase.mp4" aria-hidden="true"></video>
+              <span class="yt-ui" aria-hidden="true">
+                <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                <span class="yt-pill">Hover to preview · Click for sound</span>
+                <span class="yt-dur">DEMO · 0:16</span>
+                <span class="yt-bar"><span></span></span>
+              </span>
+            </button>
+            <div class="switcher" role="group" aria-label="ProofMyCV media">
+              <button type="button" aria-pressed="true" data-type="video" data-video="video/proofmycv-showcase.mp4" data-poster="img/factfit-studio-1280.webp" data-src="img/factfit-studio-1280.webp" data-srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" data-alt="ProofMyCV interactive demo: adding a verified fact, guard blocking an unsupported claim, reverting and previewing the resume.">Demo · 0:16</button>
+              <button type="button" aria-pressed="false" data-src="img/factfit-studio-1280.webp" data-srcset="img/factfit-studio-640.webp 640w, img/factfit-studio-1280.webp 1280w" data-alt="ProofMyCV bullet studio: three drafted résumé bullets, two marked Traceable and one marked Blocked because its number and a tool name are not in the cited facts.">Bullets</button>
               <button type="button" aria-pressed="false" data-src="img/factfit-application-1280.webp" data-srcset="img/factfit-application-640.webp 640w, img/factfit-application-1280.webp 1280w" data-alt="ProofMyCV application view: an 83% fit score for a junior full-stack job, with each matched skill linked to the fact that backs it.">Fit score</button>
               <button type="button" aria-pressed="false" data-src="img/factfit-factbank-1280.webp" data-srcset="img/factfit-factbank-640.webp 640w, img/factfit-factbank-1280.webp 1280w" data-alt="ProofMyCV fact bank: the résumé header and work entries written as short facts with their numbers and tools.">Fact bank</button>
               <button type="button" aria-pressed="false" data-src="img/factfit-guard-1280.webp" data-srcset="img/factfit-guard-640.webp 640w, img/factfit-guard-1280.webp 1280w" data-alt="ProofMyCV guard sandbox: a draft bullet that mentions MongoDB is blocked because that tool is not in the cited fact.">Guard</button>
@@ -166,10 +194,20 @@
         </article>
 
         <article class="card glass tilt" id="harnkan" aria-labelledby="harnkan-title">
-          <div class="gallery">
-            <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/harnkan-desktop-1280.webp" srcset="img/harnkan-desktop-640.webp 640w, img/harnkan-desktop-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="HarnKan on a laptop: the trip's expense list on the left and who pays whom on the right, with transfers marked as received."></button>
-            <div class="switcher" role="group" aria-label="HarnKan screens">
-              <button type="button" aria-pressed="true" data-src="img/harnkan-desktop-1280.webp" data-srcset="img/harnkan-desktop-640.webp 640w, img/harnkan-desktop-1280.webp 1280w" data-alt="HarnKan on a laptop: the trip's expense list on the left and who pays whom on the right, with transfers marked as received.">Trip</button>
+          <div class="gallery" data-title="HarnKan">
+            <button type="button" class="shot-open" data-mode="video" aria-label="Play HarnKan demo video or enlarge">
+              <img src="img/harnkan-desktop-1280.webp" srcset="img/harnkan-desktop-640.webp 640w, img/harnkan-desktop-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="HarnKan interactive demo: adding an expense, collapsing pairwise debts, reading a transfer slip and PromptPay QR.">
+              <video class="preview-video" muted loop playsinline preload="none" poster="img/harnkan-desktop-1280.webp" data-src="video/harnkan-showcase.mp4" aria-hidden="true"></video>
+              <span class="yt-ui" aria-hidden="true">
+                <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                <span class="yt-pill">Hover to preview · Click for sound</span>
+                <span class="yt-dur">DEMO · 0:16</span>
+                <span class="yt-bar"><span></span></span>
+              </span>
+            </button>
+            <div class="switcher" role="group" aria-label="HarnKan media">
+              <button type="button" aria-pressed="true" data-type="video" data-video="video/harnkan-showcase.mp4" data-poster="img/harnkan-desktop-1280.webp" data-src="img/harnkan-desktop-1280.webp" data-srcset="img/harnkan-desktop-640.webp 640w, img/harnkan-desktop-1280.webp 1280w" data-alt="HarnKan interactive demo: adding an expense, collapsing pairwise debts, reading a transfer slip and PromptPay QR.">Demo · 0:16</button>
+              <button type="button" aria-pressed="false" data-src="img/harnkan-desktop-1280.webp" data-srcset="img/harnkan-desktop-640.webp 640w, img/harnkan-desktop-1280.webp 1280w" data-alt="HarnKan on a laptop: the trip's expense list on the left and who pays whom on the right, with transfers marked as received.">Trip</button>
               <button type="button" aria-pressed="false" data-src="img/harnkan-qr-1280.webp" data-srcset="img/harnkan-qr-640.webp 640w, img/harnkan-qr-1280.webp 1280w" data-alt="HarnKan on a phone: a PromptPay QR code with 220 baht already filled in, ready to scan from a banking app.">PromptPay</button>
               <button type="button" aria-pressed="false" data-src="img/harnkan-slip-1280.webp" data-srcset="img/harnkan-slip-640.webp 640w, img/harnkan-slip-1280.webp 1280w" data-alt="HarnKan after reading a transfer slip: amount, time and payee each match the debt, and the payment waits for the payee to confirm.">Slip check</button>
               <button type="button" aria-pressed="false" data-src="img/harnkan-conflict-1280.webp" data-srcset="img/harnkan-conflict-640.webp 640w, img/harnkan-conflict-1280.webp 1280w" data-alt="HarnKan conflict sheet: two people edited the same expense at once, and the app shows both versions to choose from.">Conflict</button>
@@ -192,10 +230,20 @@
         </article>
 
         <article class="card glass tilt" id="slipjot" aria-labelledby="slipjot-title">
-          <div class="gallery">
-            <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/slipjot-dashboard-1280.webp" srcset="img/slipjot-dashboard-640.webp 640w, img/slipjot-dashboard-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="SlipJot dashboard for one month: total spending, a bar for each day, spending by category and the most frequent payees."></button>
-            <div class="switcher" role="group" aria-label="SlipJot screens">
-              <button type="button" aria-pressed="true" data-src="img/slipjot-dashboard-1280.webp" data-srcset="img/slipjot-dashboard-640.webp 640w, img/slipjot-dashboard-1280.webp 1280w" data-alt="SlipJot dashboard for one month: total spending, a bar for each day, spending by category and the most frequent payees.">Dashboard</button>
+          <div class="gallery" data-title="SlipJot">
+            <button type="button" class="shot-open" data-mode="video" aria-label="Play SlipJot demo video or enlarge">
+              <img src="img/slipjot-dashboard-1280.webp" srcset="img/slipjot-dashboard-640.webp 640w, img/slipjot-dashboard-1280.webp 1280w" sizes="(min-width: 1000px) 560px, 100vw" width="1280" height="800" loading="lazy" alt="SlipJot interactive demo: uploading a bank slip, reviewing an unsure item, monthly spending dashboard and instant search.">
+              <video class="preview-video" muted loop playsinline preload="none" poster="img/slipjot-dashboard-1280.webp" data-src="video/slipjot-showcase.mp4" aria-hidden="true"></video>
+              <span class="yt-ui" aria-hidden="true">
+                <span class="yt-play"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+                <span class="yt-pill">Hover to preview · Click for sound</span>
+                <span class="yt-dur">DEMO · 0:16</span>
+                <span class="yt-bar"><span></span></span>
+              </span>
+            </button>
+            <div class="switcher" role="group" aria-label="SlipJot media">
+              <button type="button" aria-pressed="true" data-type="video" data-video="video/slipjot-showcase.mp4" data-poster="img/slipjot-dashboard-1280.webp" data-src="img/slipjot-dashboard-1280.webp" data-srcset="img/slipjot-dashboard-640.webp 640w, img/slipjot-dashboard-1280.webp 1280w" data-alt="SlipJot interactive demo: uploading a bank slip, reviewing an unsure item, monthly spending dashboard and instant search.">Demo · 0:16</button>
+              <button type="button" aria-pressed="false" data-src="img/slipjot-dashboard-1280.webp" data-srcset="img/slipjot-dashboard-640.webp 640w, img/slipjot-dashboard-1280.webp 1280w" data-alt="SlipJot dashboard for one month: total spending, a bar for each day, spending by category and the most frequent payees.">Dashboard</button>
               <button type="button" aria-pressed="false" data-src="img/slipjot-review-1280.webp" data-srcset="img/slipjot-review-640.webp 640w, img/slipjot-review-1280.webp 1280w" data-alt="SlipJot review queue: a slip with a field the reader was unsure about, highlighted for the user to check before saving.">Review</button>
               <button type="button" aria-pressed="false" data-src="img/slipjot-expenses-1280.webp" data-srcset="img/slipjot-expenses-640.webp 640w, img/slipjot-expenses-1280.webp 1280w" data-alt="SlipJot expense list grouped by day, with a category on each payment and a total for each day.">Expenses</button>
               <button type="button" aria-pressed="false" data-src="img/slipjot-landing-1280.webp" data-srcset="img/slipjot-landing-640.webp 640w, img/slipjot-landing-1280.webp 1280w" data-alt="SlipJot home page: a sample bank slip next to the expense it becomes, and a table of reading accuracy by bank for Gemini and on-device OCR.">Home page</button>
@@ -219,7 +267,7 @@
       </div>
 
       <article class="card glass tilt side" id="bmiprint" aria-labelledby="bmiprint-title">
-        <div class="gallery">
+        <div class="gallery" data-title="BMI Print">
           <button type="button" class="shot-open" aria-label="Enlarge screenshot"><img src="img/bmiprint-app-1280.webp" srcset="img/bmiprint-app-640.webp 640w, img/bmiprint-app-1280.webp 1280w" sizes="(min-width: 1000px) 480px, 100vw" width="1280" height="800" loading="lazy" alt="BMI Print with a sample class loaded: the class list on the left and an A5 report slip on the right with weight, height, BMI, eight fitness test results and a 1 to 5 score for each. Student names are placeholders."></button>
         </div>
         <div class="side-body">
@@ -347,9 +395,28 @@
     <span>Plain HTML, CSS and JavaScript, built with help from AI coding agents. Type: Plus Jakarta Sans and JetBrains Mono.</span>
   </footer>
 
-  <dialog class="viewer" id="viewer" aria-label="Screenshot">
-    <form method="dialog"><button class="btn glass small close" aria-label="Close">Close</button></form>
-    <img id="viewer-img" src="img/morplan-planner-1600.webp" width="1600" height="1067" loading="lazy" alt="">
+  <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-bar">
+      <div class="viewer-meta">
+        <strong id="viewer-title">MorPlan</strong>
+        <span class="mono-label" id="viewer-step">1 / 7</span>
+      </div>
+      <form method="dialog"><button class="btn glass small close" aria-label="Close">Close</button></form>
+    </div>
+    <div class="viewer-stage">
+      <button type="button" class="viewer-nav" id="viewer-prev" aria-label="Previous item (Left arrow)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="viewer-frame">
+        <img id="viewer-img" src="img/morplan-planner-1600.webp" width="1600" height="1067" loading="lazy" alt="">
+        <video id="viewer-video" controls playsinline preload="metadata" hidden></video>
+      </div>
+      <button type="button" class="viewer-nav" id="viewer-next" aria-label="Next item (Right arrow)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+    <p class="viewer-cap" id="viewer-cap"></p>
+    <div class="viewer-pills" id="viewer-pills" role="group" aria-label="Switch media in viewer"></div>
   </dialog>
 
   <script src="main.js" defer></script>
