@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html styles.css main.js favicon.svg Nawat_Wattanawong_Resume.pdf _site/
-          cp -r fonts img _site/
+          cp -r fonts img video _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

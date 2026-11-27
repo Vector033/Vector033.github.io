@@ -173,10 +173,11 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
   display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 3vw, 44px);
   margin-top: 40px; padding: clamp(16px, 2.4vw, 28px); border-color: rgba(236, 72, 153, 0.25);
 }
-.shot-open { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; cursor: zoom-in; }
+.shot-open { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; cursor: zoom-in; -webkit-user-select: none; user-select: none; }
 .shot-open[data-mode="video"] { background: #07080a; cursor: pointer; transition: border-color .25s var(--ease), box-shadow .25s var(--ease); }
 .shot-open[data-mode="video"]:hover { border-color: rgba(244, 114, 182, 0.5); box-shadow: 0 0 28px -8px rgba(236, 72, 153, 0.45); }
-.shot-open img { display: block; width: 100%; transition: opacity .2s; }
+.shot-open img { display: block; width: 100%; transition: opacity .2s; -webkit-user-drag: none; }
+.shot-open img::selection, .viewer img::selection { background: transparent; }
 .shot-open[data-mode="screen"] .yt-ui,
 .shot-open[data-mode="screen"] .preview-video { display: none; }
 .preview-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #07080a; opacity: 0; pointer-events: none; transition: opacity .25s var(--ease); }
@@ -209,7 +210,7 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
 .yt-bar span { display: block; height: 100%; width: 0%; background: var(--accent-hi); box-shadow: 0 0 8px var(--accent); }
 @media (hover: none) { .yt-pill { display: none; } }
 @media (max-width: 520px) { .yt-pill { display: none; } .yt-play { width: 44px; height: 44px; } }
-.switcher { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.switcher { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; -webkit-user-select: none; user-select: none; }
 .switcher button, .switches button {
   min-height: 44px; padding: 0 16px; font: 600 0.88rem/1 var(--sans); color: var(--text-2); cursor: pointer;
   background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); border-radius: 999px;
@@ -259,7 +260,7 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
 .viewer-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .viewer-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; min-width: 0; }
 .viewer-meta strong { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em; }
-.viewer-stage { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 0; }
+.viewer-stage { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; min-height: 0; -webkit-user-select: none; user-select: none; }
 .viewer-nav {
   flex: none; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 999px;
   border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); color: var(--text); cursor: pointer;
@@ -271,11 +272,11 @@ h1 .role { display: block; margin-top: 14px; font-size: clamp(1.5rem, 3vw, 2.25r
   display: grid; place-items: center; min-width: 0; max-height: calc(92vh - 185px);
   overflow: hidden; border-radius: 12px; border: 1px solid var(--line); background: #07080a;
 }
-.viewer-frame img { width: 100%; max-height: calc(92vh - 187px); object-fit: contain; background: #fff; }
+.viewer-frame img { width: 100%; max-height: calc(92vh - 187px); object-fit: contain; background: #fff; -webkit-user-drag: none; }
 .viewer-frame video { width: 100%; max-height: calc(92vh - 187px); aspect-ratio: 16 / 9; object-fit: contain; background: #07080a; outline: none; }
 .viewer-frame img[hidden], .viewer-frame video[hidden], .viewer-nav[hidden], .viewer-pills[hidden] { display: none !important; }
 .viewer-cap { margin: 0; font-size: 0.88rem; line-height: 1.45; color: var(--text-2); text-align: center; }
-.viewer-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.viewer-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; -webkit-user-select: none; user-select: none; }
 .viewer-pills button {
   min-height: 36px; padding: 0 14px; font: 600 0.82rem/1 var(--sans); color: var(--text-2); cursor: pointer;
   background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); border-radius: 999px;
