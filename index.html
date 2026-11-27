@@ -102,9 +102,9 @@
             <div><dt>right call between answering and "not found" on a held-out split</dt><dd>78.8%</dd></div>
           </dl>
           <ul class="feat">
-            <li>Drag courses onto a week grid or place them from the keyboard. Class, midterm, final and duplicate clashes show at once, and plans A to E compare side by side and export to .ics or PNG.</li>
-            <li>Pick any of the 77 TCAS universities and your major, and it finds your curriculum: what you passed, what is overdue and which electives fit. Course tables are pasted and read in the browser, so it never asks for your registration password.</li>
-            <li>Rule answers cite the document and page. Hybrid search scored a little higher (91.7%), but its embedding model is too big for a Vercel function, so production runs BM25 at about 1 ms a question.</li>
+            <li>Drag courses straight from the sticky search list or place them from the keyboard. Class, midterm, final and duplicate clashes show at once; plans A to E compare side by side and export to .ics or PNG.</li>
+            <li>Pick any of the 77 TCAS universities and your major for a curriculum degree-audit ring: what you passed, what is overdue and which electives fit. Course tables parse in the browser, never asking for registration passwords.</li>
+            <li>Ask regulations from a slide-out drawer on any page—every answer cites the document and page. Production runs BM25 at ~1 ms a question (hybrid search scored 91.7%, but its embedding model exceeded Vercel function limits).</li>
           </ul>
           <ul class="tags" aria-label="Stack">
             <li>Next.js 16</li><li>TypeScript</li><li>Tailwind 4</li><li>dnd-kit</li><li>Supabase</li><li>Drizzle</li><li>Vitest + fast-check</li><li>Playwright</li>
@@ -144,9 +144,9 @@
             <div><dt>announcements collected (22 Nov 2026)</dt><dd>611</dd></div>
           </dl>
           <ul class="feat">
-            <li>A FastAPI collector reads CMU faculty sites and education news every hour. It follows robots.txt, retries on 5xx and 429, and merges an announcement posted on several sites into one. Anyone can add a source by pasting a link (public hosts only, admin-approved).</li>
-            <li>Gemini reads closing dates from text, posters and PDFs, and a rule-based extractor takes over when Gemini fails. On the held-out set the rules beat Gemini, 94.1% to 91.2%.</li>
-            <li>Follow only the sources you care about, no account needed. LINE's free plan allows 300 pushes a month, so the bot sends one digest a day and keeps a reserve for reminders 3 days and 1 day before a deadline.</li>
+            <li>A FastAPI collector polls CMU faculty sites and education news hourly, obeys robots.txt, retries on 5xx/429 and merges cross-posted announcements. Anyone can submit a new public source link (admin-approved).</li>
+            <li>Gemini extracts closing dates from text, posters and PDFs with a rule-based fallback; on the blind held-out set, rules beat Gemini 94.1% to 91.2%.</li>
+            <li>Supports zero-flash dark mode, pack/tag/status filters, quick-preview drawer with Google Calendar / .ics / LINE QR modal, and 3-day + 1-day LINE reminders within the 300-push free tier.</li>
           </ul>
           <ul class="tags" aria-label="Stack">
             <li>Python 3.12</li><li>FastAPI</li><li>SQLAlchemy 2</li><li>PostgreSQL</li><li>Next.js 16</li><li>LINE LIFF</li><li>Gemini</li><li>pytest</li>
@@ -184,9 +184,9 @@
             <div><dt>honest bullets accepted on the same set</dt><dd>24/30</dd></div>
           </dl>
           <ul class="feat">
-            <li>A plain-code guard blocks any bullet whose numbers or tools aren't in your facts.</li>
-            <li>Takes a job as a link, a poster photo or text; links get an SSRF check on every redirect.</li>
-            <li>Tracks each application's status and deadline, and adds a missing skill as a fact in one step.</li>
+            <li>Live fabrication guard blocks any bullet whose numbers or tools aren't in your facts, with 1-click revert.</li>
+            <li>Import a .docx/.pdf résumé or paste a job link, poster photo or text (SSRF-checked on every redirect).</li>
+            <li>Quick-add missing skills inline, reorder sections in a live preview modal and export a text-only ATS PDF.</li>
           </ul>
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase</li><li>Drizzle</li><li>Gemini</li><li>Vitest</li></ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every eval case is fictional. I use it for my own applications.</span></p>
@@ -220,9 +220,9 @@
             <div><dt>wrong ticks on the same 60 slips</dt><dd>0</dd></div>
           </dl>
           <ul class="feat">
-            <li>Fewest transfers: exact search up to 16 people, greedy above.</li>
-            <li>Offline edits queue in IndexedDB and replay once, in order.</li>
-            <li>Stores a salted hash of each slip reference, never the image.</li>
+            <li>Fewest transfers (exact DP up to 16 members, greedy above) with collapsible before/after breakdown.</li>
+            <li>EMVCo PromptPay QR, AI slip matching (salted ref hash only, image never saved), 1-tap confirm &amp; LINE summary share.</li>
+            <li>Offline PWA queue in IndexedDB plus side-by-side conflict resolution when two people edit at once.</li>
           </ul>
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase Realtime + RLS</li><li>PWA</li><li>IndexedDB</li><li>Playwright</li></ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live and installable. Not used on a real trip yet.</span></p>
@@ -256,9 +256,9 @@
             <div><dt>silent errors: unsure slips go to a review queue</dt><dd>0%</dd></div>
           </dl>
           <ul class="feat">
-            <li>Share slips straight from a banking app (Android); it reads them on the device in about 0.75 s or with Gemini.</li>
-            <li>Learned payees, then keywords, then an LLM: 13 of 381 slips needed the LLM.</li>
-            <li>Catches duplicates by hash, QR payload, reference or look-alike image.</li>
+            <li>On-device OCR (~0.75 s) or Gemini reads slips; split-view review queue deletes images on confirm (PDPA).</li>
+            <li>Learned payee rules, then keywords, then an LLM: only 13 of 381 slips needed the LLM; 4-layer duplicate check.</li>
+            <li>Interactive 31-day bar &amp; category donut charts with budget alerts, instant search and UTF-8 BOM CSV export.</li>
           </ul>
           <ul class="tags" aria-label="Stack"><li>Next.js 16</li><li>Supabase</li><li>tesseract.js</li><li>Gemini</li><li>Recharts</li></ul>
           <p class="state"><span class="dot" aria-hidden="true"></span><span><strong>Status:</strong> live with a demo account. Every number comes from synthetic slips.</span></p>
